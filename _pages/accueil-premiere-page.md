@@ -3,6 +3,7 @@ permalink: /
 layout: default
 title: Bienvenue sur Nepthune !
 ---
+{% include base_path %}
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +15,11 @@ title: Bienvenue sur Nepthune !
 <body>
     <div class="container">
         <p>Vous êtes ...</p>
-        <button class="form__button" type="submit">Un élève</button>
-        <button class="form__button" type="submit">Une université</button>
-        <button class="form__button" type="submit">Un partenaire</button>
+        <button class="form__button" type="submit" onclick="location.href='{{ base_path }}/authentification-eleve.html';">Un élève</button>
+        <br>
+        <button class="form__button" type="submit" onclick="location.href='{{ base_path }}/authentification-universite.html';">Une université</button>
+        <br>
+        <button class="form__button" type="submit" onclick="location.href='{{ base_path }}/authentification-partenaire.html';">Un partenaire</button>
+        <br>
     </div>
 </body>

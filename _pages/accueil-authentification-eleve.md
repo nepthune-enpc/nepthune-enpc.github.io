@@ -1,7 +1,10 @@
 ---
 permalink: /authentification.html
 layout: default
+title: S'authentifier
 ---
+
+{% include base_path %}
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -10,14 +13,14 @@ layout: default
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="_sass/_login.scss">
+    <link rel="stylesheet" href="./_sass/_login.scss">
     <style>
 
 </style>
 </head>
 <body>
         <div class="box">
-                <h2>S'authentifier</h2>
+                <h2>{page.title}</h2>
                 <p>Utilisez votre compte Universitaire</p>
                 <form>
                   <div class="inputBox">
@@ -28,8 +31,11 @@ layout: default
                         <input type="text" name="text" required onkeyup="this.setAttribute('value', this.value);" value="">
                         <label>mot de passe</label>
                       </div>
-                  <input type="submit" name="sign-in" value="Se connecter">
+                    <input type="checkbox" checked="checked" name="souvenir"> Se souvenir de moi
+              </label>
+                  <input type="submit" name="se-connecter" value="Se connecter">
                 </form>
+                <a href="#"> Mot de passe oublié? </a> 
               </div>
 </body>
 </html>
