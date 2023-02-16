@@ -1,5 +1,5 @@
 ---
-permalink: /authentification-eleve.html
+permalink: /authentification-partenaire.html
 title: S'authentifier
 ---
 
