@@ -12,8 +12,6 @@ title: S'authentifier
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <link rel="stylesheet" href="./assets/css/login.css" />
     <title>Document</title>
-
-</style>
 </head>
 <body>
         <div class="box">
@@ -29,7 +27,6 @@ title: S'authentifier
                         <label>mot de passe</label>
                       </div>
                     <input type="checkbox" checked="checked" name="souvenir"> Se souvenir de moi
-              </label>
                   <input type="submit" name="se-connecter" value="Se connecter">
                 </form>
                 <a href="#"> Mot de passe oublié? </a> 
