@@ -1,5 +1,5 @@
 ---
-permalink: /authentification.html
+permalink: /authentification-eleve.html
 layout: default
 title: S'authentifier
 ---
