@@ -18,7 +18,7 @@ title: S'authentifier
 </head>
 <body>
         <div class="box">
-                <h2>{page.title}</h2>
+                <h2>{{page.title}}</h2>
                 <p>Utilisez votre compte Universitaire</p>
                 <form>
                   <div class="inputBox">
