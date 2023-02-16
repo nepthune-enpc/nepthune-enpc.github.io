@@ -1,14 +1,14 @@
-
-{% include base_path %}
-
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./_sass/_accueil.css">
-    <title>{{ page.title }}</title>
-  </head>
-  <body>
-    {{ content }}
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{{ site.title }}</title>
+        <link rel="stylesheet" href="/assets/css/_accueil.css" />
+    </head>
+    <body>
+        <h1>{{ site.title }}</h1>
+        <h2>{{ page.title }}</h2>
+
+        {{ content }}
+    </body>
 </html>

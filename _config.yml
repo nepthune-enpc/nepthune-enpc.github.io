@@ -1,4 +1,5 @@
 
+title: Nepthune
 
 jekyll_auth:
   whitelist:
@@ -19,3 +20,12 @@ exclude:
   - Rakefile
   - readme.md
   - vendor
+
+
+defaults:
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
