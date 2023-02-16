@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+---
+permalink: /
+layout: default
+title: Bienvenue sur Nepthune !
+---
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
@@ -8,6 +13,9 @@
 </head>
 <body>
     <div class="container">
-        <button class="form__button" type="submit">Continue</button>
+        <p>Vous êtes ...</p>
+        <button class="form__button" type="submit">Un élève</button>
+        <button class="form__button" type="submit">Une université</button>
+        <button class="form__button" type="submit">Un partenaire</button>
     </div>
 </body>

@@ -1,3 +1,8 @@
+---
+permalink: /authentification.html
+layout: default
+---
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
