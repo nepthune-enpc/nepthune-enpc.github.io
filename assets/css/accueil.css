@@ -26,3 +26,15 @@ body {
     background: #ffffff;
     justify-content: center;
 }
+
+.button {
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #1a73e8;
+    padding: 0.625rem 1.25rem;
+    cursor: pointer;
+    border-radius: 0.312rem;
+    font-size: 1rem;
+    float: right;
+  }
