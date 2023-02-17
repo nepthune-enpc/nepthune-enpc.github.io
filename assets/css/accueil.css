@@ -25,6 +25,8 @@ body {
     border-radius: var(--border-radius);
     background: #ffffff;
     justify-content: center;
+    text-align: center;  
+    align-items: center;
 }
 
 .form__button {
@@ -36,7 +38,8 @@ body {
     cursor: pointer;
     border-radius: 0.312rem;
     font-size: 1rem;
-    float: right;
+    display: block;
+    width: 300px;
   }
 
 
