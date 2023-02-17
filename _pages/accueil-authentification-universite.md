@@ -1,5 +1,5 @@
 ---
-permalink: /accueil-authentification-universite.html
+permalink: /authentification-universite.html
 redirect_from:
     - /accueil-authentification-universite/
     - /accueil-authentification-universite.html

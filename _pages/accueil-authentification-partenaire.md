@@ -1,5 +1,5 @@
 ---
-permalink: /accueil-authentification-partenaire.html
+permalink: /authentification-partenaire.html
 title: S'authentifier
 redirect_from:
     - /accueil-authentification-partenaire/
