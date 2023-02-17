@@ -17,31 +17,23 @@ title: S'authentifier
     <title>Document</title>
 </head>
 <body>
-        <div class="box">
-                <h2>{{page.title}}</h2>
-                <p>Utilisez votre compte Universitaire</p>
-                <form>
-                  <div class="inputBox">
-                    <input type="email" name="email" required onkeyup="this.setAttribute('value', this.value);"  value="">
-                    <label>nom d'utilisateur</label>
-                  </div>
-                  <div class="inputBox">
-                        <input type="text" name="text" required onkeyup="this.setAttribute('value', this.value);" value="">
-                        <label>mot de passe</label>
-                      </div>
+    <div class="box">
+      <h2>{{page.title}}</h2>
+        <p>Utilisez votre compte Universitaire</p>
+            <form>
+              <div class="inputBox">
+                <input type="email" name="email" required onkeyup="this.setAttribute('value', this.value);"  value="">
+                <label>nom d'utilisateur</label>
+              </div>
+              <div class="inputBox">
+                  <input type="text" name="text" required onkeyup="this.setAttribute('value', this.value);" value="">
+                  <label>mot de passe</label>
+              </div>
                     <input type="checkbox" checked="checked" name="souvenir"> Se souvenir de moi
                   <input type="submit" id="se-connecter" name="se-connecter" value="Se connecter">
-                  <button class="form__button" type="submit">Continue</button>
                 </form>
-                <a href="#"> Mot de passe oublié? </a> 
+                <a href="#"> Mot de passe oublié? </a> <button onclick="window.location.replace('{{ base_path }}/page-accueil-valide-partenaire.html');">Continue</button>
               </div>
-            <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="Confirm password">
-                <div class="form__input-error-message"></div>
-            </div>
-            <button class="form__button" type="submit">Continue</button>
-            <p class="form__text">
-                <a class="form__link" href="./" id="linkLogin">Already have an account? Sign in</a>
             </p>
         </form>
     </div>
