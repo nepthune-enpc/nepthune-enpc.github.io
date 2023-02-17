@@ -14,10 +14,10 @@ title: Bienvenue sur Nepthune !
 </head>
 <body>
     <div class="container">
-        <h1>Vous êtes ...</h1>
+        <h1 align="center">Vous êtes ...</h1>
         <br><br><br>
         <button class="form__button" type="submit" onclick="location.href='{{ base_path }}/authentification-eleve.html';">Un élève</button>
-        <<br><br>
+        <br><br>
         <button class="form__button" type="submit" onclick="location.href='{{ base_path }}/authentification-universite.html';">Une université</button>
         <br><br>
         <button class="form__button" type="submit" onclick="location.href='{{ base_path }}/authentification-partenaire.html';">Un partenaire</button>
