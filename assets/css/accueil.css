@@ -27,7 +27,7 @@ body {
     justify-content: center;
 }
 
-.button {
+.form__button {
     border: none;
     outline: none;
     color: #fff;
@@ -37,4 +37,9 @@ body {
     border-radius: 0.312rem;
     font-size: 1rem;
     float: right;
+  }
+
+
+  .form__button:hover {
+    opacity: 0.8;
   }

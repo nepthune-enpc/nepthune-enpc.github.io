@@ -28,7 +28,7 @@ title: S'authentifier
                         <label>mot de passe</label>
                       </div>
                     <input type="checkbox" checked="checked" name="souvenir"> Se souvenir de moi
-                  <input type="submit" name="se-connecter" value="Se connecter">
+                  <input type="submit" name="se-connecter" value="Se connecter" id="connexion" onclick="return OnSignIn()">
                 </form>
                 <a href="#"> Mot de passe oublié? </a> 
               </div>
