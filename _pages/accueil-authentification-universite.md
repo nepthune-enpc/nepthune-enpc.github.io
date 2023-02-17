@@ -1,5 +1,8 @@
 ---
-permalink: /authentification-universite.html
+permalink: /accueil-authentification-universite.html
+redirect_from:
+    - /accueil-authentification-universite/
+    - /accueil-authentification-universite.html
 title: S'authentifier
 ---
 
@@ -36,7 +39,7 @@ title: S'authentifier
     function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile()
     if(googleUser.getHostedDomain() !== 'enpc.fr') {
-        window.location.replace("./page-accueil-valide-universite.html");
+        window.location.replace("{{ base_path }}/page-accueil-valide-universite.html");
     }
     } else {
         alert("Votre nom de domaine de mail ne correspond pas avec l'institution.")

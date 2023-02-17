@@ -1,6 +1,8 @@
 ---
 permalink: /authentification-eleve.html
-layout: default
+redirect_from:
+    - /accueil-authentification-eleve/
+    - /accueil-authentification-eleve.html
 title: S'authentifier
 ---
 
@@ -28,9 +30,12 @@ title: S'authentifier
                         <label>mot de passe</label>
                       </div>
                     <input type="checkbox" checked="checked" name="souvenir"> Se souvenir de moi
-                  <input type="submit" name="se-connecter" value="Se connecter">
+                  <input type="submit" id="se-connecter" name="se-connecter" value="Se connecter">
                 </form>
                 <a href="#"> Mot de passe oublié? </a> 
               </div>
 </body>
+  <script>
+    $(function() { $('se-connecter').click(function(){window.location.replace("{{ base_path }}/page-accueil-valide-partenaire.html");});});
+  </script>
 </html>
