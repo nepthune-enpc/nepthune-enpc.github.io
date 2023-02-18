@@ -20,7 +20,7 @@ title: S'authentifier
     <div class="box">
       <h2>{{page.title}}</h2>
         <p>Utilisez votre compte Universitaire</p>
-            <form>
+            <form onSubmit="window.location.replace('{{ base_path }}/page-accueil-valide-partenaire.html');">
               <div class="inputBox">
                 <input type="email" name="email" required onkeyup="this.setAttribute('value', this.value);"  value="">
                 <label>nom d'utilisateur</label>
@@ -38,7 +38,7 @@ title: S'authentifier
         </form>
     </div>
 </body>
-  <script src="./assets/js/authentification_boutons.js"></script>
+  <!-- <script src="./assets/js/authentification_boutons.js"></script> -->
   <script>
     $(function() { $('se-connecter').click(function(){window.location.replace("{{ base_path }}/page-accueil-valide-partenaire.html");});});
   </script>
