@@ -18,10 +18,10 @@ title: S'authentifier
 </head>
 <body>
     <div class="box">
-    <a href="./accueil-inscription-eleve.html" align="right"> Pas encore inscrit? </a>
+    <a href="{{base_path}}/accueil-inscription-eleve.html" text-align="right"> Pas encore inscrit? </a>
       <h2>{{page.title}}</h2>
         <p>Utilisez votre compte Universitaire</p>
-            <form onSubmit="window.location.replace('{{ base_path }}/page-accueil-valide-partenaire.html');">
+            <form onSubmit="window.location.replace('{{ base_path }}/page-accueil-valide-eleve.html');">
               <div class="inputBox">
                 <input type="email" name="email" required onkeyup="this.setAttribute('value', this.value);"  value="">
                 <label>nom d'utilisateur</label>

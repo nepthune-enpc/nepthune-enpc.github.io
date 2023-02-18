@@ -15,7 +15,7 @@ title: S'authentifier
     <meta name="google-signin-client_id" content="780974065492-pe6crknvlvmjsta8opn6fa3shjtg6pti.apps.googleusercontent.com">
  </head>
   <body>
-      <div class="g-signin2" data-onsucces="onSignIn" data-redirecturi="{{ base_path }}/page-accueil-valide-universite.html"></div>
+      <div class="g-signin2" data-onsucces="onSignIn"></div>
       <div id="content"></div>
   </body>
   <script>

@@ -50,6 +50,7 @@ redirect_from:
   }
   ?>  
   <div class="box">
+  <a href="{{base_path}}/accueil-inscription-partenaire.html" text-align="right"> Pas encore inscrit? </a>
                 <h2>{{page.title}}</h2>
                 <p>Utilisez votre compte Universitaire</p>
                 <form>
