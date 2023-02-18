@@ -6,3 +6,5 @@ redirect_from:
     - /page-accueil-valide-partenaire.html
 title: Accueil Partenaire
 ---
+
+{% include base_path %}
