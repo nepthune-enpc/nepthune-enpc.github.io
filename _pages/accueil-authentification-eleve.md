@@ -21,17 +21,17 @@ title: S'authentifier
     <a href="{{base_path}}/accueil-inscription-eleve.html"> Pas encore inscrit? </a1>
       <h2>{{page.title}}</h2>
         <p>Utilisez votre compte Universitaire</p>
-            <form onSubmit="window.location.replace('{{ base_path }}/page-accueil-valide-eleve.html');">
+            <form onSubmit="onLogin()">
               <div class="inputBox">
-                <input type="email" name="email" required onkeyup="this.setAttribute('value', this.value);"  value="">
+                <input type="email" name="email" id="email" required onkeyup="this.setAttribute('value', this.value);"  value="">
                 <label>nom d'utilisateur</label>
               </div>
               <div class="inputBox">
-                  <input type="text" name="text" required onkeyup="this.setAttribute('value', this.value);" value="">
+                  <input type="text" name="text" id="pwd" required onkeyup="this.setAttribute('value', this.value);" value="">
                   <label>mot de passe</label>
               </div>
                     <input type="checkbox" checked="checked" name="souvenir"> Se souvenir de moi
-                  <input type="submit" onSubmit="window.location.replace('{{ base_path }}/page-accueil-valide-partenaire.html');" onClick="window.location.replace('{{ base_path }}/page-accueil-valide-partenaire.html');" id="se-connecter" name="se-connecter" value="Se connecter">
+                  <input type="submit" onClick="onLogin()" id="se-connecter" name="se-connecter" value="Se connecter">
                 </form>
                 <a href="#"> Mot de passe oublié? </a> <button >Continue</button>
               </div>
@@ -39,6 +39,19 @@ title: S'authentifier
 </body>
   <script src="./assets/js/authentification_boutons.js"></script>
   <script>
-    $(function() { $('se-connecter').click(function(){window.location.replace("{{ base_path }}/page-accueil-valide-partenaire.html");});});
+    function onLogin() {
+      var uname = document.getElementById("email").value;
+      var pwd = document.getElementById("pwd").value;
+      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      if(uname ==''){
+        alert("Un nom est requis.");
+      }
+      else if(pwd==''){
+        	alert("Un mot de passe est requis.");
+		  }
+      else {
+        window.location.replace('{{ base_path }}/page-accueil-valide-eleve.html');
+      }
+    }
   </script>
 </html>
