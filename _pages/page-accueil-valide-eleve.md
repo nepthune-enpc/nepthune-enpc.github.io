@@ -1,5 +1,8 @@
 ---
 permalink: /page-accueil-valide-eleve.html
-layout: default
+layout: accueil
+redirect_from:
+    - /page-accueil-valide-eleve.html
+    - /page-accueil-valide-eleve/
 title: Accueil Eleve
 ---

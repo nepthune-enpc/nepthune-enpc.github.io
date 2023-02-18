@@ -1,6 +1,6 @@
 ---
 permalink: /page-accueil-valide-universite.html
-layout: default
+layout: accueil
 redirect_from:
     - /page-accueil-valide-universite/
     - /page-accueil-valide-universite.html
