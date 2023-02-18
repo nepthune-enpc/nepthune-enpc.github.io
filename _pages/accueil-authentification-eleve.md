@@ -18,6 +18,7 @@ title: S'authentifier
 </head>
 <body>
     <div class="box">
+    <a href="./accueil-inscription-eleve.html" align="right"> Pas encore inscrit? </a>
       <h2>{{page.title}}</h2>
         <p>Utilisez votre compte Universitaire</p>
             <form onSubmit="window.location.replace('{{ base_path }}/page-accueil-valide-partenaire.html');">
@@ -30,15 +31,15 @@ title: S'authentifier
                   <label>mot de passe</label>
               </div>
                     <input type="checkbox" checked="checked" name="souvenir"> Se souvenir de moi
-                  <input type="submit" id="se-connecter" name="se-connecter" value="Se connecter">
+                  <input type="submit" onSubmit="window.location.replace('{{ base_path }}/page-accueil-valide-partenaire.html');" onClick="window.location.replace('{{ base_path }}/page-accueil-valide-partenaire.html');" id="se-connecter" name="se-connecter" value="Se connecter">
                 </form>
-                <a href="#"> Mot de passe oublié? </a> <button onclick="window.location.replace('{{ base_path }}/page-accueil-valide-partenaire.html');">Continue</button>
+                <a href="#"> Mot de passe oublié? </a> <button >Continue</button>
               </div>
             </p>
         </form>
     </div>
 </body>
-  <!-- <script src="./assets/js/authentification_boutons.js"></script> -->
+  <script src="./assets/js/authentification_boutons.js"></script>
   <script>
     $(function() { $('se-connecter').click(function(){window.location.replace("{{ base_path }}/page-accueil-valide-partenaire.html");});});
   </script>
