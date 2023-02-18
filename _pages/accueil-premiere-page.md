@@ -14,9 +14,9 @@ title: Bienvenue sur Nepthune !
 </head>
 <body>
     <div class="container">
-        <h1 text-align="center">Vous êtes ...</h1>
+        <h1>Vous êtes ...</h1>
         <br><br><br>
-        <div class="text-center" style="top: 50%;-ms-transform: translateY(-50%); transform: translateY(-50%);">
+        <div class="text-center">
             <button class="form__button" type="submit" onClick="location.href='{{ base_path }}/authentification-eleve.html';">Un élève</button>
             <br><br>
             <button class="form__button" type="submit" onclick="location.href='{{ base_path }}/authentification-universite.html';">Une université</button>
