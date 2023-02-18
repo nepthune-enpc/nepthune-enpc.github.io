@@ -45,7 +45,7 @@ body {
     letter-spacing: .1px;
     line-height: 1.5;
     margin-bottom: 25px;
-    text-align: right;
+    text-align: end;
   }
   
   .box .inputBox {
