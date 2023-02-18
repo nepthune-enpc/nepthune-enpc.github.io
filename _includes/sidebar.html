@@ -1,6 +1,6 @@
 {% include base_path %}
 
-{% if page.sidebar %}
+{% if page.author_profile or layout.author_profile or page.sidebar %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,7 +11,7 @@
       content="Responsive layout with advanced sidebar menu built with SCSS and vanilla Javascript"
     />
     <link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png" />
-    <link rel="stylesheet" href="./assets/css/_sidebar.scss" />
+    <link rel="stylesheet" href="./assets/css/sidebar.scss" />
     <title>Pro Sidebar</title>
   </head>
   <body>
