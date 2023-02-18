@@ -42,7 +42,7 @@ a1 {
     cursor: pointer;
     border-radius: 0.312rem;
     font-size: 1.2rem;
-    display: block;
+    display: grid;
     width: 300px;
   }
 
