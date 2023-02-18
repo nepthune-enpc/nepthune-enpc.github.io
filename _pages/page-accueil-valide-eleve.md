@@ -6,3 +6,5 @@ redirect_from:
     - /page-accueil-valide-eleve/
 title: Accueil Eleve
 ---
+
+{% include base_path %}

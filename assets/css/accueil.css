@@ -29,6 +29,10 @@ body {
     align-items: center;
 }
 
+a1 {
+    text-align: right;
+}
+
 .form__button {
     border: none;
     outline: none;

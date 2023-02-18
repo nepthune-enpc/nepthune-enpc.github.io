@@ -18,7 +18,7 @@ title: S'authentifier
 </head>
 <body>
     <div class="box">
-    <a href="{{base_path}}/accueil-inscription-eleve.html" text-align="right"> Pas encore inscrit? </a>
+    <a1 href="{{base_path}}/accueil-inscription-eleve.html"> Pas encore inscrit? </a1>
       <h2>{{page.title}}</h2>
         <p>Utilisez votre compte Universitaire</p>
             <form onSubmit="window.location.replace('{{ base_path }}/page-accueil-valide-eleve.html');">
