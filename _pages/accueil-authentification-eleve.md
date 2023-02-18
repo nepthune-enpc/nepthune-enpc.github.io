@@ -18,8 +18,8 @@ title: S'authentifier
 </head>
 <body>
     <div class="box">
-    <a href="{{base_path}}/accueil-inscription-eleve.html"> Pas encore inscrit? </a1>
-      <h2>{{page.title}}</h2>
+    <a href="{{base_path}}/accueil-inscription-eleve.html"><a1>Pas encore inscrit?</a1></a>
+      <h1>{{page.title}}</h1>
         <p>Utilisez votre compte Universitaire</p>
             <form onSubmit="onLogin()">
               <div class="inputBox">
@@ -30,12 +30,10 @@ title: S'authentifier
                   <input type="text" name="text" id="pwd" required onkeyup="this.setAttribute('value', this.value);" value="">
                   <label>mot de passe</label>
               </div>
-                    <input type="checkbox" checked="checked" name="souvenir"> Se souvenir de moi
+                <input type="checkbox" checked="checked" name="souvenir"> Se souvenir de moi
                   <input type="submit" onClick="onLogin()" id="se-connecter" name="se-connecter" value="Se connecter">
                 </form>
-                <a href="#"> Mot de passe oublié? </a> <button >Continue</button>
-              </div>
-            </p>
+          </div>
 </body>
   <script src="./assets/js/authentification_boutons.js"></script>
   <script>
