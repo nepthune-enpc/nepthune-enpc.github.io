@@ -27,6 +27,7 @@ body {
     justify-content: center;
     text-align: center;  
     align-items: center;
+    display: flex;
 }
 
 a1 {
@@ -42,7 +43,7 @@ a1 {
     cursor: pointer;
     border-radius: 0.312rem;
     font-size: 1.2rem;
-    display: grid;
+    display: block;
     width: 300px;
   }
 
