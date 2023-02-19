@@ -33,6 +33,7 @@ title: S'authentifier
                 <input type="checkbox" checked="checked" name="souvenir"> Se souvenir de moi
                   <input type="submit" onClick="onLogin()" id="se-connecter" name="se-connecter" value="Se connecter">
                 </form>
+                <a href='{{ base_path }}/page-accueil-valide-eleve.html'>shortcut</a>
           </div>
 </body>
   <script src="./assets/js/authentification_boutons.js"></script>
