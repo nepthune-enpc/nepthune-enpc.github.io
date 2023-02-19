@@ -8,3 +8,5 @@ title: Accueil Partenaire
 ---
 
 {% include base_path %}
+
+{% include sidebar.html %}

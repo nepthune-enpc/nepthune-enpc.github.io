@@ -8,3 +8,5 @@ title: Accueil Universite
 ---
 
 {% include base_path %}
+
+{% include sidebar.html %}

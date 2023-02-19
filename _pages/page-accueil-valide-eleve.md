@@ -8,3 +8,5 @@ title: Accueil Eleve
 ---
 
 {% include base_path %}
+
+{% include sidebar.html %}
