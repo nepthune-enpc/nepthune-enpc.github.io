@@ -1,5 +1,5 @@
 import { createPopper } from '@popperjs/core';
-import { SIDEBAR_EL } from './constants';
+import { SIDEBAR_EL } from './constants.js';
 
 class Popper {
   instance = null;

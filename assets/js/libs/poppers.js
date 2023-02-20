@@ -1,5 +1,5 @@
-import { SUB_MENU_ELS } from './constants';
-import Popper from './popper';
+import { SUB_MENU_ELS } from './constants.js';
+import Popper from './popper.js';
 
 class Poppers {
   subMenuPoppers = [];

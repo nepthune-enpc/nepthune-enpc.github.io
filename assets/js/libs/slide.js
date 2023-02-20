@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-unused-expressions */
-import { ANIMATION_DURATION } from './constants';
+import { ANIMATION_DURATION } from './constants.js';
 
 export const slideUp = (target, duration = ANIMATION_DURATION) => {
   const { parentElement } = target;
