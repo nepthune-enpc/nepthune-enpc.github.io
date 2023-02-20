@@ -1,15 +1,12 @@
----
-layout: default
----
-
-{% include base_path %}
-
-
-
 <!doctype html>
-<head>
-</head>
-<body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/css-pro-layout.css">
+  </head>
+  <body>
     {% include sidebar.html %}
-</body>
+    {{ content }}
+  </body>
 </html>
