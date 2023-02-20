@@ -1,3 +1,26 @@
 {% include base_path %}
 
-<link rel="stylesheet" href="{{ base_path }}/assets/css/css-pro-layout.css"/>
+{% if page.sidebar %}
+<div class="sidebar-layout">
+  <!-- Account header -->
+  <div class="sidebar-header">
+    <div>V</div>
+    <h5>Victoria</h5>
+  </div>
+  <div class="sidebar-content">
+    <nav class="menu open-current-submenu">
+      <ul>
+        <li class="menu-header"><span>GENERAL</span></li>
+        <li class="menu-item sub-menu">
+          <a href="#">
+            <span class="menu-icon">
+              <i class=""ri-bar-chart-2-fill"></i>
+            </span>
+            <span class="menu-title">Mes filtres</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+{% endif %}
