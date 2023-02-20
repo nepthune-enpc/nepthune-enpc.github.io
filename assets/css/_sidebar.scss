@@ -1,6 +1,6 @@
 
 @import "{{ site.theme }}";
-@import 'css-pro-layout/dist/scss/css-pro-layout.scss';
+@import './css-pro-layout.scss';
 
 .sidebar {
     color: $text-color;
