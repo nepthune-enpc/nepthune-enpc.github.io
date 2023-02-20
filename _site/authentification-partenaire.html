@@ -1,19 +1,20 @@
----
-permalink: /authentification-partenaire.html
-title: S'authentifier
-redirect_from:
-    - /accueil-authentification-partenaire/
-    - /accueil-authentification-partenaire.html
----
 
-{% include base_path %}
 
 <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Nepthune</title>
+        <link rel="stylesheet" href="./assets/css/accueil.css" />
+    </head>
+    <body>
+        
+<p>&lt;!DOCTYPE html&gt;</p>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
      <link rel="stylesheet" href="./assets/css/login.css" />
     <title>Document</title>
 
@@ -51,25 +52,28 @@ redirect_from:
   }
   ?>  
   <div class="box">
-  <a href="{{base_path}}/accueil-inscription-partenaire.html"><a1> Pas encore inscrit? </a1></a>
-                <h2>{{page.title}}</h2>
+  <a href="https://github.com/pages/nepthune-enpc/nepthune-enpc.github.io/accueil-inscription-partenaire.html"><a1> Pas encore inscrit? </a1></a>
+                <h2>S'authentifier</h2>
                 <p>Utilisez votre compte Universitaire</p>
                 <form>
                   <div class="inputBox">
-                    <input type="email" name="email" required onkeyup="this.setAttribute('value', this.value);"  value="">
+                    <input type="email" name="email" required="" onkeyup="this.setAttribute('value', this.value);" value="" />
                     <label>nom d'utilisateur</label>
                   </div>
                   <div class="inputBox">
-                        <input type="text" name="text" required onkeyup="this.setAttribute('value', this.value);" value="">
+                        <input type="text" name="text" required="" onkeyup="this.setAttribute('value', this.value);" value="" />
                         <label>mot de passe</label>
                       </div>
-                    <input type="checkbox" checked="checked" name="souvenir"> Se souvenir de moi
-                  <input type="submit" id="se-connecter" name="se-connecter" value="Se connecter" >
+                    <input type="checkbox" checked="checked" name="souvenir" /> Se souvenir de moi
+                  <input type="submit" id="se-connecter" name="se-connecter" value="Se connecter" />
                 </form>
                 <a href="#"> Mot de passe oublié? </a> 
               </div>  
   </body>
   <script>
-    $(function() { $('se-connecter').click(function(){window.location.replace("{{ base_path }}/page-accueil-valide-partenaire.html");});});
+    $(function() { $('se-connecter').click(function(){window.location.replace("https://github.com/pages/nepthune-enpc/nepthune-enpc.github.io/page-accueil-valide-partenaire.html");});});
   </script>
+</html>
+
+    </body>
 </html>

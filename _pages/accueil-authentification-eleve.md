@@ -8,6 +8,7 @@ title: S'authentifier
 
 {% include base_path %}
 
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">

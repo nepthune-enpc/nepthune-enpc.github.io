@@ -8,4 +8,3 @@ title: Accueil Partenaire
 ---
 
 {% include base_path %}
-
