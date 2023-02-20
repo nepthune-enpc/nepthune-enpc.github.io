@@ -1,12 +1,12 @@
-import '../css/sidebar.scss';
-import { slideToggle, slideUp, slideDown } from '../libs/slide';
+import 'sidebar';
+import { slideToggle, slideUp, slideDown } from './libs/slide';
 import {
   ANIMATION_DURATION,
   FIRST_SUB_MENUS_BTN,
   INNER_SUB_MENUS_BTN,
   SIDEBAR_EL,
-} from '../libs/constants';
-import Poppers from '../libs/poppers';
+} from './libs/constants';
+import Poppers from './libs/poppers';
 
 const PoppersInstance = new Poppers();
 
