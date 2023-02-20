@@ -1,4 +1,4 @@
-import 'sidebar';
+import './styles/styles.scss';
 import { slideToggle, slideUp, slideDown } from './libs/slide';
 import {
   ANIMATION_DURATION,
