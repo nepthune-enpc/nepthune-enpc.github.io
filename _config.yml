@@ -8,6 +8,7 @@ jekyll_auth:
 include:
   - _pages
   - files
+  - .htaccess
 exclude:
   - script
   - bin
