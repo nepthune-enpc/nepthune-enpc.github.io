@@ -10,6 +10,7 @@ title: Bienvenue sur Nepthune !
 
 
 <!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
@@ -17,7 +18,7 @@ title: Bienvenue sur Nepthune !
 <body>
     <div class="container">
         <h1>Vous êtes ...</h1>
-        <br><br><br><br>
+        <br><br>
         <div class="text-center">
             <button class="form__button" type="submit" onClick="location.href='{{ base_path }}/authentification-eleve.html';">Un élève</button>
             <br><br>
@@ -28,3 +29,4 @@ title: Bienvenue sur Nepthune !
         </div>
     </div>
 </body>
+</html>
