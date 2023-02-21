@@ -9,7 +9,7 @@ title: S'authentifier
 
 {% include base_path %}
 
-<!DOCTYPE html>
+
 <html lang="fr">
 <head>
   <script src="https://apis.google.com/js/platform.js"></script>
