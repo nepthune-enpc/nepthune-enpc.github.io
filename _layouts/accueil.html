@@ -17,10 +17,11 @@
   </head>
   <body>
     <div class="layout has-sidebar fixed-sidebar">
-      <aside class="sidebar break-point-sm has-bg-image">
+      <aside class="sidebar break-point-sm">
         <a id="btn-collapse" class="sidebar-collapser"><i class="ri-arrow-left-s-line"></i></a>
         {% include sidebar.html %}
       </aside>
+      <div class="overlay"></div>
       <div class="layout">
         <!-- <header class="header">Header</header> -->
         <main class="content">
@@ -31,5 +32,5 @@
       </div>
     </div>
   </body>
-  <script type="module" src="{{ base_path }}/assets/js/sidebar.js"></script>
+  <script type="text/javascript" src="{{ base_path }}/assets/js/sidebar.js"></script>
 </html>
