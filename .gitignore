@@ -1,4 +1,5 @@
 node_modules/
+.htaccess
 _site/
 _site/*
 _site/*/*
