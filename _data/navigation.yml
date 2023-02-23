@@ -1,7 +1,7 @@
 main:
 
-  - title: "Calendrier"
-  - url: "/calendrier/"
+  - title: "Agenda"
+  - url: "/agenda/"
 
   - title: "Bourses"
   - url: "/bourses/"
