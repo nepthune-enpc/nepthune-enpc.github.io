@@ -1,0 +1,3 @@
+Header set X-Content-Type-Options "nosniff"
+AddDefaultCharset UTF-8
+AddType text/scss ".scss"
