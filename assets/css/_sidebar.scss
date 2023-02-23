@@ -1,7 +1,7 @@
 
 @import "{{ site.theme }}";
 @import 'css-pro-layout';
-@import "variables";
+@import "./variables";
 
 .sidebar {
     color: $text-color;
