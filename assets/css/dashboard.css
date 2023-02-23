@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import './remixicon.css';
-@import "variables";
-@import "layout";
-@import "menu";
-@import "sidebar";
-@import "style";
+@import "./_variables.scss";
+@import "./_layout.scss";
+@import "./_menu.scss";
+@import "./_sidebar.scss";
+@import "./_style.scss";

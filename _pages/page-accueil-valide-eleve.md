@@ -10,6 +10,6 @@ title: Accueil Eleve
 {% include base_path %}
 
 <html lang="fr">
-<h2>Content</h2>
+<h2>Page d'accueil des élèves</h2>
 <img src="{{ base_path }}/files/nepthune_logo.png" alt="Logo" width="200" height="100">
 </html>
