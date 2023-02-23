@@ -13,6 +13,7 @@
     "gh-pages": "yarn build && gh-pages -d dist"
   },
   "devDependencies": {
+    "@popperjs/core": "^2.9.2",
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "babel-loader": "^8.2.3",
