@@ -1,5 +1,6 @@
 # nepthune-enpc.github.io
 
+NB: Some pieces of code were borrowed from [site1](https://github.com/azouaoui-med/pro-sidebar-template.git) and [site2](https://github.com/academicpages/academicpages.github.io.git)
 ## Useful links
 
 - Login Form:

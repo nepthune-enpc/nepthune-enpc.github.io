@@ -1,5 +1,11 @@
 {% include base_path %}
 
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -24,16 +30,26 @@
       <div id="overlay" class="overlay"></div>
       <div class="layout">
         <header class="header">
-          Header  
           {% include head.html %}
         </header>
         <main class="content">
+          <div>
+            <a id="btn-toggle" href="#" class="sidebar-toggler break-point-lg">
+              <i class="ri-menu-line ri-xl"></i>
+            </a>
+            {% include head.html %}
           {{ content }}
         </main>
         <div class="overlay"></div>
         <footer class="footer">Footer</footer>
       </div>
     </div>
+    <footer class="page__meta">
+      {% if site.data.ui-text[site.locale].meta_label %}
+        <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+      {% endif %}
+      {% include page__taxonomy.html %}
+  </footer>
   </body>
   {% include scripts.html %}
 </html>
