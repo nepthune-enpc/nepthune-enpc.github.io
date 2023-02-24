@@ -1,14 +1,4 @@
----
-layout: compress
----
-
 {% include base_path %}
-
-{% if page.url != "/" and site.breadcrumbs %}
-  {% unless paginator %}
-    {% include breadcrumbs.html %}
-  {% endunless %}
-{% endif %}
 
 <!DOCTYPE html>
 <html>
@@ -20,10 +10,4 @@ layout: compress
     <body>
         {{ content }}
     </body>
-    <footer class="page__meta">
-        {% if site.data.ui-text[site.locale].meta_label %}
-          <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
-        {% endif %}
-        {% include page__taxonomy.html %}
-    </footer>
 </html>
