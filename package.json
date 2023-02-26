@@ -1,49 +1,33 @@
 {
   "name": "nepthune-enpc",
   "version": "1.0.0",
-  "main": "assets/js/sidebar.js",
-  "repository": "https://github.com/nepthune-enpc/nepthune-enpc.github.io.git",
   "description": "Nepthune Official Website",
-  "author": "Nepthune",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nepthune-enpc/nepthune-enpc.github.io.git"
+  },
+  "keywords": [
+    "jekyll",
+    "theme",
+    "minimal"
+  ],
+  "author": "Lucie and Vicaotria",
   "license": "MIT",
-  "scripts": {
-    "clean": "rimraf dist",
-    "start": "webpack serve",
-    "build": "rimraf dist && webpack",
-    "gh-pages": "yarn build && gh-pages -d dist"
+  "bugs": {
+    "url": "https://github.com/nepthune-enpc/nepthune-enpc.github.io/issues"
+  },
+  "homepage": "https://nepthune-enpc.github.io/",
+  "engines": {
+    "node": ">= 0.10.0"
   },
   "devDependencies": {
-    "@popperjs/core": "^2.9.2",
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
-    "babel-loader": "^8.2.3",
-    "copy-webpack-plugin": "^10.0.0",
-    "copyfiles": "^2.4.1",
-    "css-loader": "^5.2.7",
-    "eslint": "^8.2.0",
-    "eslint-config-airbnb-base": "15.0.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-prettier": "^4.0.0",
-    "file-loader": "^6.2.0",
-    "gh-pages": "^3.2.3",
-    "less": "^4.1.1",
-    "less-loader": "^8.1.1",
-    "mini-css-extract-plugin": "^1.6.0",
-    "postcss": "^8.2.15",
-    "postcss-loader": "^5.2.0",
-    "postcss-preset-env": "^6.7.0",
-    "prettier": "^2.5.0",
-    "rimraf": "^3.0.2",
-    "sass": "^1.43.4",
-    "sass-loader": "^12.3.0",
-    "style-loader": "^2.0.0",
-    "webpack": "^5.64.2",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.5.0"
+    "npm-run-all": "^1.7.0",
+    "onchange": "^2.2.0",
+    "uglify-js": "^2.6.1"
   },
-  "dependencies": {
-    "@popperjs/core": "^2.9.2",
-    "css-pro-layout": "^1.1.0"
+  "scripts": {
+    "uglify": "uglifyjs assets/js/vendor/jquery/jquery-1.12.4.min.js assets/js/plugins/jquery.fitvids.js assets/js/plugins/jquery.greedy-navigation.js assets/js/plugins/jquery.magnific-popup.js assets/js/plugins/jquery.smooth-scroll.min.js assets/js/plugins/stickyfill.min.js assets/js/_main.js -c -m -o assets/js/main.min.js",
+    "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- npm run build:js",
+    "build:js": "npm run uglify"
   }
-}
+};
