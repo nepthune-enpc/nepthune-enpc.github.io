@@ -1,0 +1,17 @@
+docs:
+
+- title: Accueil
+  url: /page-accueil-valide-eleve.html
+  icon: ri-dashboard-line
+
+- title: Mes informations
+  url: /modif-infos-persos.html
+  icon: ri-folder-2-line
+
+- title: Mes filtres
+  url:
+  icon: ri-bar-chart-2-fill
+
+- title: Notifications
+  url:
+  icon: ri-bar-chart-2-fill

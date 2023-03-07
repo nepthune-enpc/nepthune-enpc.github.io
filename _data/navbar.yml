@@ -1,0 +1,9 @@
+main:
+  - title: "Calendrier"
+    url: "/calendrier/"
+
+  - title: "Bourses"
+    url: "/bourses/"
+
+  - title: "Partenaires"
+    url: "/partenaires/"

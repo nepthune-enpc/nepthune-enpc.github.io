@@ -1,4 +1,4 @@
-import { createPopper } from './@popperjs/core';
+import { createPopper } from './@popperjs/core/lib/';
 import { SIDEBAR_EL } from './constants.js';
 
 class Popper {

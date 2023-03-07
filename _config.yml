@@ -1,5 +1,7 @@
 
 title: Nepthune
+github: [metadata]
+# theme: jekyll-theme-nepthune
 
 jekyll_auth:
   whitelist:
@@ -36,4 +38,12 @@ defaults:
 # Sass/SCSS
 sass:
   sass_dir: _sass
-  style: compressed 
+  style: compact
+
+# Plugins
+# plugins:
+#   - jekyll-paginate
+#   - jekyll-sitemap
+#   - jekyll-gist
+#   - jekyll-feed
+#   - jekyll-redirect-from

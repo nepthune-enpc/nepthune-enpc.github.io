@@ -1,4 +1,4 @@
-import './styles/styles.scss';
+// import '../css/main.scss';
 import { slideToggle, slideUp, slideDown } from './libs/slide.js';
 import {
   ANIMATION_DURATION,

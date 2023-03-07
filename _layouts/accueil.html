@@ -8,11 +8,11 @@
     <meta
       name="description"
       content="{{ page.title }}"
-    />>
+    />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="{{ base_path }}/assets/images/favicon.png" >
-    <!-- <link rel="stylesheet" href="{{ base_path }}/assets/js/s.css" /> -->
-    <!-- <link rel="stylesheet" href="{{ base_path }}/assets/css/dashboard.css"> -->
-    {% include head.html %}
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+    <!-- {% include head.html %} -->
     <title>{{ page.title }}</title>
   </head>
   <body>
@@ -20,10 +20,12 @@
       <aside class="sidebar break-point-sm">
         <a id="btn-collapse" class="sidebar-collapser"><i class="ri-arrow-left-s-line"></i></a>
         {% include sidebar.html %}
+        <!-- <script type="module" src="{{ base_path }}/assets/js/sidebar.js"></script> -->
       </aside>
       <div class="overlay"></div>
       <div class="layout">
-        <!-- <header class="header">Header</header> -->
+        <div class="navbar">
+          {% include navigation.html %}</div>
         <main class="content">
           {{ content }}
         </main>
