@@ -10,15 +10,26 @@
     <nav class="menu open-current-submenu">
       <ul>
         <li class="menu-header"><span>GENERAL</span></li>
-        {% for item in site.data.side_bar.docs %}
         <li class="menu-item sub-menu">
-          <a href="{{ base_path }}{{ item.url }}">
+          <a href="#">
             <span class="menu-icon">
-              <i class="{{ item.icon }}"></i>
+              <i class="ri-dashboard-line"></i>
             </span>
-            <span class="menu-title">{{ item.title }}</span>
-          </a></li>
-          {% endfor %}
+            <span class="menu-title">Accueil</span>
+          </a>
+          <a href="#">
+            <span class="menu-icon">
+              <i class="ri-folder-2-line"></i>
+            </span>
+            <span class="menu-title">Mes informations</span>
+          </a>
+          <a href="#">
+            <span class="menu-icon">
+              <i class="ri-bar-chart-2-fill"></i>
+            </span>
+            <span class="menu-title">Mes filtres</span>
+          </a>
+        </li>
       </ul>
     </nav>
   </div>

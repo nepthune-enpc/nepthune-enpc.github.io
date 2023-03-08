@@ -9,7 +9,7 @@ docs:
   icon: ri-folder-2-line
 
 - title: Mes filtres
-  url:
+  url: /
   icon: ri-bar-chart-2-fill
 
 - title: Notifications
