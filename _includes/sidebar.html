@@ -1,4 +1,4 @@
-<div class="sidebar-layout">
+<div class="sidebar-layout" id="sidebar-layout">
   <!-- Account header -->
   <div class="sidebar-header">
     <div class="pro-sidebar-logo">
@@ -11,25 +11,14 @@
       <ul>
         <li class="menu-header"><span>GENERAL</span></li>
         <li class="menu-item sub-menu">
-          <a href="#">
-            <span class="menu-icon">
-              <i class="ri-dashboard-line"></i>
-            </span>
-            <span class="menu-title">Accueil</span>
-          </a>
-          <a href="#">
-            <span class="menu-icon">
-              <i class="ri-folder-2-line"></i>
-            </span>
-            <span class="menu-title">Mes informations</span>
-          </a>
-          <a href="#">
-            <span class="menu-icon">
-              <i class="ri-bar-chart-2-fill"></i>
-            </span>
-            <span class="menu-title">Mes filtres</span>
-          </a>
-        </li>
+        {% for item in site.data.side_bar.docs %}
+        <a href=".{{ item.url }}">
+          <span class="menu-icon">
+            <i class="{{ item.icon }}"></i>
+          </span>
+          <span class="menu-title">{{ item.title }}</span>
+        </a>
+        {% endfor %}</li>
       </ul>
     </nav>
   </div>

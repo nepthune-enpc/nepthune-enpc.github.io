@@ -9,9 +9,9 @@ docs:
   icon: ri-folder-2-line
 
 - title: Mes filtres
-  url: /
+  url: /filtres/
   icon: ri-bar-chart-2-fill
 
 - title: Notifications
-  url:
-  icon: ri-bar-chart-2-fill
+  url: /notifications/
+  icon: ri-notification-2-line

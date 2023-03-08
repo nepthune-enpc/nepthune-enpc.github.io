@@ -23,7 +23,7 @@ title: S'authentifier
     function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile()
     if(googleUser.getHostedDomain() !== 'enpc.fr') {
-        window.location.replace("{{ base_path }}/page-accueil-valide-universite.html");
+        window.location.replace("./page-accueil-valide-universite.html");
     }
     } else {
         alert("Votre nom de domaine de mail ne correspond pas avec l'institution.")

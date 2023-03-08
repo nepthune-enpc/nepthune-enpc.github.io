@@ -11,5 +11,5 @@ title: Accueil Eleve
 
 <html lang="fr">
 <h2>Page d'accueil des élèves</h2>
-<img src="{{ base_path }}/files/nepthune_logo.png" alt="Logo" width="200" height="100">
+<img src="./files/nepthune_logo.png" alt="Logo" width="200" height="100">
 </html>

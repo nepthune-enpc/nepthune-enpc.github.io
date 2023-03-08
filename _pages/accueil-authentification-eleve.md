@@ -18,7 +18,7 @@ title: S'authentifier
 </head>
 <body>
     <div class="box">
-      <a href="{{base_path}}/accueil-inscription-eleve.html"><a1 text-align="end">Pas encore inscrit?</a1></a>
+      <a href="./accueil-inscription-eleve.html"><a1 text-align="end">Pas encore inscrit?</a1></a>
       <h1 text-align="center">{{page.title}}</h1>
         <p>Utilisez votre compte Universitaire</p>
             <form onSubmit="onLogin()">
@@ -33,7 +33,7 @@ title: S'authentifier
                 <input type="checkbox" checked="checked" name="souvenir"> Se souvenir de moi
                   <input type="submit" onClick="onLogin()" id="se-connecter" name="se-connecter" value="Se connecter">
                 </form>
-                <a href='{{ base_path }}/page-accueil-valide-eleve.html'>shortcut</a>
+                <a href='./page-accueil-valide-eleve.html'>shortcut</a>
           </div>
 </body>
   <script src="./assets/js/authentification_boutons.js"></script>
@@ -49,7 +49,7 @@ title: S'authentifier
         	alert("Un mot de passe est requis.");
 		  }
       else {
-        window.location.replace('{{ base_path }}/page-accueil-valide-eleve.html');
+        window.location.replace('./page-accueil-valide-eleve.html');
       }
     }
   </script>
