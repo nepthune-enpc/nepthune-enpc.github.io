@@ -3,7 +3,7 @@ permalink: /
 redirect_from:
     - /about/
     - /about.html
-layout: default
+layout: default_auth
 title: Bienvenue sur Nepthune !
 ---
 {% include base_path %}
@@ -15,7 +15,7 @@ title: Bienvenue sur Nepthune !
     <meta charset="utf-8">
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="">
         <h1>Vous êtes ...</h1>
         <br><br>
         <div class="text-center">
@@ -29,3 +29,15 @@ title: Bienvenue sur Nepthune !
     </div>
 </body>
 </html>
+<style>
+    div.container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+</style>

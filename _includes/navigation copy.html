@@ -1,0 +1,31 @@
+<div class="navbar-layout">
+    <ul>
+        {% for item in site.data.navbar.main %}
+        <li> 
+            <!-- <li class="{% if item.url == page.url %}active{% endif %}"> -->
+            <a href=".{{ item.url }}">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<style>
+    .navbar-layout  {
+        display: flex;
+    }
+    .navbar-layout ul {
+        display: flex;
+        list-style: none;
+    }
+    .navbar-layout ul li {
+        margin-right: 50px;
+    }
+    .navbar-layout ul li a {
+        text-decoration: none;
+        color:rgb(3, 84, 108);
+    }
+    .navbar-layout ul li a:hover {
+        text-decoration: underline;
+        transition: 0.5s;
+    }
+</style>
+

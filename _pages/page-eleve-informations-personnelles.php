@@ -1,44 +1,30 @@
 ---
-permalink: /infos-persos.html
+permalink: /infos-persos.html  
 layout: accueil
 redirect_from:
     - /page-eleve-informations-personnelles/
     - /page-eleve-informations-personnelles.html
+    - /page-eleve-informations-personnelles.php
 title: Mes données personnelles
 ---
 
-<!-- <style>
-    .change_button {
-        border: none;
-        outline: none;
-        color: #fff;
-        background-color: #1773e8;
-        padding: 0.95rem 1.5rem;
-        cursor: pointer;
-        border-radius: 0.312rem;
-        font-size: 1.2rem;
-        display: block;
-        width: 300px;
-    }
-</style> -->
+{% include base_path %}
+
+
 <html>
-<input type="submit" onClick="Modify()" id="modifier-infos" name="modifier-infos" value="Modifier mes informations">
-<script>
-    $(function() { $('modifier-infos').click(function(){window.location.replace("{{ base_path }}/modif-infos-persos.html");});});
-</script>
+    <h2>Vos Informations: </h2>
+<body>
+Nom: <?php echo $_POST["surname"]; ?>
+<br>
+Prénom: <?php echo $_POST["name"]; ?>
+<br>
+Date de Naissance: <?php echo $_POST["birthday"]; ?>
+<br>
+Adresse: <?php echo $_POST["address"]; ?>
+<br>
+Numéro de téléphone: <?php echo $_POST["phone"]; ?>
+<br>
+Adresse mail: <?php echo $_POST["email"]; ?>
+<br>
+</body>
 </html>
-
-<?php
-
-
-echo "<h2>Your Input:</h2>";
-echo $name;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $website;
-echo "<br>";
-echo $comment;
-echo "<br>";
-echo $gender;
-?>
