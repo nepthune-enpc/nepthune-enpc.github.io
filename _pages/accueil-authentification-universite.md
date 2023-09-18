@@ -1,6 +1,6 @@
 ---
 permalink: /authentification-universite.html
-layout: 
+layout: default_auth
 redirect_from:
     - /accueil-authentification-universite/
     - /accueil-authentification-universite.html

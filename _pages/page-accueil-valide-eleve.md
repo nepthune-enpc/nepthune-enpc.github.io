@@ -10,6 +10,15 @@ title: Accueil Eleve
 {% include base_path %}
 
 <html lang="fr">
-<h2>Page d'accueil des élèves</h2>
-<img src="./files/nepthune_logo.png" alt="Logo" width="200" height="100">
+    <div class="main-content">
+        <h2>Page d'accueil des élèves</h2>
+        <img src="./files/nepthune_logo.png" alt="Logo" width="200" height="100">
+    </div>
 </html>
+<style>
+    .main-content {
+        display: absolute;
+        padding-left: 3%;
+        padding-top: 3%;
+    }
+</style>

@@ -1,10 +1,6 @@
 
 title: Nepthune
 
-jekyll_auth:
-  whitelist:
-    - drafts?
-
 include:
   - _pages
   - files
@@ -16,13 +12,18 @@ exclude:
   - lib
   - Gemfile
   - Gemfile.lock
-  - jekyll-auth.gemspec
-  - jekyll-auth*.gem
   - config.ru
   - Rakefile
   - readme.md
   - vendor
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
+# Collections
+collections:
+  bourses:
+    output: true
+    permalink: /:collection/:path/
 
 defaults:
   # _pages
@@ -30,10 +31,27 @@ defaults:
       path: ""
       type: pages
     values:
-      layout: default
+      layout: accueil
+  # _bourses
+  - scope:
+      path: ""
+      type: bourses
+    values:
+      layout: bourse
+  
 
 
 # Sass/SCSS
 sass:
   sass_dir: _sass
   style: compressed 
+
+
+# Outputting
+permalink: /:categories/:title/
+
+category_archive:
+  type: liquid
+  path: /categories/
+
+

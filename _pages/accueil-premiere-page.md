@@ -30,14 +30,21 @@ title: Bienvenue sur Nepthune !
 </body>
 </html>
 <style>
+
     div.container {
-        position: absolute;
+        position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
         align-items: center;
         justify-content: center;
+        width: 50%;
+    }
+
+    div.text-center {
+         margin-top: 5%;
+         height: 70%;
     }
 
 </style>

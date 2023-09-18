@@ -1,5 +1,6 @@
 ---
 permalink: /authentification-eleve.html
+layout: default_auth
 redirect_from:
     - /accueil-authentification-eleve/
     - /accueil-authentification-eleve.html
