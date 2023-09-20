@@ -6,12 +6,15 @@ main:
   - title: "Bourses"
     url: "/bourses/"
     subtitle:
-      - "Bourses publiques", 
-        "Bourses privees", 
-        "Toutes les bourses"
+      - title: "Bourses publiques"
+        url: "/bourses/bourses_publiques"
+      - title: "Bourses privees"
+        url: "/bourses/bourses_privees"
+      - title: "Toutes les bourses"
+        url: "/bourses/"
 
   - title: "Partenaires"
     url: "/partenaires/"
 
   - title: "FAQ"
-   url: "/foire-aux-questions/"
+    url: "/foire-aux-questions/"
