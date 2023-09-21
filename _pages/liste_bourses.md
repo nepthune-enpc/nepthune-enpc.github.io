@@ -1,5 +1,7 @@
 ---
-title: "Liste des Bourses Existantes"
+layout: bourse
+title: Liste des Bourses Existantes
+permalink: /bourses/
 redirect_from:
     - /bourses/bourses_publiques
     - /bourses/bourses_privees
@@ -7,23 +9,17 @@ redirect_from:
 entries_layout: grid
 ---
 
-{% include base_path %}
+<div class="grid-container">
+    {% for bourse in site.bourses %}
+        {% include single-bourse.html %}
+    {% endfor %}
+</div>
 
-
-{% for bourse in site.bourses %}
-    <h1><a href="#">{{bourse.title}}</a></h1>
-    <h1><a href="#">{{bourse.publication}}</a></h1>
-    {% include single-bourse.html %}
-{% endfor %}
 
 <style>
-    .clearfix:before,
-    .clearfix:after {
-    content: " ";
-    display: table;
-    }
-
-    .clearfix:after {
-    clear: both;
-    }
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
 </style>

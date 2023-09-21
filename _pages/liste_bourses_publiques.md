@@ -9,20 +9,20 @@ redirect_from:
 entries_layout: grid
 ---
 
-<div class="posts clearfix"></div>
+
+
+<div class="grid-container hover01">
     {% for bourse in site.bourses %}
         {% include single-bourse.html %}
     {% endfor %}
+</div>
 
 
 <style>
-    .clearfix:before,
-    .clearfix:after {
-    content: " ";
-    display: table;
-    }
-
-    .clearfix:after {
-    clear: both;
-    }
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 100px 100px;
+}
 </style>

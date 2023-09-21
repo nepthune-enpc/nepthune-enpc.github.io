@@ -1,20 +1,39 @@
 {% include base_path %}
 
-<article class="bourse">
-    <h1><a href="#">{{bourse.title}}</a></h1>
-    <h1><a href="#">{{bourse.publication}}</a></h1>
-</article>
+<div class="card w-10 hover01">
+    <div class="card-body">
+        <h5 class="card-title">{{bourse.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{bourse.publication}}</h6>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="card-link">En savoir Plus</a>
+    </div>
+</div>
+
 
 <style>
-    .bourse {
-    margin: 0;
-    padding: 0.3rem;
-    background-color: #bee;
+    .hover01 .card  {
+        border-radius: 3%;
+        /* background-color: rgb(224, 248, 248); */
+        width: 100;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
     }
 
-    .bourse > h1 {
-    margin: 0.5rem;
-    padding: 0.3rem;
-    font-size: 1.2rem;
+
+.hover01 .card:hover  {
+	-webkit-transform: scale(0.95);
+	transform: scale(0.95);
+}
+    .card-link {
+        text-align: right;
+        float: right;
+        font-size: 11pt;
+        text-decoration: none;
+    }
+    .card-text {
+        color: #333333;
+        font-size: 11pt;
     }
 </style>

@@ -57,8 +57,15 @@
         color:rgb(3, 84, 108) !important;
         right: 0;
     } */
+    .dropdown-toggle {
+        float: right;
+        color:rgb(3, 84, 108) !important;
+        font-size: 14pt;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+    }
 
-    .nav-item {
+   .nav-item {
         margin-top: 20px;
         margin-left: 60px;
         font-family: 'Poppins', sans-serif;
@@ -71,27 +78,32 @@
         font-family: 'Poppins', sans-serif;
         font-weight: 400;
         font-size: 14pt;
-    }
-
+    } 
     .dropdown-menu {
         display:  none;
         background-color: #ffffff;
-        height: 10%;
+        margin-top: 5%;
     }
 
     .dropdown-item {
         background-color: #ffffff;
     }
 
+    .dropdown-item:hover {
+        background-color: #eeeeee;
+        border-radius: 5%;
+    }
+
     .dropdown:hover .dropdown-menu {
         display: block;
-        height: 10%;
+
         font-size: 14pt;
         background-color: #eeeeee;
-        border-radius: 2%;
-}
+        border-radius: 5%;
+        margin-top: 40px;
+} 
 
-    #deconnect {
+    /* #deconnect {
         background-color: transparent;
         cursor: pointer;
         color:rgb(3, 84, 108);
@@ -105,7 +117,7 @@
         font-weight: 400;
         font-size: 14pt;
         color: #666;
-    }
+    } */
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
