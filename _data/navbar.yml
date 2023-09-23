@@ -16,5 +16,8 @@ main:
   - title: "Partenaires"
     url: "/partenaires/"
 
+  - title: "Statistiques"
+    url: "/statistiques/"
+
   - title: "FAQ"
     url: "/foire-aux-questions/"
