@@ -11,19 +11,17 @@
     />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png" >
-    <!-- <link rel="stylesheet" href="{{ base_path }}/assets/js/s.css" /> -->
-    <!-- <link rel="stylesheet" href="{{ base_path }}/assets/css/dashboard.css"> -->
     {% include head.html %}
     <title>{{ page.title }}</title>
   </head>
   <body>
     <div class="layout has-sidebar fixed-sidebar"
-    id="current-sidebar" style="transition: transform 1s;">
+    id="current-sidebar">
       <aside class="sidebar break-point-sm">
-        <a id="btn-collapse" class="sidebar-collapser"><i id="icon" class="ri-arrow-left-s-line"></i></a>
+        <a id="btn-collapse" class="sidebar-collapser"><i class="ri-arrow-left-s-line"></i></a>
         {% include sidebar.html %}
       </aside>
-      <!-- <div class="overlay"></div> -->
+      <div class="overlay" id="overlay"></div>
       <div class="layout">
         <header class="header">
           {% include navigation.html %}
@@ -33,17 +31,34 @@
           {{ content }}
         </main>
         <div class="overlay"></div>
-        <footer class="footer">Footer</footer>
+        <footer class="footer">
+          <div class="social-links">
+            <a href="https://github.com/azouaoui-med" target="_blank">
+              <i class="ri-github-fill ri-xl"></i>
+            </a>
+            <a href="https://twitter.com/azouaoui_med" target="_blank">
+              <i class="ri-twitter-fill ri-xl"></i>
+            </a>
+            <a href="https://codepen.io/azouaoui-med" target="_blank">
+              <i class="ri-codepen-fill ri-xl"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mohamed-azouaoui/" target="_blank">
+              <i class="ri-linkedin-box-fill ri-xl"></i>
+            </a>
+          </div>
+        </footer>
       </div>
     </div>
   </body>
+  <link rel="stylesheet" href="{{ base_path }}/assets/js/styles/styles.css" />
   {% include scripts.html %}
 </html>
-
 <style>
+  a {
+    text-decoration: none;
+  }
   .content {
-    margin-top: 80px;
-    margin-left: 80px;
-
+    margin-top: 3%;
+    margin-left: 3%;
   }
 </style>

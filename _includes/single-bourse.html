@@ -2,38 +2,44 @@
 
 <div class="card w-10 hover01">
     <div class="card-body">
-        <h5 class="card-title">{{bourse.title}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{bourse.publication}}</h6>
+        <a href="{{ base_path }}{{ bourse.url }}" rel="permalink" class="card-link">
+        <h5 class="card-title">{{ bourse.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{bourse.publication | date_to_string }}</h6>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="card-link">En savoir Plus</a>
+        <a href="{{ base_path }}{{ bourse.url }}" id="cardlink" rel="permalink" class="card-link">En savoir Plus</a>
+    </a>
     </div>
 </div>
 
 
 <style>
-    .hover01 .card  {
+    .hover01 .card {
         border-radius: 3%;
         /* background-color: rgb(224, 248, 248); */
-        width: 100;
+        max-width: 10%;
         -webkit-transform: scale(1);
         transform: scale(1);
         -webkit-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
     }
-
-
-.hover01 .card:hover  {
-	-webkit-transform: scale(0.95);
-	transform: scale(0.95);
-}
-    .card-link {
-        text-align: right;
-        float: right;
-        font-size: 11pt;
-        text-decoration: none;
+    .card-title {
+        color: rgb(13, 94, 118)
     }
+    /* .card {
+        transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+    } */
+    .hover01 .card:hover {
+        -webkit-transform: scale(0.95);
+        transform: scale(0.95);
+    }
+
     .card-text {
         color: #333333;
+        font-size: 11pt;
+    }
+    .card-link {
+        text-decoration: none;
+        float: right;
         font-size: 11pt;
     }
 </style>

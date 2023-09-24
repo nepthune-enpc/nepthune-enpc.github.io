@@ -1,7 +1,7 @@
 ---
 layout: bourse
-title: "Liste des Bourses Publiques tExistantes"
-permalink: /bourses/bourses_publiques
+title: "Liste des Bourses Privees tExistantes"
+permalink: /bourses/bourses_privees
 redirect_from:
     - /bourses/bourses_publiques
     - /bourses/bourses_privees
@@ -9,7 +9,7 @@ redirect_from:
 entries_layout: grid
 ---
 
-{% assign pub_bourses = site.bourses | where: "tags",  'publiques' %}
+{% assign pub_bourses = site.bourses | where: "tags",  'privee' %}
 
 <div class="grid-container hover01">
     {% for bourse in pub_bourses %}

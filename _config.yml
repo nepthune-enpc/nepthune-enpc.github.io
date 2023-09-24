@@ -38,6 +38,7 @@ defaults:
       type: bourses
     values:
       layout: bourse
+      share: true
   
 
 
@@ -53,5 +54,7 @@ permalink: /:categories/:title/
 category_archive:
   type: liquid
   path: /categories/
-
+tag_archive:
+  type: liquid
+  path: /tags/
 
