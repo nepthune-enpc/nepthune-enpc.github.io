@@ -1,0 +1,55 @@
+---
+layout: accueil
+---
+
+{% include base_path %}
+
+{% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+<div class="container">
+    {% if page.logo %}
+    <div class="image">
+        <img src="{{page.logo}}">
+      </div>
+      {% endif %}
+      <div class="bourse-content">
+        {% if page.tags %}
+            {% for tag in  page.tags %}
+                <div class="badge">{{tag}}</div>
+            {% endfor %}
+        {% endif %}
+        {% if page.date %}<p style="font-weight: bold;">Date limite de depot de dossier</p>{{ page.date | date: "%B %d, %Y" }}{% endif %}
+        {% if page.montant %}<p style="font-weight: bold;">Montant</p>{{page.montant}}{% endif %}
+        {% if page.cibles %}<p style="font-weight: bold;">Beneficiaires</p>{{page.cibles}}{% endif %}
+      </div>
+</div>
+
+
+
+
+<style>
+      img {
+    max-width: 25%;
+    max-height:15%;
+    float: left;
+  }
+  .badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  color: #fff;
+  background-color: #6c757d;
+
+  &.primary {
+    background-color: #ab2dff;
+  }
+
+  .bourse-content {
+    display: flex;
+  }
+</style>
