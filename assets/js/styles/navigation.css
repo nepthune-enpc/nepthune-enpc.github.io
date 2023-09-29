@@ -1,0 +1,31 @@
+.navbar .navbar-layout ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar .navbar-layout ul li {
+    margin-right: 50px;
+}
+
+.navbar .navbar-layout ul li a {
+    text-decoration: none;
+    color: rgba(12, 30, 53, 0.85);
+}
+
+.navbar .navbar-layout ul li a:hover {
+    text-decoration: underline;
+}
+
+.btn-bd-primary {
+    color: #eeeeee;
+    background-color: rgb(63, 144, 168);
+    border: none;
+    font-size: 11pt;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.btn-bd-primary:hover {
+    color: #eeeeee;
+    background-color: rgb(23, 104, 128);
+}

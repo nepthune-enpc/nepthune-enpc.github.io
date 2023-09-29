@@ -1,4 +1,8 @@
-<div class="sidebar-layout" id="#sidebarScroll">
+
+<aside class="sidebar break-point-sm">
+  <a id="btn-collapse" class="sidebar-collapser"><i class="ri-arrow-left-s-line"></i></a>
+
+<div class="sidebar-layout" id="sidebarScroll">
   <!-- Account header -->
   <div class="sidebar-header">
     <div class="pro-sidebar-logo">
@@ -12,7 +16,7 @@
         <li class="menu-header"><span>GENERAL</span></li>
         <li class="menu-item sub-menu">
         {% for item in site.data.side_bar.docs %}
-        <a href=".{{ item.url }}" class="sidebar-link">
+        <a href="{{ base_path }}{{ item.url }}" class="sidebar-link">
           <span class="menu-icon">
             <i class="{{ item.icon }}"></i>
           </span>
@@ -26,9 +30,11 @@
     <!-- Footer content here -->
      <a href="{{ base_path }}" class="sidebar-link">
       <span class="menu-icon"><i class="ri-logout-box-r-line"></i></span>
-      <span>Déconnexion</span>    
+      <span class="menu-title">Déconnexion</span>    
      </a>
   </form>  
   </div>
-</div>
+</div>  
 {% include scripts.html %}
+</aside>
+

@@ -30,7 +30,6 @@ title: Bienvenue sur Nepthune !
 </body>
 </html>
 <style>
-
     div.container {
         position: fixed;
         top: 50%;
@@ -46,5 +45,4 @@ title: Bienvenue sur Nepthune !
          margin-top: 5%;
          height: 70%;
     }
-
 </style>
