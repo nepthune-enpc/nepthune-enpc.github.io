@@ -778,6 +778,9 @@ a {
 a:hover.sidebar-link .menu-icon {
   color: #dee2ec;
 }
+a:hover.sidebar-link .menu-title {
+  color: #dee2ec;
+}
 .layout .sidebar-footer a:hover.sidebar-link .menu-icon i {
   animation: swing ease-in-out 0.5s 1 alternate;
 }
