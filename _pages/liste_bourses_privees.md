@@ -1,6 +1,6 @@
 ---
 layout: bourse
-title: "Liste des Bourses Privees tExistantes"
+title: "Liste des Bourses Privees Existantes"
 permalink: /bourses/bourses_privees
 redirect_from:
     - /bourses/bourses_publiques
