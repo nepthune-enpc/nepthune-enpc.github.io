@@ -1,6 +1,6 @@
 {% include base_path %}
 
-<div class="card w-10 hover01">
+<div class="card w-10  card__hover01">
     <div class="card-body">
         <a href="{{ base_path }}{{ bourse.url }}" rel="permalink" class="card-link">
         <h5 class="card-title">{{ bourse.title }}</h5>
@@ -13,22 +13,31 @@
 
 
 <style>
-    .hover01 .card {
+    .card__hover01 {
         border-radius: 3%;
-        /* background-color: rgb(224, 248, 248); */
+        background-color: rgb(224, 248, 248);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+        padding-bottom: 2%;
+    }
+    /* .card .hover01 {
+        border-radius: 3%;
+        background-color: rgb(224, 248, 248); 
         max-width: 10%;
         -webkit-transform: scale(1);
         transform: scale(1);
         -webkit-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
-    }
+    } */
     .card-title {
         color: rgb(13, 94, 118)
     }
     /* .card {
         transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
     } */
-    .hover01 .card:hover {
+    .card__hover01:hover {
         -webkit-transform: scale(0.95);
         transform: scale(0.95);
     }

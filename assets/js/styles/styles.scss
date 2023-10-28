@@ -1,13 +1,16 @@
+
 $sidebar-width: 250px;
 $sidebar-collapsed-width: 80px;
 
-@import './css-pro-layout/dist/scss/css-pro-layout.scss';
+// @import './css-pro-layout/dist/scss/css-pro-layout.scss';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import 'variables';
 @import './layout.scss';
 @import './sidebar.scss';
-@import './menu.scss';
+@import 'menu';
+@import 'filtres';
 @import '../../css/remixicon.css';
+// @import '../../../_sass/footer.scss';
 
 * {
   box-sizing: border-box;

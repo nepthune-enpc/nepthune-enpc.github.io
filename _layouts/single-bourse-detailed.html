@@ -12,13 +12,10 @@ layout: accueil
 {% endif %}
 
 {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+
 <div class="bourse-container">
   <div class="row">
-    {% if page.logo %}
-    <div class="col-6 col-md-4">
-        <img src="{{page.logo}}">
-    </div>
-    {% endif %}
+    {% if page.logo %}<div class="col-6 col-md-4"><img src="{{page.logo}}"></div>{% endif %}
     <div class="col-md-8">
       <h1>{{ bourse.title }}</h1>
       <div class="bourse-content">
@@ -27,9 +24,9 @@ layout: accueil
                 <div class="badge">{{tag}}</div>
             {% endfor %}
         {% endif %}
-        {% if page.date %}<p style="font-weight: bold;">Date limite de depot de dossier</p>{{ page.date | date: "%B %d, %Y" }}{% endif %}
-        {% if page.montant %}<p style="font-weight: bold;">Montant</p>{{page.montant}}{% endif %}
-        {% if page.cibles %}<p style="font-weight: bold;">Beneficiaires</p>{{page.cibles}}{% endif %}
+        {% if page.date %}<p><b>Date limite de depot de dossier</b><br>{{ page.date | date: "%B %d, %Y" }}</p>{% endif %}
+        {% if page.montant %}<p><b>Montant</b><br>{{page.montant}}</p>{% endif %}
+        {% if page.cibles %}<p><b>Beneficiaires</b><br>{{page.cibles}}</p>{% endif %}
       </div>
 </div></div>
 </div>
@@ -41,8 +38,9 @@ layout: accueil
     border: 1px solid rgb(188, 220, 245);
     border-radius: 10px;
     max-width: 40%;
+    padding: 2%;
   }
-      img {
+  img {
     max-width: 25%;
     max-height:15%;
     display: block;

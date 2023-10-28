@@ -29,3 +29,33 @@ puis un développement d’outils pour étudiants étrangers venant étudier en 
 </div>
 
 </html>
+
+@REM <div class="container" id="i18_career">
+@REM https://github.com/jarrekk/Jalpc/blob/master/_includes/sections/career.html
+@REM     <div class="row">
+@REM         <div class="col-lg-12 text-center">
+@REM             <div class="navy-line"></div>
+@REM             <h1><span data-i18n="career.my_career">My Career</span></h1>
+@REM         </div>
+@REM     </div>
+@REM     <div class="row features-block">
+@REM         <div class="col-lg-12">
+@REM             <div id="vertical-timeline" class="vertical-container light-timeline center-orientation">
+@REM             {% for career in site.data.index.careers %}
+@REM             {% assign loopindex = forloop.index | modulo: 2 %}
+@REM                 <div class="vertical-timeline-block">
+@REM                     <div class="vertical-timeline-icon {% if career.present ==  true %} navy-bg-present {% else %} navy-bg {% endif %} wow rotateIn">
+@REM                         <i class="fa {{ career.icon }}"></i>
+@REM                     </div>
+@REM                     <div class="vertical-timeline-content wow {% if loopindex == 1 %} rotateInUpRight {% else %} rotateInUpLeft {% endif %}">
+@REM                         <h2><span data-i18n="career.{{ career.name.i18n }}">{{ career.name.detail }}</span></h2>
+@REM                         <p><span data-i18n="career.{{ career.desc.i18n }}">{{ career.desc.detail }} </span></p>
+@REM                         <span class="vertical-date"><span data-i18n="career.{{ career.date.i18n }}"> {{ career.date.detail }} </span>
+@REM                         <br/> <small><span data-i18n="career.{{ career.job.i18n }}">{{ career.job.detail }}</span></small> </span>
+@REM                     </div>
+@REM                 </div>
+@REM             {% endfor %}
+@REM             </div>
+@REM         </div>
+@REM     </div>
+@REM </div>
