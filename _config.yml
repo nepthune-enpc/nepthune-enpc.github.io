@@ -1,7 +1,6 @@
 
 title: Nepthune
 
-
 include:
   - _pages
   - files
@@ -33,7 +32,6 @@ defaults:
       type: pages
     values:
       layout: accueil
-      permalink: /:path
   # _bourses
   - scope:
       path: ""
@@ -60,17 +58,3 @@ tag_archive:
   type: liquid
   path: /tags/
 
-webserver_headers:
-  - - Access-Control-Allow-Origin
-    - "*"
-  - - Access-Control-Allow-Methods
-    - GET, OPTIONS, HEAD
-
-
-tsv_reader:
-  converters:
-    - all
-  headers: true
- 
-
-# https://jekyllrb.com/tutorials/csv-to-table/
