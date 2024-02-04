@@ -9,13 +9,13 @@ redirect_from:
 entries_layout: grid
 ---
 
-{% assign pub_bourses = site.bourses | where: "tags",  'privee' %}
+{% assign liste_bourses = site.data.bourses | where: "type",  'privee' %}
 
-<div class="grid-container hover01">
-    {% for bourse in pub_bourses %}
-        {% include single-bourse.html %}
-    {% endfor %}
-</div>
+
+{% for bourse in liste_bourses %}
+    {% include single-bourse.html bourse=bourse%}
+{% endfor %}
+
 
 
 <style>
