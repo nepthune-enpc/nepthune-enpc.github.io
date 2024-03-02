@@ -1,13 +1,13 @@
-date,nom,donateur,type,montant,deadline,versement,lycee,licence,master,doctorant,logo,cible,attribution,disponible,description
-2023-09-01,Bourse de l'Ecole des Ponts ParisTech,Ecole des Ponts ParisTech,publique,450,2023-10-15,2024-02-01,non,oui,oui,oui,https://upload.wikimedia.org/wikipedia/commons/e/ea/Logo_ponts_paristech.png,eleves des ponts,8,oui,bourse attribuee par l'ecole des Ponts a ses eleves sur criteres sociaux.
-2023-08-09,Bourse George Besse,Fondation George Besse,sociale,,,,,,,,,,,,,
-2023-09-11,Bourse de la Fondation des Ponts,Fondation des Ponts,frais de scolarite,,,,,,,,,,,,,
-2023-09-02,Bourse Meridiam,Meridiam,frais de scolarite,,,,,,,,,,,,,
-2023-09-01,Bourse Erasmus+,Erasmus,mobilite,,,,,,,,,,,,,
-2023-08-09,Bourse de la vocation,Fondation Marcel Bleustein-Blanchet,prix,,,,,,,,,,,,,
-2023-08-09,Bourse Coiffard,Jacques Coiffard,mobilite,,,,,,,,,,,,,
-2023-08-09,Bourse Eiffel,Eiffel,frais de scolarite,,,,,,,,,,,,,
-2023-08-09,Aide a la mobilite,ile-de-france,mobilite,,,,,,,,,,,,
-2023-08-09,Bourse d'étude pour les étudiants en Architecture,DAAD,mobilite,,,,,,,,,,,,,
-2023-08-09,Bourse d'études de la fondation Heinrich Böll,Fondation Heinrich Boll,mobilite,,,,,,,,,,,,
-2023-08-31,Bourse du CROUS,CROUS,Aide Financiere,,,,,,,,,,,,,
+date,nom,donateur,type,montant,deadline,versement,lycee,licence,master,doctorant,logo,cible,attribution,disponible,description,mobilite,
+2023-09-01,Bourse de l'Ecole des Ponts ParisTech,Ecole des Ponts ParisTech,publique,450,2023-10-15,2024-02-01,non,oui,oui,oui,https://upload.wikimedia.org/wikipedia/commons/e/ea/Logo_ponts_paristech.png,eleves des ponts,8,oui,bourse attribuee par l'ecole des Ponts a ses eleves sur criteres sociaux.,oui
+2023-08-09,Bourse George Besse,Fondation George Besse,privee,890,2023-11-15,2024-01-12,,,,,,,,,,oui
+2023-09-11,Bourse de la Fondation des Ponts,Fondation des Ponts,privee,240,2023-10-02,2023-12-01,,,,,,,,,,
+2023-09-02,Bourse Meridiam,Meridiam,privee,1050,2023-10-15,2024-02-10,,,,,,,,,,
+2023-09-01,Bourse Erasmus+,Erasmus,publique,320,2023-09-15,2024-08-01,,,,,,,,,,,oui
+2023-08-09,Bourse de la vocation,Fondation Marcel Bleustein-Blanchet,publique,150,,,,,,,,,,,,non
+2023-08-09,Bourse Coiffard,Jacques Coiffard,mobilite,1500,,,,,,,,,,,,oui
+2023-08-09,Bourse Eiffel,Eiffel,publique,1950,,,,,,,,,,,,oui
+2023-08-09,Aide a la mobilite,ile-de-france,mobilite,,,,,,,,,,,,battribuee par la region ile de france pour acco;pagner des eleves etudiants dans des experiences hors region ou hors pays,oui
+2023-08-09,Bourse d'étude pour les étudiants en Architecture,DAAD,mobilite,,,,,,,,,,,,,non
+2023-08-09,Bourse d'études de la fondation Heinrich Böll,Fondation Heinrich Boll,mobilite,,,,,,,,,,,,,non
+2023-08-31,Bourse du CROUS,CROUS,Aide Financiere,,,,,,,,,,,,bourse attribuee selon des criteres sociaux comme le quotient familial. Peut varier selon la situation fincaciere du demndeur,non

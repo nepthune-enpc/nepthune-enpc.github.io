@@ -1,5 +1,9 @@
 ---
 layout: accueil
+permalink: /bourses/{{bourse.name}}/
+redirect_from:
+/bourses_publiques/{{bourse.name}}/
+/bourses_privees/{{bourse.name}}/
 ---
 
 {% include base_path %}
@@ -31,7 +35,8 @@ layout: accueil
         {% if page.montant %}<p style="font-weight: bold;">Montant</p>{{page.montant}}{% endif %}
         {% if page.cibles %}<p style="font-weight: bold;">Beneficiaires</p>{{page.cibles}}{% endif %}
       </div>
-</div></div>
+</div>
+</div>
 </div>
 
 

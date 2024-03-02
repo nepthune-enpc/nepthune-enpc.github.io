@@ -9,8 +9,13 @@ redirect_from:
 entries_layout: grid
 ---
 
-<div class="grid-container">
-    {% for bourse in liste_des_bourses %}
-        {% include single-bourse.html bourse=bourse%}
-    {% endfor %}
-</div>
+{% assign liste_bourses = site.data.bourses | where: "type",  'publique' %}
+
+{% if liste_bourses == empty %}
+  <p>Desole, aucune offre de bourse ne contient tous vos criteres...</p>
+{% else %}
+  {% for bourse in liste_bourses %}
+      {% include single-bourse.html bourse=bourse%}
+  {% endfor %}
+{% endif %}
+       

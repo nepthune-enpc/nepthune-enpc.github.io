@@ -11,16 +11,14 @@ entries_layout: grid
 
 {% assign liste_bourses = site.data.bourses | where: "type",  'publique' %}
 
-
-{% for bourse in liste_bourses %}
-    {% include single-bourse.html bourse=bourse%}
-{% endfor %}
-
+{% if liste_bourses == empty %}
+  <p>Desole, aucune offre de bourse ne contient tous vos criteres...</p>
+{% else %}
+  {% for bourse in liste_bourses %}
+      {% include single-bourse.html bourse=bourse%}
+  {% endfor %}
+{% endif %}
        
-
-
-
-
 
 
 <script type="text/javascript">
