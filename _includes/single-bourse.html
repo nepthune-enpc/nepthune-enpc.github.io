@@ -43,14 +43,14 @@
                 <h4 class="mb-1 me-1">{{bourse.montant}} €</h4>
                 <span class="text-danger me-1 ms-1"><s>530 €</s></span>
               </div>
-              {% if bourse.disponible == "oui" %}
+              {% if bourse.di```sponible == "oui" %}
                 <h6 class="text-success">Disponible</h6>
               {% else %}
                 <h6 class="text-danger">Indisponible</h6>
               {% endif %}
               <div class="mt-4">
                 <!-- <button class="btn btn-primary shadow-0" type="button">En savoir plus</button> -->
-                <a href="/bourses_{{bourse.type}}s/{{bourse.nom}}/details" class="btn btn-primary border px-2 pt-2 icon-hover" role="button">En savoir plus</a>
+                <a href="/bourses_{{bourse.type}}s/{{bourse.id}}/details" class="btn btn-primary border px-2 pt-2 icon-hover" role="button">En savoir plus</a>
               </div>
             </div>
           </div>

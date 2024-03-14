@@ -161,6 +161,7 @@
 
 .layout .content {
   flex-grow: 1;
+  margin-top: 2%;
 }
 .layout .overlay {
   position: fixed;
@@ -336,6 +337,8 @@
 .layout .footer {
   text-align: center;
   margin-top: auto;
+  /* background-color:  rgb(136, 222, 253); */
+  border: none;;
   /* padding: 20px; */
   height: 12%;
   width: 100%;
@@ -792,16 +795,16 @@ a:hover.sidebar-link .menu-title {
 .layout .sidebar-footer a {
   display: flex;
   align-items: center;
-  height: 50px;
+  height: 5%; /* // 50px; */
   padding: 0 20px;
   color: #7d84ab;
   font-family: "Poppins", sans-serif;
-  font-size: 11pt;
+  font-size: 10pt;
 }
 /*# sourceMappingURL=styles.css.map */
 
 
-
+/* 
 
 .ms-6 {
   margin-left: 1.5rem !important;
@@ -813,9 +816,12 @@ a:hover.sidebar-link .menu-title {
 .ms-12 {
   margin-left: 7rem !important;
 }
+ */
 
-
-
+.layout .layout .content {
+  margin-left: 4%;
+  font-size: 11pt;
+}
 
 
 
@@ -823,7 +829,7 @@ a:hover.sidebar-link .menu-title {
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/utilities";
 
-$utilities: map-merge(
+/* $utilities: map-merge(
 $utilities,
 (
   "width": map-merge(
@@ -838,5 +844,5 @@ $utilities,
         (60: 60%),
     ),
   ),
-)
-);
+) 
+);*/
