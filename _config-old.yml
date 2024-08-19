@@ -1,10 +1,6 @@
 
 title: Nepthune
 
-jekyll_auth:
-  whitelist:
-    - drafts?
-
 include:
   - _pages
   - files
@@ -16,8 +12,6 @@ exclude:
   - lib
   - Gemfile
   - Gemfile.lock
-  - jekyll-auth.gemspec
-  - jekyll-auth*.gem
   - config.ru
   - Rakefile
   - readme.md
