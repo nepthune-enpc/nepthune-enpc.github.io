@@ -1,6 +1,7 @@
 ---
 permalink: /authentification-partenaire.html
 title: S'authentifier
+layout: default_auth
 redirect_from:
     - /accueil-authentification-partenaire/
     - /accueil-authentification-partenaire.html

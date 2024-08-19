@@ -1,0 +1,4 @@
+token = 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
+
+Victoriq-brami token
+tok = "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"

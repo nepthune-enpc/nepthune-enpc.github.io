@@ -1,31 +1,133 @@
-<div class="navbar-layout">
-    <ul>
-        {% for item in site.data.navbar.main %}
-        <li> 
-            <!-- <li class="{% if item.url == page.url %}active{% endif %}"> -->
-            <a href=".{{ item.url }}">{{ item.title }}</a>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
-<style>
-    .navbar-layout  {
-        display: flex;
-    }
-    .navbar-layout ul {
-        display: flex;
-        list-style: none;
-    }
-    .navbar-layout ul li {
-        margin-right: 50px;
-    }
-    .navbar-layout ul li a {
-        text-decoration: none;
-        color:rgb(3, 84, 108);
-    }
-    .navbar-layout ul li a:hover {
-        text-decoration: underline;
-        transition: 0.5s;
-    }
-</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<div class="container-fluid">
+<nav class="navbar navbar-expand-lg bg-transparent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {% for item in site.data.navbar.main %}
+                    {% if item.subtitle %}
+                        <li class="nav-item dropdown">
+                            <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">{{ item.title }}</button>
+                            <ul class="dropdown-menu" >
+                            {% for sub_item in item.subtitle %}
+                                <li><a class="dropdown-item" href="{{ sub_item.url }}">{{ sub_item.title }}</a></li>
+                            {% endfor %}
+                            </ul>
+                        </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href=".{{ item.url }}">{{ item.title }}</a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>  
+                <form class="d-flex" id="searchbar" role="search" style="float: inline-end;">
+                    <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
+                    <button class="btn btn-bd-primary" type="submit"><i class="ri-search-line"></i></button>
+                </form>      
+        </div>    
 
+</nav>    
+</div>
+
+<!-- <link href="https://unpkg.com/css-pro-layout/dist/css/css-pro-layout.min.css" rel="stylesheet" /> -->
+<style>
+    body {
+        font-size: 10pt;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        color:rgb(3, 84, 108) !important;
+    }
+    .layout .layout .header .container-fluid {
+        margin-left: 4%;
+        margin-top: 1%;
+    }
+
+    .dropdown-toggle {
+        float: right;
+        color:rgb(3, 84, 108) !important;
+        font-size: 11pt;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+    }
+
+   li.nav-item {
+        margin-top: 5%;
+        margin-left: 5%;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        color:rgb(3, 84, 108) !important;
+        font-size: 10pt;
+        max-width: 50%;
+    }
+
+    .nav-link {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size: 10pt;
+    } 
+    .dropdown-menu {
+        display:  none;
+        background-color: #ffffff;
+        margin-top: 5%;
+    }
+
+    .dropdown-item {
+        background-color: #ffffff;
+    }
+
+    .dropdown-item:hover {
+        background-color: #eeeeee;
+        border-radius: 5%;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        font-size: 10pt;
+        border-radius: 5%;
+        margin-top: 30%;
+} 
+
+.navbar .navbar-layout ul {
+    display: flex;
+    /* list-style: none; */
+}
+
+.navbar .navbar-layout ul li {
+    margin-right: 20px;
+}
+
+.navbar .navbar-layout ul li a {
+    text-decoration: none;
+    /* color: rgba(52, 60, 73, 0.85); */
+}
+
+.navbar .navbar-layout ul li a:hover {
+    text-decoration:none;
+    /* color:rgba(52, 60, 73, 0.95); */
+}
+
+.btn-bd-primary {
+    color: #eeeeee;
+    background-color: rgb(63, 144, 168);
+    border: none;
+    font-size: 10pt;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.btn-bd-primary:hover {
+    color: #eeeeee;
+    background-color: rgb(23, 104, 128);
+}
+
+#searchbar {
+    margin-top: 1%;
+    text-align: right;
+    right: 8%;
+    max-width: 15%;
+}
+
+
+
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>

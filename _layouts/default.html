@@ -1,5 +1,12 @@
 {% include base_path %}
 
+
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
+
 <!DOCTYPE html>
 <html>
     <head>

@@ -158,12 +158,10 @@
     transition: none;
   }
 }
-.layout .footer {
-  height: 64px;
-  min-height: 64px;
-}
+
 .layout .content {
   flex-grow: 1;
+  margin-top: 2%;
 }
 .layout .overlay {
   position: fixed;
@@ -328,18 +326,26 @@
 .layout .header {
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding-top: 0%;
 }
 .layout .content {
-  padding: 12px 50px;
+  padding-top: 2%;
+
   display: flex;
   flex-direction: column;
 }
 .layout .footer {
   text-align: center;
   margin-top: auto;
-  margin-bottom: 20px;
-  padding: 20px;
+  /* background-color:  rgb(136, 222, 253); */
+  border: none;;
+  /* padding: 20px; */
+  height: 12%;
+  width: 100%;
+  min-height: 5%;
+  position: absolute;
+  padding: 0%;
+  bottom: 0;
 }
 
 .sidebar {
@@ -626,6 +632,12 @@ body {
   font-size: 0.9rem;
 }
 
+h5 {
+  font-family: "Poppins", sans-serif;
+  color: #3f4750;
+  font-size: 12pt;
+}
+
 a {
   text-decoration: none;
 }
@@ -756,4 +768,81 @@ a {
   color: #3f4750;
 }
 
+.layout .sidebar-footer a.sidebar-link {
+  text-decoration: none;
+  display: inline-block;
+}
+.layout .sidebar-footer a.sidebar-link .menu-icon {
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+a:hover.sidebar-link .menu-icon {
+  color: #dee2ec;
+}
+a:hover.sidebar-link .menu-title {
+  color: #dee2ec;
+}
+.layout .sidebar-footer a:hover.sidebar-link .menu-icon i {
+  animation: swing ease-in-out 0.5s 1 alternate;
+}
+.layout .sidebar-footer a:hover::after.sidebar-link .menu-icon  {
+  border-color: #dee2ec !important;
+}
+
+.layout .sidebar-footer a {
+  display: flex;
+  align-items: center;
+  height: 5%; /* // 50px; */
+  padding: 0 20px;
+  color: #7d84ab;
+  font-family: "Poppins", sans-serif;
+  font-size: 10pt;
+}
 /*# sourceMappingURL=styles.css.map */
+
+
+/* 
+
+.ms-6 {
+  margin-left: 1.5rem !important;
+}
+
+.ms-8 {
+  margin-left: 3rem !important;
+}
+.ms-12 {
+  margin-left: 7rem !important;
+}
+ */
+
+.layout .layout .content {
+  margin-left: 4%;
+  font-size: 11pt;
+}
+
+
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/utilities";
+
+/* $utilities: map-merge(
+$utilities,
+(
+  "width": map-merge(
+    map-get($utilities, "width"),
+    (
+      values: map-merge(
+        map-get(map-get($utilities, "width"), "values"),
+        (10: 10%),
+      ),
+      values: map-merge(
+        map-get(map-get($utilities, "width"), "values"),
+        (60: 60%),
+    ),
+  ),
+) 
+);*/

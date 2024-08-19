@@ -30,6 +30,7 @@
 .ri-xs { font-size: .75em; }
 .ri-sm { font-size: .875em }
 .ri-1x { font-size: 1em; }
+.ri-15x{ font-size: 1.5em; }
 .ri-2x { font-size: 2em; }
 .ri-3x { font-size: 3em; }
 .ri-4x { font-size: 4em; }
@@ -57,3 +58,7 @@
 .ri-codepen-fill:before { content: "\ebaf"; }
 .ri-dashboard-2-line:before { content: "\ec10"; }
 .ri-folder-2-line:before { content: "\ed52"; }
+.ri-star-half-s-fill:before { content: "\f189"; color: gold;}
+.ri-star-half-s-line:before { content: "\f18a"; }
+.ri-star-line:before { content: "\f18b"; }
+.ri-star-s-fill:before { content: "\f18c"; color: gold;}

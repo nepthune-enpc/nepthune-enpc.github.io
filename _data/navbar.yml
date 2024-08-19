@@ -2,8 +2,22 @@ main:
   - title: "Calendrier"
     url: "/calendrier/"
 
+
   - title: "Bourses"
     url: "/bourses/"
+    subtitle:
+      - title: "Bourses publiques"
+        url: "/bourses/bourses_publiques"
+      - title: "Bourses privees"
+        url: "/bourses/bourses_privees"
+      - title: "Toutes les bourses"
+        url: "/bourses/"
 
   - title: "Partenaires"
     url: "/partenaires/"
+
+  - title: "Statistiques"
+    url: "/statistiques/"
+
+  - title: "FAQ"
+    url: "/foire-aux-questions/"
