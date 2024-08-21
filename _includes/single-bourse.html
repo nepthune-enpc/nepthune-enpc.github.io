@@ -22,17 +22,32 @@
               <h5 class=" text-dark">{{ bourse.nom }}</h5>
               <div class="d-flex flex-row">
                 <div class="text-warning mb-1 me-2">
-                  <i class="ri-star-s-fill ri-15x"></i>
-                  <i class="ri-star-s-fill ri-15x"></i>
-                  <i class="ri-star-s-fill ri-15x"></i>
-                  <i class="ri-star-s-fill ri-15x"></i>
-                  <i class="ri-star-half-s-fill ri-15x"></i>
-                  <span class="ms-1">
-                    4.5
+                  <p id="notes"></p>
+<!--                  <i class="ri-star-s-fill ri-15x"></i>-->
+<!--                  <i class="ri-star-s-fill ri-15x"></i>-->
+<!--                  <i class="ri-star-s-fill ri-15x"></i>-->
+<!--                  <i class="ri-star-s-fill ri-15x"></i>-->
+<!--                  <i class="ri-star-half-s-fill ri-15x"></i>-->
+                  <span class="ms-1" id="note_attr">
+                    {{ bourse.note }}
                   </span>
                 </div>
                 <span class="text-muted">{{bourse.attribution }} attributions</span>
               </div>
+<!--              Script to log the rate of the scholarship-->
+              <script type="text/javascript">
+                let text = "";
+                let rate = parseFloat(document.getElementById("note_attr"));
+
+                for (let i = 0; i < Math.floor(rate); i++) {
+                  text += "<i class='ri-star-s-fill ri-15x'></i>";
+                }
+                if (Math.abs(rate) - Math.floor(rate) > 0) {
+                  text += "<i className='ri-star-half-s-fill ri-15x'></i>";
+                }
+
+                document.getElementById("notes").innerHTML = text;
+              </script>
 
               <p class="text mb-4 mb-md-0">
                 {{bourse.description}}

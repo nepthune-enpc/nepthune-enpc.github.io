@@ -2,8 +2,8 @@
 layout: accueil
 permalink: /bourses/{{bourse.id}}/details
 redirect_from:
-/bourses_publiques/{{bourse.id}}/details
-/bourses_privees/{{bourse.id}}/details
+  - /bourses_publiques/{{bourse.id}}/details
+  - /bourses_privees/{{bourse.id}}/details
 ---
 
 {% include base_path %}
@@ -53,23 +53,24 @@ redirect_from:
     display: block;
   }
   .badge {
-  display: inline-block;
-  padding: 0.25em 0.4em;
-  font-size: 75%;
-  font-weight: 700;
-  line-height: 1;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: 0.25rem;
-  color: #fff;
-  background-color: #3cc7dd;
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    color: #fff;
+    background-color: #3cc7dd;
 
-  &.primary {
-    background-color: #ab2dff;
-  }
-  
-  .bourse-content {
-    display: flex;
+    &.primary {
+      background-color: #ab2dff;
+    }
+
+    .bourse-content {
+      display: flex;
+    }
   }
 </style>

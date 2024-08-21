@@ -1,0 +1,36 @@
+
+
+h2 {
+    font-family: "Poppins", sans-serif;
+    color: #3f4750;
+    font-size: 4vw;
+    margin-top: 10%;
+    margin-left: 5%;
+    text-align: left;
+}
+
+h3 {
+    font-family: "Poppins", sans-serif;
+    color: #6f7a83;
+    font-size: 1.5vw;
+    margin-left: 5%;
+    text-align: left;
+}
+
+body {
+    background-image: url("../../files/minions_404.png");
+    /*background-image: url("./files/minions_404.png");*/
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: right 5% bottom 185%;
+}
+
+.retour {
+    margin-top: 5%;
+    margin-left: 15%;
+    font-size: 1.5vw;
+    font-family: "Poppins", sans-serif;
+    color: #3d5983;
+    text-underline-mode: none;
+
+}
