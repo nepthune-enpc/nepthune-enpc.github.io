@@ -1,9 +1,11 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "vendor/font-awesome/fontawesome";
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   jekyll-theme-nepthune.scss 1:9  root stylesheet */
+/* Error: Undefined variable.
+ *    ,
+ * 43 | .mfp-counter { font-family: $serif; }                          // Caption font family
+ *    |                             ^^^^^^
+ *    '
+ *   vendor\magnific-popup\_settings.scss 43:29      @import
+ *   vendor\magnific-popup\_magnific-popup.scss 3:9  @import
+ *   jekyll-theme-nepthune.scss 4:9                  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,5 +15,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"vendor/font-awesome/fontawesome\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   jekyll-theme-nepthune.scss 1:9  root stylesheet";
+  content: "Error: Undefined variable.\a    \2577 \a 43 \2502  .mfp-counter { font-family: $serif; }                          // Caption font family\d\a    \2502                              ^^^^^^\a    \2575 \a   vendor\\magnific-popup\\_settings.scss 43:29      @import\a   vendor\\magnific-popup\\_magnific-popup.scss 3:9  @import\a   jekyll-theme-nepthune.scss 4:9                  root stylesheet";
 }
