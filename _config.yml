@@ -1,0 +1,35 @@
+title: Nepthune
+github: [metadata]
+url: https://nepthune-enpc.github.io
+# theme: jekyll-theme-nepthune
+
+jekyll_auth:
+  whitelist:
+    - drafts?
+include:
+  - _pages
+  - files
+  - .htaccess
+  - assets
+exclude:
+  - script
+  - bin
+  - lib
+  - Gemfile
+  - Gemfile.lock
+  - jekyll-auth.gemspec
+  - jekyll-auth*.gem
+  - config.ru
+  - Rakefile
+  - readme.md
+  - vendor
+defaults:
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+# Sass/SCSS
+sass:
+  sass_dir: _sass
