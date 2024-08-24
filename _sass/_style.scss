@@ -761,32 +761,40 @@ a {
 }
 
 .ms-8 {
-  margin-left: 3.rem !important;
+  margin-left: 3.5rem !important;
 }
+
 .ms-12 {
-  margin-left: 5.rem !important;
+  margin-left: 5.5rem !important;
 }
 
+//.ms-8 {
+//  margin-left: 3.0rem !important;
+//}
+//.ms-12 {
+//  margin-left: 5.0rem !important;
+//}
 
 
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/utilities";
 
-$utilities: map-merge(
-$utilities,
-(
-  "width": map-merge(
-    map-get($utilities, "width"),
-    (
-      values: map-merge(
-        map-get(map-get($utilities, "width"), "values"),
-        (10: 10%),
-      ),
-      values: map-merge(
-        map-get(map-get($utilities, "width"), "values"),
-        (60: 60%),
-    ),
-  ),
-)
-)
+//@import "bootstrap/scss/functions";
+//@import "bootstrap/scss/variables";
+//@import "bootstrap/scss/utilities";
+//
+//$utilities: map-merge(
+//$utilities,
+//(
+//  "width": map-merge(
+//    map-get($utilities, "width"),
+//    (
+//      values: map-merge(
+//        map-get(map-get($utilities, "width"), "values"),
+//        (10: 10%),
+//      ),
+//      values: map-merge(
+//        map-get(map-get($utilities, "width"), "values"),
+//        (60: 60%),
+//    ),
+//  ),
+//)
+//)
