@@ -15,6 +15,7 @@
 @import "variables";
 @import "mixins";
 @import "vendor/susy/susy";
+@import "utilities";
 
 @import "footer";
 @import "menu";
@@ -23,6 +24,11 @@
 @import "page";
 @import "navigation";
 @import "404";
+
+@import "vendor/font-awesome/fontawesome";
+@import "vendor/font-awesome/solid";
+@import "vendor/font-awesome/brands";
+@import "vendor/magnific-popup/magnific-popup";
 @import "style";
 
 
