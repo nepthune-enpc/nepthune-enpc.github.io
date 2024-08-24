@@ -1,13 +1,28 @@
-@import "vendor/font-awesome/fontawesome";
-@import "vendor/font-awesome/solid";
-@import "vendor/font-awesome/brands";
-@import "vendor/magnific-popup/magnific-popup";
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+//@import "vendor/font-awesome/fontawesome";
+//@import "vendor/font-awesome/solid";
+//@import "vendor/font-awesome/brands";
+//@import "vendor/magnific-popup/magnific-popup";
+//@import "vendor/breakpoint/breakpoint"; // media query mixins
+//@import "vendor/susy/susy";
+
+
 @import "vendor/breakpoint/breakpoint"; // media query mixins
-@import "vendor/susy/susy";
 @import "variables";
+@import "mixins";
+@import "vendor/susy/susy";
+
 @import "footer";
 @import "menu";
 @import "style";
 @import "layout";
 @import "page";
 @import "navigation";
+@import "404";
+@import "style";
+
+
