@@ -54,26 +54,16 @@ entries_layout: grid
         font-weight: 400;
         color: #333333;
     }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+      padding: 100px 100px;
+    }
 </style>
 
-{% assign pub_bourses = liste_des_bourses | where: "tags",  'publiques' %}
-
-<div class="grid-container hover01">
-    {% if pub_bourses == empty %}
-        <p>Desole, aucune offre de bourse ne contient tous vos criteres...</p>
-    {% else %}
-    {% for bourse in pub_bourses %}
-        {% include single-bourse.html %}
-    {% endfor %}
-    {% endif %}
-</div>
 
 
 <style>
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  padding: 100px 100px;
-}
+
 </style>

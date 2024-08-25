@@ -4,6 +4,10 @@ url                      : https://nepthune-enpc.github.io
 baseurl                  : ""
 # theme: jekyll-theme-nepthune
 
+
+head_scripts:
+  - https://code.jquery.com/jquery-3.2.1.min.js
+
 jekyll_auth:
   whitelist:
     - drafts?
