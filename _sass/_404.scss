@@ -17,9 +17,9 @@ h3 {
     text-align: left;
 }
 
-body {
-    background-image: url("{{ base_path }}/files/minions_404.png");
-    //background-image: url("../../files/minions_404.png");
+body .error {
+    //background-image: url("./{{ base_path }}/files/minions_404.png");
+    background-image: url("../../files/minions_404.png");
     /*background-image: url("./files/minions_404.png");*/
     background-repeat: no-repeat;
     background-size: 40%;
