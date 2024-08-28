@@ -34,21 +34,7 @@
                 </div>
                 <span class="text-muted">{{bourse.attribution }} attributions</span>
               </div>
-<!--              Script to log the rate of the scholarship-->
-              <script type="text/javascript">
-                let text = "";
-                // const rate = parseFloat(document.getElementById("note_attr"));
-                const rate = parseFloat( "{{ bourse.note }}");
 
-                for (let i = 0; i < Math.floor(rate); i++) {
-                  text += "<i class='ri-star-s-fill ri-15x'></i>";
-                }
-                if (Math.abs(rate) - Math.floor(rate) > 0) {
-                  text += "<i class='ri-star-half-s-fill ri-15x'></i>";
-                }
-
-                document.getElementById("notes").innerHTML = text;
-              </script>
 
               <p class="text mb-4 mb-md-0">
                 {{bourse.description}}
@@ -57,7 +43,9 @@
             <div class="col-xl-3 col-md-3 col-sm-5">
               <div class="d-flex flex-row align-items-center mb-1">
                 <h4 class="mb-1 me-1">{{bourse.montant}} €</h4>
+                {% if bourse.ancien_montant %}
                 <span class="text-danger me-1 ms-1"><s>530 €</s></span>
+                {% endif %}
               </div>
               {% if bourse.disponible == "oui" %}
                 <h6 class="text-success">Disponible</h6>
@@ -75,7 +63,21 @@
     </div>
 </div>
 
+<!--              Script to log the rate of the scholarship-->
+<script type="text/javascript">
+  let text = "";
+  // const rate = parseFloat(document.getElementById("note_attr"));
+  const rate = parseFloat( "{{ bourse.note }}");
 
+  for (let i = 0; i < Math.floor(rate); i++) {
+    text += "<i class='ri-star-s-fill ri-15x'></i>";
+  }
+  if (Math.abs(rate) - Math.floor(rate) > 0) {
+    text += "<i class='ri-star-half-s-fill ri-15x'></i>";
+  }
+
+  document.getElementById("notes").innerHTML = text;
+</script>
 <!-- <div class="card w-10 hover01">
     <div class="card-body">
         <a href="{{ base_path }}{{ bourse.url }}" rel="permalink" class="card-link">
