@@ -15,6 +15,11 @@ entries_layout: grid
 {% if liste_bourses == empty %}
   <p>Desole, aucune offre de bourse ne contient tous vos criteres...</p>
 {% else %}
+
+
+{% if liste_bourses == empty %}
+  <p>Desole, aucune offre de bourse ne contient tous vos criteres...</p>
+{% else %}
   {% for bourse in liste_bourses %}
       {% include single-bourse.html bourse=bourse%}
   {% endfor %}
@@ -27,5 +32,11 @@ entries_layout: grid
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   padding: 100px 100px;
+}
+.scroll-list {
+    position:fixed;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    margin-top: 10%;
 }
 </style>

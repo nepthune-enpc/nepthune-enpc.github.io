@@ -1,4 +1,3 @@
-@import './css-pro-layout/dist/css/css-pro-layout.css';
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import '../../css/remixicon.css';
 .layout {
@@ -158,10 +157,12 @@
     transition: none;
   }
 }
-
+.layout .footer {
+  height: 64px;
+  min-height: 64px;
+}
 .layout .content {
   flex-grow: 1;
-  margin-top: 2%;
 }
 .layout .overlay {
   position: fixed;
@@ -326,26 +327,18 @@
 .layout .header {
   display: flex;
   align-items: center;
-  padding-top: 0%;
+  padding: 20px;
 }
 .layout .content {
-  padding-top: 2%;
-
+  padding: 12px 50px;
   display: flex;
   flex-direction: column;
 }
 .layout .footer {
   text-align: center;
   margin-top: auto;
-  /* background-color:  rgb(136, 222, 253); */
-  border: none;;
-  /* padding: 20px; */
-  height: 12%;
-  width: 100%;
-  min-height: 5%;
-  position: absolute;
-  padding: 0%;
-  bottom: 0;
+  margin-bottom: 20px;
+  padding: 20px;
 }
 
 .sidebar {
@@ -632,12 +625,6 @@ body {
   font-size: 0.9rem;
 }
 
-h5 {
-  font-family: "Poppins", sans-serif;
-  color: #3f4750;
-  font-size: 12pt;
-}
-
 a {
   text-decoration: none;
 }
@@ -664,7 +651,6 @@ a {
   font-size: 24px;
   font-weight: 700;
   background-color: #ff8100;
-  margin-right: 10px;
 }
 .layout .sidebar .pro-sidebar-logo > h5 {
   overflow: hidden;
@@ -682,7 +668,6 @@ a {
   justify-content: center;
   text-align: center;
   font-size: 0.8em;
-  padding: 20px 0;
   border-radius: 8px;
   width: 180px;
   min-width: 190px;
@@ -697,7 +682,6 @@ a {
 .layout .sidebar .footer-box a {
   color: #fff;
   font-weight: 600;
-  margin-bottom: 10px;
 }
 .layout .sidebar .sidebar-collapser {
   transition: left, right, 0.3s;
@@ -768,44 +752,6 @@ a {
   color: #3f4750;
 }
 
-.layout .sidebar-footer a.sidebar-link {
-  text-decoration: none;
-  display: inline-block;
-}
-.layout .sidebar-footer a.sidebar-link .menu-icon {
-  text-decoration: none;
-  display: inline-block;
-  margin-right: 10px;
-  font-family: "Poppins", sans-serif;
-}
-
-a:hover.sidebar-link .menu-icon {
-  color: #dee2ec;
-}
-a:hover.sidebar-link .menu-title {
-  color: #dee2ec;
-}
-.layout .sidebar-footer a:hover.sidebar-link .menu-icon i {
-  animation: swing ease-in-out 0.5s 1 alternate;
-}
-.layout .sidebar-footer a:hover::after.sidebar-link .menu-icon  {
-  border-color: #dee2ec !important;
-}
-
-.layout .sidebar-footer a {
-  display: flex;
-  align-items: center;
-  height: 5%; /* // 50px; */
-  padding: 0 20px;
-  color: #7d84ab;
-  font-family: "Poppins", sans-serif;
-  font-size: 10pt;
-}
-/*# sourceMappingURL=styles.css.map */
-
-
-/* 
-
 .ms-6 {
   margin-left: 1.5rem !important;
 }
@@ -813,36 +759,9 @@ a:hover.sidebar-link .menu-title {
 .ms-8 {
   margin-left: 3rem !important;
 }
+
 .ms-12 {
-  margin-left: 7rem !important;
-}
- */
-
-.layout .layout .content {
-  margin-left: 4%;
-  font-size: 11pt;
+  margin-left: 5rem !important;
 }
 
-
-
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/utilities";
-
-/* $utilities: map-merge(
-$utilities,
-(
-  "width": map-merge(
-    map-get($utilities, "width"),
-    (
-      values: map-merge(
-        map-get(map-get($utilities, "width"), "values"),
-        (10: 10%),
-      ),
-      values: map-merge(
-        map-get(map-get($utilities, "width"), "values"),
-        (60: 60%),
-    ),
-  ),
-) 
-);*/
+/*# sourceMappingURL=styles.css.map */
