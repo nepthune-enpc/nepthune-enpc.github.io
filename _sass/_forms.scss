@@ -1,0 +1,62 @@
+[inert] > * > .form-control  {
+  color: #FFFFFF;
+  border: none;
+}
+
+[inert] > * > .form-label  {
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2em;
+  margin-left: 0%;
+  //font-weight: bold;
+}
+
+[inert] > * > .form-control  {
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2em;
+  margin-left: -1%;
+}
+
+a.btn.btn-form-submit {
+  background-color: #2b6384;
+  color: #ffffff;
+  border-color: #2b6384;
+  //font-weight: bold;
+  border-radius: 5px;
+  float: right;
+}
+
+.btn-form-submit:hover,
+.btn-form-submit:active,
+.btn-form-submit:focus,
+.btn-form-submit.active {
+  /* let's darken #004E64 a bit for hover effect */
+  background: #2b75a5;
+  color: #ffffff;
+  border-color: #003D4F;
+  color: #ffffff;
+}
+
+a.btn.btn-form-save {
+  background-color: #6caacc;
+  color: #ffffff;
+  border-color: #2b6384;
+  //font-weight: bold;
+  border-radius: 5px;
+  float: right;
+  position: relative;
+}
+
+.btn-form-save:hover,
+.btn-form-save:active,
+.btn-form-save.active,
+.btn-form-save:focus {
+  /* let's darken #004E64 a bit for hover effect */
+  background: #006699;
+  color: #ffffff;
+  border-color: #003D4F;
+  color: #ffffff;
+}
+
+

@@ -1,9 +1,10 @@
 ---
-permalink: /mes_infos/
+permalink: /modif_infos/
 layout: accueil
 redirect_from:
-    - /mes_infos
-    - /page-eleves-infos-persos.html
+    - /modif_infos
+    - /modif_infos/
+    - /page-eleves-modif-infos-persos.html
 title: Mes Informations
 ---
 
@@ -11,10 +12,12 @@ title: Mes Informations
 {% include base_path %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+
 {% assign eleve=site.data.eleves[1] %}
 
+
 <div class="form-container" >
-<form class="row g-5" action="" inert>
+<form class="row g-5" action="">
   <div class="col-6 col-sm-4">
     <label for="inputEmail4" class="form-label">Nom:</label>
     <input type="text" class="form-control" id="inputEmail4" placeholder="{{ eleve.nom }}">
@@ -73,16 +76,18 @@ title: Mes Informations
       </label>
     </div>
   </div>
-
-</form>
-  <div class="col-12 active position-relative">
-    <a type="submit" class="btn btn-form-submit" href="{{ base_path }}/modif_infos">Modifier mes informations</a>
+  <div class="col-10 active position-relative">
+    <a type="submit" class="btn btn-form-save" href="{{ base_path }}/modif_infos_2.html">Sauvegarder</a>
   </div>
+  <div class="col-2 active position-relative">
+    <a type="submit" class="btn btn-form-submit" href="{{ base_path }}/modif_infos_2.html">Suivant</a>
+  </div>
+</form>
   </div>
 <style>
   .form-container {
     margin-left: 5%;
     width: 40%;
-    margin-top: 5%;
+    margin-top: 2%;
   }
 </style>
