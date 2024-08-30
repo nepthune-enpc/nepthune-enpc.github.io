@@ -1,0 +1,14 @@
+id,prenom,nom,email,naissance,adresse,postal,ville,region,ecole
+0,Camille,Lefèvre,,,14 Rue de la République,69002,Lyon,Auvergne-Rhône-Alpes,Université Claude Bernard Lyon 1
+1,Adrien,Richard,,,12 Rue du Château,44000,Nantes,Pays de la Loire,Université de Nantes
+2,Pauline,Fournier,,,20 Rue Saint-Jean,69005,Lyon,Auvergne-Rhône-Alpes,Université Paris-Saclay
+3,Maxime,Dupont,,,19 Rue des Fossés,80000,Amiens,Hauts-de-France,Université de Lille
+4,Lucie,Roux,,,7 Rue Victor Hugo,13001,Marseille,Provence-Alpes-Côte d'Azur,Aix-Marseille Université
+5,Nathan,Brun,,,2 Boulevard des Pyrénées,64000,Pau,Nouvelle-Aquitaine,Université Toulouse Jean Jaurès
+6,Manon,Robert,,,76 Avenue Jean Médecin,06000,Nice,Provence-Alpes-Côte d'Azur,Université Paris 1 Panthéon-Sorbonne
+7,Pierre,Simon,,,5 Place Stanislas,54000,Nancy,Grand Est,Université de Lorraine
+8,Louise,Mercier,,,18 Rue de la Paix,75002,Paris,Île-de-France,Université Paris-Saclay
+9,Théo,Dubois,,, 27 Rue des Martyrs,75009,Paris,Île-de-France,Université Paris 1 Panthéon-Sorbonne
+10,Sophie,Martin,,,3 Avenue des Champs-Élysées,75008,Paris,Île-de-France,Université Paris-Dauphine
+11,Lucas,Moreau,,,11 Rue du Faubourg Saint-Honoré,75008,Paris,Île-de-France,Université Paris-Dauphine
+12,Hugo,Garnier,,,9 Rue des Rosiers,75004,Paris,Île-de-France,Université Paris-Saclay

@@ -1,6 +1,7 @@
 ---
 permalink: /auth/agir/
 layout: default_auth
+collection: auth
 redirect_from:
     - /auth/agir/
     - /auth/agir.html

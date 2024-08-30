@@ -1,6 +1,7 @@
 ---
-permalink: /auth/le_projet/
+#permalink: /auth/le_projet/
 layout: default_auth
+collection: auth
 redirect_from:
     - /auth/le_projet/
     - /auth/le_projet.html

@@ -1,61 +1,113 @@
-       ---
-permalink: /filtres/
+---
+permalink: /draft_filtres/
 layout: accueil
 redirect_from:
-    - /filtres
-    - /filtres/
-    - /mes_filtres
+    - /draft_filtres
+    - /draft_filtres.html
 title: Mes Filtres
 ---
 
 {% include base_path %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<html> <form class="row g-3">
+<div class="form-container" >
+<form class="row g-3" inert>
   <div class="col-md-6">
-      <label for="inputEmail4" class="form-label">Email</label>
-      <input type="email" class="form-control" id="inputEmail4">
+    <label for="inputEmail4" class="form-label">Nom:</label>
+    <input type="text" class="form-control" id="inputEmail4">
   </div>
-  <section class="range-slider container">
-    <span class="output outputOne"></span>
-    <span class="output outputTwo"></span>
-    <span class="full-range"></span>
-    <span class="incl-range"></span>
-    <input name="rangeOne" value="10" min="0" max="100" step="1" type="range">
-    <input name="rangeTwo" value="90" min="0" max="100" step="1" type="range">
-  </section>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Prenom:</label>
+    <input type="text" class="form-control" id="inputPassword4">
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Addresse</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">Ville: </label>
+    <input type="text" class="form-control" id="inputCity">
+  </div>
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">Region</label>
+    <select id="inputState" class="form-select">
+      <option selected>Choose...</option>
+      <option>...</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+    <label for="inputZip" class="form-label">Code Postal</label>
+    <input type="text" class="form-control" id="inputZip">
+  </div>
+    <div class="col-12">
+    <label for="inputAddress2" class="form-label">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </div>
 </form>
-</html>
-<script>
-  var rangeOne = document.querySelector('input[name="rangeOne"]'),
-		rangeTwo = document.querySelector('input[name="rangeTwo"]'),
-		outputOne = document.querySelector('.outputOne'),
-		outputTwo = document.querySelector('.outputTwo'),
-		inclRange = document.querySelector('.incl-range'),
-		updateView = function () {
-			if (this.getAttribute('name') === 'rangeOne') {
-				outputOne.innerHTML = this.value;
-				outputOne.style.left = this.value / this.getAttribute('max') * 100 + '%';
-			} else {
-				outputTwo.style.left = this.value / this.getAttribute('max') * 100 + '%';
-				outputTwo.innerHTML = this.value
-			}
-			if (parseInt(rangeOne.value) > parseInt(rangeTwo.value)) {
-				inclRange.style.width = (rangeOne.value - rangeTwo.value) / this.getAttribute('max') * 100 + '%';
-				inclRange.style.left = rangeTwo.value / this.getAttribute('max') * 100 + '%';
-			} else {
-				inclRange.style.width = (rangeTwo.value - rangeOne.value) / this.getAttribute('max') * 100 + '%';
-				inclRange.style.left = rangeOne.value / this.getAttribute('max') * 100 + '%';
-			}
-		};
+  </div>
+<style>
+  .form-container {
+    width: 50%;
+    margin-top: 5%;
+  }
+</style>
 
-	document.addEventListener('DOMContentLoaded', function () {
-		updateView.call(rangeOne);
-		updateView.call(rangeTwo);
-		$('input[type="range"]').on('mouseup', function() {
-			this.blur();
-		}).on('mousedown input', function () {
-			updateView.call(this);
-		});
-	});
-</script>
+<!--<form class="row g-3">-->
+<!--  <div class="col-md-6">-->
+<!--      <label for="inputEmail4" class="form-label">Email</label>-->
+<!--      <input type="email" class="form-control" id="inputEmail4">-->
+<!--  </div>-->
+<!--  <section class="range-slider container">-->
+<!--    <span class="output outputOne"></span>-->
+<!--    <span class="output outputTwo"></span>-->
+<!--    <span class="full-range"></span>-->
+<!--    <span class="incl-range"></span>-->
+<!--    <input name="rangeOne" value="10" min="0" max="100" step="1" type="range">-->
+<!--    <input name="rangeTwo" value="90" min="0" max="100" step="1" type="range">-->
+<!--  </section>-->
+<!--</form>-->
+<!--</html>-->
+<!--<script>-->
+<!--  var rangeOne = document.querySelector('input[name="rangeOne"]'),-->
+<!--		rangeTwo = document.querySelector('input[name="rangeTwo"]'),-->
+<!--		outputOne = document.querySelector('.outputOne'),-->
+<!--		outputTwo = document.querySelector('.outputTwo'),-->
+<!--		inclRange = document.querySelector('.incl-range'),-->
+<!--		updateView = function () {-->
+<!--			if (this.getAttribute('name') === 'rangeOne') {-->
+<!--				outputOne.innerHTML = this.value;-->
+<!--				outputOne.style.left = this.value / this.getAttribute('max') * 100 + '%';-->
+<!--			} else {-->
+<!--				outputTwo.style.left = this.value / this.getAttribute('max') * 100 + '%';-->
+<!--				outputTwo.innerHTML = this.value-->
+<!--			}-->
+<!--			if (parseInt(rangeOne.value) > parseInt(rangeTwo.value)) {-->
+<!--				inclRange.style.width = (rangeOne.value - rangeTwo.value) / this.getAttribute('max') * 100 + '%';-->
+<!--				inclRange.style.left = rangeTwo.value / this.getAttribute('max') * 100 + '%';-->
+<!--			} else {-->
+<!--				inclRange.style.width = (rangeTwo.value - rangeOne.value) / this.getAttribute('max') * 100 + '%';-->
+<!--				inclRange.style.left = rangeOne.value / this.getAttribute('max') * 100 + '%';-->
+<!--			}-->
+<!--		};-->
+
+<!--	document.addEventListener('DOMContentLoaded', function () {-->
+<!--		updateView.call(rangeOne);-->
+<!--		updateView.call(rangeTwo);-->
+<!--		$('input[type="range"]').on('mouseup', function() {-->
+<!--			this.blur();-->
+<!--		}).on('mousedown input', function () {-->
+<!--			updateView.call(this);-->
+<!--		});-->
+<!--	});-->
+<!--</script>-->

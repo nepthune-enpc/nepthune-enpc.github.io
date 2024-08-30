@@ -5,7 +5,7 @@ docs:
   icon: ri-dashboard-line
 
 - title: Mes informations
-  url: /modif-infos-persos.html
+  url: /mes_infos/
   icon: ri-folder-2-line
 
 - title: Mes filtres

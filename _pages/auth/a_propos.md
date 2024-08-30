@@ -1,6 +1,7 @@
 ---
 permalink: /auth/a_propos/
 layout: default_auth
+collection: auth
 redirect_from:
     - /auth/a_propos/
     - /auth/a_propos.md

@@ -1,0 +1,80 @@
+---
+permalink: /mes_infos/
+layout: accueil
+redirect_from:
+    - /mes_infos
+    - /page-eleves-infos-persos.html
+title: Mes Filtres
+---
+
+{% include base_path %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+{% assign eleve=site.data.eleves[1] %}
+
+<div class="form-container" >
+<form class="row g-3" inert>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Nom:</label>
+    <input type="text" class="form-control" id="inputEmail4" placeholder="{{ eleve.nom }}">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Prenom:</label>
+    <input type="text" class="form-control" id="inputPassword4" placeholder="{{ eleve.prenom }}">
+  </div>
+  <div class="col-md-4">
+    <label for="inputDate" class="form-label">Date de Naissance:</label>
+    <input type="date" class="form-control" id="inputDate" placeholder="{{ eleve.naissance }}">
+  </div>
+  <div class="col-md-8">
+    <label for="inputEmail0" class="form-label">Prenom:</label>
+    <input type="text" class="form-control" id="inputEmail0" placeholder="{{ eleve.email }}">
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Adresse</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="{{ eleve.adresse }}">
+  </div>
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">Ville: </label>
+    <input type="text" class="form-control" id="inputCity" placeholder="{{ eleve.ville }}">
+  </div>
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">Region</label>
+<!--    <input type="text" class="form-control" id="inputState" placeholder="{{ eleve.region }}">-->
+    <select id="inputState" class="form-select">
+<!--      <option selected>Choose...</option>-->
+      <option selected>{{ eleve.region }}</option>
+      <option>Guadeloupe</option>
+      <option>xxxxxxx</option>
+      <option>Martinique</option>
+      <option>Guyane</option>
+      <option>la Reunion</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+    <label for="inputZip" class="form-label">Code Postal</label>
+    <input type="text" class="form-control" id="inputZip" placeholder="{{ eleve.postal }}">
+  </div>
+    <div class="col-12">
+    <label for="inputAddress2" class="form-label">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Modifier</button>
+  </div>
+</form>
+  </div>
+<style>
+  .form-container {
+    width: 50%;
+    margin-top: 5%;
+  }
+</style>
