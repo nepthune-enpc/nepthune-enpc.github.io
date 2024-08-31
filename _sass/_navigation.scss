@@ -9,7 +9,7 @@
         transition: width, 0.3s;
         height: $header-height;
         min-height: $header-height;
-        position: relative;
+        position: fixed;
     
         .navbar-layout  {
             display: flex;

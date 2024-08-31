@@ -5,8 +5,8 @@ layout: accueil
 
 
 <!-- sidebar + content -->
-<section class="">
-  <div class="container">
+<section class="" style="">
+  <div  style="">
     <div class="row">
     
       <!-- content -->
@@ -20,7 +20,7 @@ layout: accueil
               <option value="newest">Plus Recentes</option>
               <option value="A-Z">Ordre alphabetique</option>
             </select>
-            <div class="btn-group shadow-0 border">
+            <div class="btn-group shadow-0 border" style="position: relative;z-index: 1;">
               <a onclick="listView()" class="btn btn-light" title="List view">
                 <i class="fa fa-bars fa-lg"></i>
               </a>
@@ -30,6 +30,7 @@ layout: accueil
             </div>
           </div>
         </header>
+
 
         {{content}}
 

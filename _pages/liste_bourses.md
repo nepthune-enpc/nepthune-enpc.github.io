@@ -9,13 +9,26 @@ redirect_from:
 entries_layout: grid
 ---
 
-{% assign liste_bourses = site.data.bourses | where: "type",  'publique' %}
 
+{% assign liste_bourses = site.data.bourses %}
+
+<html>
 {% if liste_bourses == empty %}
   <p>Desole, aucune offre de bourse ne contient tous vos criteres...</p>
 {% else %}
+<div class="scroll-list">
   {% for bourse in liste_bourses %}
       {% include single-bourse.html bourse=bourse%}
   {% endfor %}
+</div>
 {% endif %}
+
+</html>
+
+<style>
+.scroll-list {
+overflow-y: scroll;
+overflow:hidden;
+}
+</style>
        
