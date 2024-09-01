@@ -15,6 +15,7 @@ title: Accueil Eleve
         <img src="./files/nepthune_logo.png" alt="Logo" width="200" height="100">
     </div>
 </html>
+
 <style>
     .main-content {
         display: absolute;

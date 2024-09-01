@@ -3,14 +3,14 @@
 
 
 
-<div class="row justify-content-center mb-3" style="overflow:hidden;overflow-y: scroll;">
-    <div class="col-md-12" >
+<div class="row justify-content-center mb-3" >
+    <div class="col-md-10" >
       <div class="card shadow-0 border rounded-3">
         <div class="card-body">
           <div class="row g-0">
             <div class="col-xl-3 col-md-4 d-flex justify-content-center">
               <div class="bg-image hover-zoom ripple rounded ripple-surface me-md-3 mb-3 mb-md-0">
-                <img src="{{ bourse.logo }}" class="w-100" />
+                <img src="{{ bourse.logo }}" class="adaptive-width" />
                 <a href="#!">
                   <div class="hover-overlay">
                     <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
@@ -18,16 +18,11 @@
                 </a>
               </div>
             </div>
-            <div class="col-xl-6 col-md-5 col-sm-7">
+            <div class="col-xl-7 col-md-5 col-sm-7">
               <h5 class=" text-dark">{{ bourse.nom }}</h5>
               <div class="d-flex flex-row">
                 <div class="text-warning mb-1 me-2">
-                  <p id="notes"></p>
-<!--                  <i class="ri-star-s-fill ri-15x"></i>-->
-<!--                  <i class="ri-star-s-fill ri-15x"></i>-->
-<!--                  <i class="ri-star-s-fill ri-15x"></i>-->
-<!--                  <i class="ri-star-s-fill ri-15x"></i>-->
-<!--                  <i class="ri-star-half-s-fill ri-15x"></i>-->
+                  <span id="{{ bourse.nom }}"></span>
                   <span class="ms-1" id="note_attr">
                     {{ bourse.note }}
                   </span>
@@ -40,7 +35,7 @@
                 {{bourse.description}}
               </p>
             </div>
-            <div class="col-xl-3 col-md-3 col-sm-5">
+            <div class="col-xl-2 col-md-3 col-sm-5">
               <div class="d-flex flex-row align-items-center mb-1">
                 <h4 class="mb-1 me-1">{{bourse.montant}} €</h4>
                 {% if bourse.ancien_montant %}
@@ -54,7 +49,8 @@
               {% endif %}
               <div class="mt-4">
                 <!-- <button class="btn btn-primary shadow-0" type="button">En savoir plus</button> -->
-                <a href="/bourses_{{bourse.type}}s/{{bourse.id}}/details" class="btn btn-primary border px-2 pt-2 icon-hover" role="button">En savoir plus</a>
+<!--                <a href="/bourses_{{bourse.type}}s/{{bourse.id}}/details" class="btn btn-primary border px-2 pt-2 icon-hover" role="button">En savoir plus</a>-->
+                <a href="/bourses_{{bourse.type}}s/{{bourse.id}}/details" class="btn btn-form-submit" role="button">En savoir plus</a>
               </div>
             </div>
           </div>
@@ -65,9 +61,9 @@
 
 <!--              Script to log the rate of the scholarship-->
 <script type="text/javascript">
-  let text = "";
+  var text = "";
   // const rate = parseFloat(document.getElementById("note_attr"));
-  const rate = parseFloat( "{{ bourse.note }}");
+  var rate = parseFloat( "{{ bourse.note }}");
 
   for (let i = 0; i < Math.floor(rate); i++) {
     text += "<i class='ri-star-s-fill ri-15x'></i>";
@@ -76,8 +72,19 @@
     text += "<i class='ri-star-half-s-fill ri-15x'></i>";
   }
 
-  document.getElementById("notes").innerHTML = text;
+  document.getElementById("{{ bourse.nom }}").innerHTML = text;
 </script>
+<style>
+  img.adaptive-width {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+</style>
 <!-- <div class="card w-10 hover01">
     <div class="card-body">
         <a href="{{ base_path }}{{ bourse.url }}" rel="permalink" class="card-link">

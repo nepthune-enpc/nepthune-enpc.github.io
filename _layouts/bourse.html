@@ -14,13 +14,13 @@ layout: accueil
         <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
           <strong class="d-block py-2">12 Bourses trouvees</strong>
           <div class="ms-auto">
-            <select class="form-select d-inline-block w-auto border pt-1" id="sort-grants">
+            <select class="form-select d-inline-block w-auto border pt-1" id="sort-grants" onchange="displaySelection()">
               <option value="amount">Montant Decroissant</option>
               <option value="popular">Plus populaires</option>
               <option value="newest">Plus Recentes</option>
               <option value="A-Z">Ordre alphabetique</option>
             </select>
-            <div class="btn-group shadow-0 border" style="position: relative;z-index: 1;">
+            <div class="btn-group shadow-0 border" style="position: relative;z-index:1;">
               <a onclick="listView()" class="btn btn-light" title="List view">
                 <i class="fa fa-bars fa-lg"></i>
               </a>
@@ -30,7 +30,7 @@ layout: accueil
             </div>
           </div>
         </header>
-
+        <p id="sorting-result"></p>
 
         {{content}}
 
@@ -59,32 +59,31 @@ layout: accueil
         </nav>
         <!-- Pagination -->
       </div>
+
+
     </div>
+
   </div>
 </section>
 
 <!-- Footer -->
-
-
-<!--<script type="text/javascript">-->
-<!--  function handleSelectChange() {-->
-<!--    const para = document.querySelector("p");-->
-<!--    const sortedGrantSelect = document.getElementById("grants-sort-type");-->
-<!--    const choice= sortedGrantSelect.value;-->
-<!--    if (choice === "newest") {-->
-<!--      para.textContent = " {% assign liste_des_bourses = site.data.bourses  | sort:'date' %}";-->
-<!--    } else if (choice === "oldest") {-->
-<!--      para.textContent ="{% assign liste_des_bourses = site.data.bourses  | sort: 'date' | reverse  %}";-->
-<!--    } else if (choice === "za") {-->
-<!--      para.textContent = "{% assign liste_des_bourses = site.data.bourses  | sort: 'donateur'| reverse %}";-->
-<!--    } else if (choice === "az") {-->
-<!--      para.textContent = "{% assign  liste_des_bourses = site.data.bourses  | sort: 'donateur' %}";-->
-<!--    } else {-->
-<!--      para.textContent = "{% assign  liste_des_bourses = site.data.bourses | sort: 'montant' | reverse %}";-->
-<!--    }-->
-<!--  }-->
-<!--</script>-->
 <script>
+  function displaySelection() {
+    var choice = document.getElementById("sort-grants").value;
+    let txt = "";
+    if (choice === "newest") {
+      txt = "{% assign liste_des_bourses = site.data.bourses  | sort:'date' %}";
+    } else if (choice === "oldest") {
+      txt ="{% assign liste_des_bourses = site.data.bourses  | sort: 'date' | reverse  %}";
+    } else if (choice === "amount") {
+      txt = "{% assign liste_des_bourses = site.data.bourses  | sort: 'montant'| reverse %}";
+    } else if (choice === "A-Z") {
+      txt = "{% assign  liste_des_bourses = site.data.bourses  | sort: 'donateur' %}";
+    } else {
+      txt = "{% assign  liste_des_bourses = site.data.bourses | sort: 'montant' | reverse %}";
+   }
+    document.getElementById("sorting-result").textContent = txt;
+  }
   // Get the elements with class="column"
   var elements = document.getElementsByClassName("card-body");
 
@@ -104,22 +103,9 @@ layout: accueil
       elements[i].style.width = "50%";
     }
   }
-
-
-  // Grants list order
-  document.getElementById('sort-grants').addEventListener('change', function() {
-    const choice= this.value;
-    if (choice === "newest") {
-      para.textContent = " {% assign liste_des_bourses = site.data.bourses  | sort:'date' %}";
-    } else if (choice === "popular") {
-      para.textContent ="{% assign liste_des_bourses = site.data.bourses  | sort: 'date' | reverse  %}"
-    } else if (choice === "A-Z") {
-      para.textContent = "{% assign  liste_des_bourses = site.data.bourses  | sort: 'donateur' %}";
-    } else {
-      para.textContent = "{% assign  liste_des_bourses = site.data.bourses | sort: 'montant' | reverse %}";
-    }
-  });
 </script>
+
+
 
 
 <!-- <style>

@@ -1,0 +1,30 @@
+---
+permalink: /dev.html
+layout: accueil
+redirect_from:
+    - /dev.html
+    - /dev/
+title: Accueil Eleve
+---
+
+{% include base_path %}
+
+<form>
+<!--  <input type="hidden" name="q" value="{{ site.data.bourses }}">-->
+
+  {%- for filter in site.data.filtres -%}
+    <details>
+      <summary>
+        <div>
+          <span>{{ filter.label }}</span>
+
+          {%- assign size=filter.active_values_size | times: 1% -%}
+
+          {%- if size > 0 -%}
+            <span>({{ filter.active_values_size }})</span>
+          {%- endif -%}
+        </div>
+      </summary>
+    <details>
+  {%- endfor -%}
+</form>
