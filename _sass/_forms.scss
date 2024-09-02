@@ -60,3 +60,46 @@ a.btn.btn-form-save {
 }
 
 
+ul.custom-form-list > li > .custom-form-label {
+  color: #3f4750;
+  font-family: "Poppins", sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  //color: #3f4750; $dark-gray ;
+}
+
+ul.custom-form-list > li > .custom-form-control {
+  color: #3f4750;
+  border: none;
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8em;
+  //color: #3f4750; $dark-gray ;
+}
+
+ul.custom-form-list > li > .custom-form-label::after {
+  content: "\a";
+  //display: block;
+  white-space: pre;
+  //color: #3f4750; $dark-gray ;
+}
+
+ul.custom-form-list > li > .custom-form-control::before {
+  content: "\a";
+  white-space: pre;
+  //color: #3f4750; $dark-gray ;
+}
+
+ul.custom-form-list {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  text-align: left;
+
+}
+
+ul.custom-form-list > li {
+  margin-bottom: 15%;
+
+}
+

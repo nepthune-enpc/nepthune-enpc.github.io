@@ -6,11 +6,12 @@ layout: accueil
 
 <!-- sidebar + content -->
 <section class="" style="">
-  <div  style="">
+  <div  style="container-fluid">
     <div class="row">
     
       <!-- content -->
-      <div class="col-lg-9" style="margin-top:5%;margin-left:3%;overflow:hidden;">
+      <div class="col-md-9 mb-4 pb-3" style="overflow:hidden;">
+<!--      <div class="col-md-9" style="margin-top:5%;margin-left:3%;overflow:hidden;">-->
         <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
           <strong class="d-block py-2">12 Bourses trouvees</strong>
           <div class="ms-auto">
@@ -61,6 +62,9 @@ layout: accueil
       </div>
 
 
+      <div class="col-md-3">
+        {% include filtres_bar.html %}
+      </div>
     </div>
 
   </div>
