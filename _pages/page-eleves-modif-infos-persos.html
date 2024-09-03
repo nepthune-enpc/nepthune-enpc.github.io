@@ -13,10 +13,17 @@ title: Mes Informations
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
+
 {% assign eleve=site.data.eleves[1] %}
 
 
 <div class="form-container" >
+<!--  <div class="row g-5">-->
+<!--  <div class="col-6 col-sm-4">-->
+{% include progress_bar.html %}
+<!--</div>-->
+<!--</div>-->
+
 <form class="row g-5" action="">
   <div class="col-6 col-sm-4">
     <label for="inputEmail4" class="form-label">Nom:</label>
@@ -89,5 +96,6 @@ title: Mes Informations
     margin-left: 5%;
     width: 40%;
     margin-top: 2%;
+    margin-bottom: 10%;
   }
 </style>

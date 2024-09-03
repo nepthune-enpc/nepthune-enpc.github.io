@@ -87,6 +87,7 @@ ul.custom-form-list > li > .custom-form-label::after {
 ul.custom-form-list > li > .custom-form-control::before {
   content: "\a";
   white-space: pre;
+  //margin-left: 5em;
   //color: #3f4750; $dark-gray ;
 }
 
@@ -103,3 +104,18 @@ ul.custom-form-list > li {
 
 }
 
+
+.filter-title {
+  font-weight: 500;
+  margin-bottom: 5%;
+  color: $dark-gray ;
+}
+
+.custom-form-control {
+    margin-left: 10%;
+}
+
+
+.form-check-input {
+    margin-left: 20%;
+}

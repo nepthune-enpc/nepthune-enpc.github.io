@@ -1,7 +1,7 @@
 {% include base_path %}
 
 
-<div class="card shadow-0 border rounded-3">
+<div class="card shadow-0 border rounded-3 px-3">
   <div class="card-body">
     <div class="row g-0">
         <h4 style="text-align:center;margin-bottom: 2%;" class="border-bottom mb-2 pb-3">Filtres</h4>
@@ -9,20 +9,80 @@
         <form action="" method="">
           <ul class="custom-form-list">
             <li>
-              <label for="montant" class="custom-form-label">MONTANT</label>
-            <input type="text" class="custom-form-control" id="montant">
+              <div class="filter-title">MONTANT</div>
+<!--              <label for="montant" class="custom-form-label">MONTANT</label>-->
+<!--            <input type="text" class="custom-form-control" id="montant">-->
+            <input type="range" name="price-min" id="montant" value="200" min="0" max="10000">
             </li>
             <li>
-              <label for="datest" class="custom-form-label">DATE DE VERSEMENT</label>
-              <input type="date" class="custom-form-control" id="datest">
+              <div class="filter-title">DATE DE VERSEMENT</div>
+<!--              <label for="datest" class="custom-form-label"></label>-->
+              <input type="date" class="custom-form-control" style="display:flex;" id="datest">-<input type="date" class="custom-form-control" id="datest1" style="display:flex;">
             </li>
             <li>
-              <label for="etudes" class="custom-form-label">DOMAINE D'ETUDES</label>
-              <input type="text" class="custom-form-control" id="etudes">
+              <div class="filter-title">DOMAINE D'ETUDES</div>
+<!--              <label for="etudes" class="custom-form-label">DOMAINE D'ETUDES</label>-->
+              <div class="form-check">
+                <input class="form-check-input custom-form-control" type="checkbox" value="" id="flexCheckDefault1">
+                <label class="form-check-label" for="flexCheckDefault1">Litterature</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input custom-form-control" type="checkbox" value="" id="flexCheckDefault2">
+                <label class="form-check-label" for="flexCheckDefault2">Biologie</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
+                <label class="form-check-label" for="flexCheckDefault3">Politique</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
+                <label class="form-check-label" for="flexCheckDefault4">Ingenierie</label>
+              </div>
             </li>
             <li>
-              <label for="grade" class="custom-form-label">NOTE</label>
-              <input type="text" class="custom-form-control" id="grade">
+              <div class="filter-title">NOTE</div>
+<!--              <label for="grade" class="custom-form-label">NOTE</label>-->
+              <div class="form-check">
+                <input class="form-check-input custom-form-control" type="checkbox" value="" id="grade5">
+                <label class="form-check-label" for="grade5">
+                  <i class='ri-star-s-fill ri-15x'></i>
+                  <i class='ri-star-s-fill ri-15x'></i>
+                  <i class='ri-star-s-fill ri-15x'></i>
+                  <i class='ri-star-s-fill ri-15x'></i>
+                  <i class='ri-star-s-fill ri-15x'></i>
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input custom-form-control" type="checkbox" value="" id="grade4">
+                <label class="form-check-label" for="grade4">
+                  <i class='ri-star-s-fill ri-15x'></i>
+                  <i class='ri-star-s-fill ri-15x'></i>
+                  <i class='ri-star-s-fill ri-15x'></i>
+                  <i class='ri-star-s-fill ri-15x'></i>
+                </label>
+              </div>
+                            <div class="form-check">
+                <input class="form-check-input custom-form-control" type="checkbox" value="" id="grade3">
+                <label class="form-check-label" for="grade3">
+                  <i class='ri-star-s-fill ri-15x'></i>
+                  <i class='ri-star-s-fill ri-15x'></i>
+                  <i class='ri-star-s-fill ri-15x'></i>
+                </label>
+              </div>
+                <div class="form-check">
+                <input class="form-check-input custom-form-control" type="checkbox" value="" id="grade2">
+                <label class="form-check-label" for="grade2">
+                  <i class='ri-star-s-fill ri-15x'></i>
+                  <i class='ri-star-s-fill ri-15x'></i>
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input custom-form-control" type="checkbox" value="" id="grade1">
+                <label class="form-check-label" for="grade1">
+                  <i class='ri-star-s-fill ri-15x'></i>
+                </label>
+              </div>
+<!--              <input type="text" class="custom-form-control" id="grade">-->
             </li>
           </ul>
         </form>
@@ -30,3 +90,34 @@
     </div>
   </div>
 </div>
+<script>
+  (function( $ ){
+$( document ).ready( function() {
+	$( '.input-range').each(function(){
+		var value = $(this).attr('data-slider-value');
+		var separator = value.indexOf(',');
+		if( separator !== -1 ){
+			value = value.split(',');
+			value.forEach(function(item, i, arr) {
+				arr[ i ] = parseFloat( item );
+			});
+		} else {
+			value = parseFloat( value );
+		}
+		$( this ).slider({
+			formatter: function(value) {
+				console.log(value);
+				return '$' + value;
+			},
+			min: parseFloat( $( this ).attr('data-slider-min') ),
+			max: parseFloat( $( this ).attr('data-slider-max') ),
+			range: $( this ).attr('data-slider-range'),
+			value: value,
+			tooltip_split: $( this ).attr('data-slider-tooltip_split'),
+			tooltip: $( this ).attr('data-slider-tooltip')
+		});
+	});
+
+ } );
+} )( jQuery );
+</script>
