@@ -82,24 +82,106 @@
     }
 </style>
 
-<div class="stepper-wrapper border-bottom mb-4">
-    <div class="stepper-item completed">
-        <div class="step-counter">1</div>
-        <div class="step-name">Coordonnees</div>
-      </div>
-      <div class="stepper-item completed">
-        <div class="step-counter">2</div>
-        <div class="step-name">Etudes</div>
-      </div>
-    <div class="stepper-item active">
-        <div class="step-counter">3</div>
-        <div class="step-name">Third</div>
-      </div>
-      <div class="stepper-item">
-        <div class="step-counter">4</div>
-        <div class="step-name">Forth</div>
-      </div>
-</div>
+
+
+{% if page_num == 1 %}
+    <div class="stepper-wrapper border-bottom mb-4">
+        <div class="stepper-item active">
+            <div class="step-counter">1</div>
+            <div class="step-name">Coordonnees</div>
+          </div>
+          <div class="stepper-item">
+            <div class="step-counter">2</div>
+            <div class="step-name">Etudes</div>
+          </div>
+        <div class="stepper-item">
+            <div class="step-counter">3</div>
+            <div class="step-name">Third</div>
+          </div>
+          <div class="stepper-item">
+            <div class="step-counter">4</div>
+            <div class="step-name">Forth</div>
+          </div>
+    </div>
+{% elsif page_num == "1" %}
+    <div class="stepper-wrapper border-bottom mb-4">
+        <div class="stepper-item active">
+            <div class="step-counter">1</div>
+            <div class="step-name">Coordonnees</div>
+          </div>
+          <div class="stepper-item">
+            <div class="step-counter">2</div>
+            <div class="step-name">Etudes</div>
+          </div>
+        <div class="stepper-item">
+            <div class="step-counter">3</div>
+            <div class="step-name">Third</div>
+          </div>
+          <div class="stepper-item">
+            <div class="step-counter">4</div>
+            <div class="step-name">Forth</div>
+          </div>
+    </div>
+{% elsif page_num == "2" %}
+    <div class="stepper-wrapper border-bottom mb-4">
+        <div class="stepper-item completed">
+            <div class="step-counter">1</div>
+            <div class="step-name">Coordonnees</div>
+          </div>
+          <div class="stepper-item active">
+            <div class="step-counter">2</div>
+            <div class="step-name">Etudes</div>
+          </div>
+        <div class="stepper-item">
+            <div class="step-counter">3</div>
+            <div class="step-name">Third</div>
+          </div>
+          <div class="stepper-item">
+            <div class="step-counter">4</div>
+            <div class="step-name">Forth</div>
+          </div>
+    </div>
+{% elsif page_num == "3" %}
+    <div class="stepper-wrapper border-bottom mb-4">
+        <div class="stepper-item completed">
+            <div class="step-counter">1</div>
+            <div class="step-name">Coordonnees</div>
+          </div>
+          <div class="stepper-item completed">
+            <div class="step-counter">2</div>
+            <div class="step-name">Etudes</div>
+          </div>
+        <div class="stepper-item active">
+            <div class="step-counter">3</div>
+            <div class="step-name">Third</div>
+          </div>
+          <div class="stepper-item">
+            <div class="step-counter">4</div>
+            <div class="step-name">Forth</div>
+          </div>
+    </div>
+{% elsif page_num == "4" %}
+    <div class="stepper-wrapper border-bottom mb-4">
+        <div class="stepper-item completed">
+            <div class="step-counter">1</div>
+            <div class="step-name">Coordonnees</div>
+          </div>
+          <div class="stepper-item completed">
+            <div class="step-counter">2</div>
+            <div class="step-name">Etudes</div>
+          </div>
+        <div class="stepper-item completed">
+            <div class="step-counter">3</div>
+            <div class="step-name">Third</div>
+          </div>
+          <div class="stepper-item active">
+            <div class="step-counter">4</div>
+            <div class="step-name">Forth</div>
+          </div>
+    </div>
+{% endif %}
+
+
 <!--    .stepper-item.completed .step-counter {-->
 <!--    background-color: #1a4173;-->
 <!--}-->

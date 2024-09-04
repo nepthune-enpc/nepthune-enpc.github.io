@@ -1,29 +1,41 @@
 ---
-permalink: /mes_infos/
+permalink: /modif_infos_2/
 layout: accueil
 redirect_from:
-    - /mes_infos
-    - /page-eleves-infos-persos.html
-title: Mes Informations
+    - /modif_infos_2
+    - /modif_infos_2.html
+    - /modif_infos_2/
+    - /page-eleves-modif-infos-persos-2.html
+title: Mes Informations 2
+num: 2
 ---
 
 
 {% include base_path %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+
+
 {% assign eleve=site.data.eleves[1] %}
+{% assign page_num = "2" %}
 
 <div class="form-container" >
-<form class="row g-3" action="" inert>
-  <div class="col-8 col-sm-4">
+<!--  <div class="row g-5">-->
+<!--  <div class="col-6 col-sm-4">-->
+{% include progress_bar.html page_num=page_num %}
+<!--</div>-->
+<!--</div>-->
+
+<form class="row g-3" action="">
+  <div class="col-8 col-sm-6">
     <label for="inputEmail4" class="form-label">Nom:</label>
     <input type="text" class="form-control" id="inputEmail4" placeholder="{{ eleve.nom }}">
   </div>
-  <div class="col-8 col-sm-4">
+  <div class="col-8 col-sm-6">
     <label for="inputPassword4" class="form-label">Prenom:</label>
     <input type="text" class="form-control" id="inputPassword4" placeholder="{{ eleve.prenom }}">
   </div>
-  <div class="col-8 col-sm-4">
+  <div class="col-8 col-sm-6">
     <label for="inputDate" class="form-label">Date de Naissance:</label>
     <input type="date" class="form-control" id="inputDate" placeholder="{{ eleve.naissance }}">
   </div>
@@ -39,15 +51,15 @@ title: Mes Informations
     <label for="inputAddress" class="form-label">Adresse</label>
     <input type="text" class="form-control" id="inputAddress" placeholder="{{ eleve.adresse }}">
   </div>
-  <div class="col-md-6">
+  <div class="col-6 col-md-6">
     <label for="inputCity" class="form-label">Ville: </label>
     <input type="text" class="form-control" id="inputCity" placeholder="{{ eleve.ville }}">
   </div>
-  <div class="col-sm-2">
+  <div class="col-2 col-sm-2">
     <label for="inputZip" class="form-label">Zip</label>
     <input type="text" class="form-control" id="inputZip" placeholder="{{ eleve.postal }}">
   </div>
-  <div class="col-sm-4">
+  <div class="col-4 col-sm-4">
     <label for="inputState" class="form-label">Region</label>
 <!--    <input type="text" class="form-control" id="inputState" placeholder="{{ eleve.region }}">-->
     <select id="inputState" class="form-select">
@@ -69,22 +81,23 @@ title: Mes Informations
     <div class="form-check">
       <input class="form-check-input" type="checkbox" id="gridCheck">
       <label class="form-check-label" for="gridCheck">
-        Check me out {{ base_path }}
+        Check me out
       </label>
     </div>
   </div>
-
-</form>
-  <p>{{ base_path }}</p>
-  <div class="col-12 active position-relative">
-    <a type="submit" class="btn btn-form-submit" href="{{ base_path }}/modif_infos">Modifier mes informations</a>
+  <div class="col-10 active position-relative">
+    <a type="submit" class="btn btn-form-save" >Sauvegarder</a>
   </div>
+  <div class="col-2 active position-relative">
+    <a type="submit" class="btn btn-form-submit" href="{{ base_path }}/modif_infos_3/">Suivant</a>
+  </div>
+</form>
   </div>
 <style>
   .form-container {
     margin-left: 5%;
-    width: 80%;
-    margin-top: 5%;
+    width: 50%;
+    margin-top: 2%;
     margin-bottom: 10%;
   }
 </style>

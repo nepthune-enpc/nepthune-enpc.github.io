@@ -6,34 +6,42 @@ redirect_from:
     - /modif_infos/
     - /page-eleves-modif-infos-persos.html
 title: Mes Informations
+num: 1
 ---
 
 
 {% include base_path %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+  .form-container {
+    margin-left: 5%;
+    width: 65%;
+    margin-top: 2%;
+    margin-bottom: 10%;
+  }
+</style>
 
-
-
+{% assign page_num = "1" %}
 {% assign eleve=site.data.eleves[1] %}
 
 
 <div class="form-container" >
 <!--  <div class="row g-5">-->
 <!--  <div class="col-6 col-sm-4">-->
-{% include progress_bar.html %}
+{% include progress_bar.html page_num=page_num %}
 <!--</div>-->
 <!--</div>-->
 
-<form class="row g-5" action="">
-  <div class="col-6 col-sm-4">
+<form class="row g-3" action="">
+  <div class="col-6 col-sm-6">
     <label for="inputEmail4" class="form-label">Nom:</label>
     <input type="text" class="form-control" id="inputEmail4" placeholder="{{ eleve.nom }}">
   </div>
-  <div class="col-6 col-sm-4">
+  <div class="col-6 col-sm-6">
     <label for="inputPassword4" class="form-label">Prenom:</label>
     <input type="text" class="form-control" id="inputPassword4" placeholder="{{ eleve.prenom }}">
   </div>
-  <div class="col-6 col-sm-4">
+  <div class="col-6 col-sm-6">
     <label for="inputDate" class="form-label">Date de Naissance:</label>
     <input type="date" class="form-control" id="inputDate" placeholder="{{ eleve.naissance }}">
   </div>
@@ -82,20 +90,12 @@ title: Mes Informations
         Check me out
       </label>
     </div>
-  </div>
+  </div>  <div>{{ base_path }}</div>
   <div class="col-10 active position-relative">
-    <a type="submit" class="btn btn-form-save" href="{{ base_path }}/modif_infos_2.html">Sauvegarder</a>
+    <a type="submit" class="btn btn-form-save">Sauvegarder</a>
   </div>
   <div class="col-2 active position-relative">
-    <a type="submit" class="btn btn-form-submit" href="{{ base_path }}/modif_infos_2.html">Suivant</a>
+    <a type="submit" class="btn btn-form-submit" href="{{ base_path }}/modif_infos_2/">Suivant</a>
   </div>
 </form>
   </div>
-<style>
-  .form-container {
-    margin-left: 5%;
-    width: 40%;
-    margin-top: 2%;
-    margin-bottom: 10%;
-  }
-</style>

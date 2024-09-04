@@ -6,15 +6,16 @@
 [inert] > * > .form-label  {
   border: none;
   font-family: "Poppins", sans-serif;
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin-left: 0%;
+  margin-bottom: 0%;
   //font-weight: bold;
 }
 
 [inert] > * > .form-control  {
   border: none;
   font-family: "Poppins", sans-serif;
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin-left: -1%;
 }
 
@@ -22,6 +23,7 @@ a.btn.btn-form-submit {
   background-color: #2b6384;
   color: #ffffff;
   border-color: #2b6384;
+  font-size: 0.9em;
   //font-weight: bold;
   border-radius: 5px;
   float: right;
@@ -118,4 +120,8 @@ ul.custom-form-list > li {
 
 .form-check-input {
     margin-left: 20%;
+}
+
+.form-check-label {
+    color: $darker-gray;
 }
