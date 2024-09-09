@@ -15,9 +15,7 @@ entries_layout: grid
 {% if liste_bourses == empty %}
   <p>Desole, aucune offre de bourse ne contient tous vos criteres...</p>
 {% else %}
-  {% for bourse in liste_bourses %}
-      {% include single-bourse.html bourse=bourse%}
-  {% endfor %}
+      {% include single-bourse.html liste_bourses=liste_bourses%}
 {% endif %}
 
 

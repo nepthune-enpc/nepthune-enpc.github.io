@@ -5,12 +5,12 @@ layout: accueil
 
 
 <!-- sidebar + content -->
-<section class="" style="">
-  <div  style="container-fluid">
+<section class="" >
+  <div class="container-fluid">
     <div class="row">
     
       <!-- content -->
-      <div class="col-md-9 mb-4 pb-3" style="overflow:hidden;">
+      <div class="col-md-9 mb-4 pb-3" >
 <!--      <div class="col-md-9" style="margin-top:5%;margin-left:3%;overflow:hidden;">-->
         <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
           <strong class="d-block py-2">12 Bourses trouvees</strong>
@@ -21,7 +21,7 @@ layout: accueil
               <option value="newest">Plus Recentes</option>
               <option value="A-Z">Ordre alphabetique</option>
             </select>
-            <div class="btn-group shadow-0 border" style="position: relative;z-index:1;">
+            <div class="btn-group shadow-0 border">
               <a onclick="listView()" class="btn btn-light" title="List view">
                 <i class="fa fa-bars fa-lg"></i>
               </a>
@@ -62,7 +62,7 @@ layout: accueil
       </div>
 
 
-      <div class="col-md-3">
+      <div class="col-3 col-md-3 mb-4 px-3">
         {% include filtres_bar.html %}
       </div>
     </div>
@@ -71,7 +71,7 @@ layout: accueil
 </section>
 
 <!-- Footer -->
-<script>
+<!-- <script>
   function displaySelection() {
     var choice = document.getElementById("sort-grants").value;
     let txt = "";
@@ -107,21 +107,7 @@ layout: accueil
       elements[i].style.width = "50%";
     }
   }
-</script>
+</script> -->
 
 
 
-
-<!-- <style>
-   
-     .tri-list {
-        position: absolute;
-        right: 5%;
-        max-width: 6%;
-        background-color: rgb(201, 240, 252);
-        font-size: 11pt;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 400;
-        color: #333333;
-    }
-</style> --> -->

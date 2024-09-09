@@ -1,0 +1,87 @@
+---
+layout: accueil
+title: "Liste des Bourses Publiques Existantes"
+permalink: /foire-aux-questions
+redirect_from:
+    - /faq.html
+    - /faq/
+    - /foire-aux-questions
+    - /foire-aux-questions.html
+entries_layout: grid
+---
+
+{% include base_path %}
+
+
+
+
+<script type="module">
+    var filterableElements = $('.js-filterable');
+    // var filterableElements = $('.card-body');
+    // var filterableElements = document.getElementsByClassName("card-body");
+  
+    // Find the minimum and maximum data-price values
+    var minPrice = Number.MAX_VALUE;
+    var maxPrice = Number.MIN_VALUE;
+  
+  
+    filterableElements.each(function() {
+      var price = parseInt($(this).attr('data-price'));
+      minPrice = Math.min(minPrice, price);
+      maxPrice = Math.max(maxPrice, price);
+    });
+  
+    // Set the min and max attributes of the price range inputs
+    $('#minPrice').attr('min', minPrice).attr('max', maxPrice).attr('value', minPrice);
+    $('#maxPrice').attr('min', minPrice).attr('max', maxPrice).attr('value', maxPrice);
+  
+    // Update the selected price values on input change
+    $('#minPrice').on('input', function() {
+      updatePriceValues();
+    });
+  
+    $('#maxPrice').on('input', function() {
+      updatePriceValues();
+    });
+  
+    // Helper function to update the displayed price values
+    function updatePriceValues() {
+      var minSelectedPrice = parseInt($('#minPrice').val());
+      var maxSelectedPrice = parseInt($('#maxPrice').val());
+  
+      // Ensure the minimum price is not greater than the maximum price
+      if (minSelectedPrice > maxSelectedPrice) {
+        $('#minPrice').val(maxSelectedPrice);
+        minSelectedPrice = maxSelectedPrice;
+      }
+  
+      // Ensure the maximum price is not less than the minimum price
+      if (maxSelectedPrice < minSelectedPrice) {
+        $('#maxPrice').val(minSelectedPrice);
+        maxSelectedPrice = minSelectedPrice;
+      }
+  
+      $('#minPriceValue').text(' $' + minSelectedPrice);
+      $('#maxPriceValue').text(' $' + maxSelectedPrice);
+      var rangeleftPercentage = ((minSelectedPrice - minPrice) / (maxPrice - minPrice)) * 100;
+      var rangerightPercentage = 100 -((maxSelectedPrice - minPrice) / (maxPrice - minPrice)) * 100;
+  
+      // Set the width of the range-selected element as a percentage
+      $('.range-selected').css('left', rangeleftPercentage + '%');
+            $('.range-selected').css('right', rangerightPercentage + '%');
+      // Filter the .js-filterable elements
+      filterableElements.each(function() {
+        var price = parseInt($(this).attr('data-price'));
+  
+        if (price >= minSelectedPrice && price <= maxSelectedPrice) {
+          $(this).addClass('show').removeClass('hide');
+        } else {
+          $(this).addClass('hide').removeClass('show');
+        }
+      });
+    }
+  
+    // Initialize the filtering based on the initial values of the price range inputs
+    updatePriceValues();
+</script>
+  

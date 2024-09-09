@@ -10,12 +10,22 @@
           <ul class="custom-form-list">
             <li>
               <div class="filter-title">MONTANT</div>
-<!--              <label for="montant" class="custom-form-label">MONTANT</label>-->
-<!--            <input type="text" class="custom-form-control" id="montant">-->
-            <input type="range" name="price-min" id="montant" value="200" min="0" max="10000">
+              <div class="slider">
+              <div class="slider-labels">
+                <div> <label for="minPrice">De:</label><span id="minPriceValue"></span></div>
+                <div><label for="maxPrice">A:</label><span id="maxPriceValue"></span></div>
+                </div>
+              <div class="range-slider">
+                 <span class="range-selected"></span>
+               </div>
+              <div class="slider-inputs">
+              <input type="range" id="minPrice" min="0" max="2000" step="1" value="0">
+              <input type="range" id="maxPrice" min="0" max="2000" step="1" value="2000">
+              </div>
+              </div>
             </li>
             <li>
-              <div class="filter-title">DATE DE VERSEMENT</div>
+              <div class="filter-title"><label for="datest">DATE DE VERSEMENT</label></div>
 <!--              <label for="datest" class="custom-form-label"></label>-->
               <input type="date" class="custom-form-control" style="display:flex;" id="datest">
             </li>
@@ -36,22 +46,30 @@
               </div>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
-                <label class="form-check-label" for="flexCheckDefault4">Ingenierie</label>
+                <label class="form-check-label" for="flexCheckDefault4">Medecine</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5">
+                <label class="form-check-label" for="flexCheckDefault5">Informatique</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6">
+                <label class="form-check-label" for="flexCheckDefault6">Sociologie</label>
               </div>
             </li>
             <li>
               <div class="filter-title">TYPE</div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="publique">
+                <input class="form-check-input" type="checkbox" value="" id="publique" checked>
                 <label class="form-check-label" for="publique">Publique</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="privee">
+                <input class="form-check-input" type="checkbox" value="" id="privee" checked>
                 <label class="form-check-label" for="privee">Privee</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="mobilite">
-                <label class="form-check-label" for="mobilite">Privee</label>
+                <input class="form-check-input" type="checkbox" value="" id="mobilite" checked>
+                <label class="form-check-label" for="mobilite">Mobilite</label>
               </div>
             </li>
             <li>
@@ -100,39 +118,116 @@
 <!--              <input type="text" class="custom-form-control" id="grade">-->
             </li>
           </ul>
+          <button class="btn btn-primary reset-button" type="reset" value="Reset">Reset</button>
         </form>
       </div>
     </div>
   </div>
 </div>
-<script>
-  (function( $ ){
-$( document ).ready( function() {
-	$( '.input-range').each(function(){
-		var value = $(this).attr('data-slider-value');
-		var separator = value.indexOf(',');
-		if( separator !== -1 ){
-			value = value.split(',');
-			value.forEach(function(item, i, arr) {
-				arr[ i ] = parseFloat( item );
-			});
-		} else {
-			value = parseFloat( value );
-		}
-		$( this ).slider({
-			formatter: function(value) {
-				console.log(value);
-				return '$' + value;
-			},
-			min: parseFloat( $( this ).attr('data-slider-min') ),
-			max: parseFloat( $( this ).attr('data-slider-max') ),
-			range: $( this ).attr('data-slider-range'),
-			value: value,
-			tooltip_split: $( this ).attr('data-slider-tooltip_split'),
-			tooltip: $( this ).attr('data-slider-tooltip')
-		});
-	});
+<style>
+  .slider {
+    margin-left: 5%;
+    justify-content: center;
+  }
+  .show {
+    transform: scale(1);
+    /* position: relative; */
+    justify-content: center;
+  }
+.hide {
+  /* margin-left: -50%;  */
+  transform: scale(0);
+  /* transform-box: border-box; */
+  /* transform-origin: 0% -50%;  */
+  position: absolute;
+  justify-content: center;
+  /*overflow: visible;*/
+  left: 5%;
+  width: 0;
+}
+span.price {
+  display: block;
+  font-size: 30px;
+  color: #586066;
+}
+.slider-labels {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  color: #465055;
+  font-weight: 400;
+}
+.slider-inputs {
+  position: relative;
+  height: 20px;
+}
+.slider-inputs input {
+  position: absolute;
+    background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width:100%;
+   top: -60%;
+}
+.slider-inputs input::-webkit-slider-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #1b86c2;
+  /*background-color: #1b53c0;*/
+  pointer-events: auto;
+  -webkit-appearance: none;
+}
+.range-slider {
+  height: 5px;
+  position: relative;
+  background-color: #e1e9f6;
+  border-radius: 2px;
+}
+.range-selected {
+  height: 100%;
+  left: 0;
+  right: 0;
+  position: absolute;
+  border-radius: 5px;
+  background-color: #1b86c2;
+  /*background-color: #1b53c0;*/
+}
 
- } );
-} )( jQuery );
-</script>
+.form-check {
+  margin-left: 10%;
+}
+
+input[type=checkbox]:checked {
+  color: #1b86c2;
+  background-color: #1b86c2;
+}
+.explain {
+  color: black;
+  margin: 2rem auto;
+  /*width: 50%;*/
+
+}
+.js-filterable {
+  width: 100%;
+  height: auto;
+  /* display: flex;*/
+  flex-direction: column; 
+  /* display: grid; */
+  /* position: relative; */
+  align-items: center;
+  justify-content: center;
+  transition: 1.5s;
+  /*border-radius: 1rem;*/
+  /*border: 3px solid white;*/
+  /*box-shadow: 0 0 8px 0px #00000063;*/
+}
+
+.reset-button {
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+</style>

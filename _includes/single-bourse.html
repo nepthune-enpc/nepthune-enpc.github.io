@@ -1,13 +1,15 @@
 {% include base_path %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
-
-
-<div class="row justify-content-center mb-3" >
+{% for bourse in liste_bourses %}
+<div class="js-filterable show" data-price="{{ bourse.montant }}">
+  <div class="row justify-content-center mb-3">
     <div class="col-md-9" >
       <div class="card shadow-0 border rounded-3">
         <div class="card-body">
-          <div class="row g-0">
+            <div class="row g-0">
+
             <div class="col-xl-3 col-md-4 d-flex justify-content-center">
               <div class="bg-image hover-zoom ripple rounded ripple-surface me-md-3 mb-2 mb-md-0">
                 <img src="{{ bourse.logo }}" class="adaptive-width" />
@@ -54,12 +56,12 @@
               </div>
             </div>
           </div>
+          </div>
         </div>
       </div>
-    </div>
+   </div>
 </div>
 
-<!--              Script to log the rate of the scholarship-->
 <script type="text/javascript">
   var text = "";
   // const rate = parseFloat(document.getElementById("note_attr"));
@@ -74,6 +76,82 @@
 
   document.getElementById("{{ bourse.nom }}").innerHTML = text;
 </script>
+{% endfor %}
+
+<script type="module">
+  const allCheckboxesVanillaJS = $(".form-check-input");
+  allCheckboxesVanillaJS.each(function() {
+       $(this).attr("checked", true);
+    });
+  var filterableElements = $('.js-filterable');
+  // var filterableElements = $('.card-body');
+  // var filterableElements = document.getElementsByClassName("card-body");
+
+  // Find the minimum and maximum data-price values
+  var minPrice = Number.MAX_VALUE;
+  var maxPrice = Number.MIN_VALUE;
+
+
+  filterableElements.each(function() {
+    var price = parseInt($(this).attr('data-price'));
+    minPrice = Math.min(minPrice, price);
+    maxPrice = Math.max(maxPrice, price);
+  });
+
+  // Set the min and max attributes of the price range inputs
+  $('#minPrice').attr('min', minPrice).attr('max', maxPrice).attr('value', minPrice);
+  $('#maxPrice').attr('min', minPrice).attr('max', maxPrice).attr('value', maxPrice);
+
+  // Update the selected price values on input change
+  $('#minPrice').on('input', function() {
+    updatePriceValues();
+  });
+
+  $('#maxPrice').on('input', function() {
+    updatePriceValues();
+  });
+
+  // Helper function to update the displayed price values
+  function updatePriceValues() {
+    var minSelectedPrice = parseInt($('#minPrice').val());
+    var maxSelectedPrice = parseInt($('#maxPrice').val());
+
+    // Ensure the minimum price is not greater than the maximum price
+    if (minSelectedPrice > maxSelectedPrice) {
+      $('#minPrice').val(maxSelectedPrice);
+      minSelectedPrice = maxSelectedPrice;
+    }
+
+    // Ensure the maximum price is not less than the minimum price
+    if (maxSelectedPrice < minSelectedPrice) {
+      $('#maxPrice').val(minSelectedPrice);
+      maxSelectedPrice = minSelectedPrice;
+    }
+
+    $('#minPriceValue').text( " " + minSelectedPrice + ' €');
+    $('#maxPriceValue').text(' ' + maxSelectedPrice + ' €');
+    var rangeleftPercentage = ((minSelectedPrice - minPrice) / (maxPrice - minPrice)) * 100;
+    var rangerightPercentage = 100 -((maxSelectedPrice - minPrice) / (maxPrice - minPrice)) * 100;
+
+    // Set the width of the range-selected element as a percentage
+    $('.range-selected').css('left', rangeleftPercentage + '%');
+          $('.range-selected').css('right', rangerightPercentage + '%');
+    // Filter the .js-filterable elements
+    filterableElements.each(function() {
+      var price = parseInt($(this).attr('data-price'));
+
+      if (price >= minSelectedPrice && price <= maxSelectedPrice) {
+        $(this).addClass('show').removeClass('hide');
+      } else {
+        $(this).addClass('hide').removeClass('show');
+      }
+    });
+  }
+
+  // Initialize the filtering based on the initial values of the price range inputs
+  updatePriceValues();
+  </script>
+
 <style>
   img.adaptive-width {
     width: 60%;
@@ -85,46 +163,3 @@
   }
 
 </style>
-<!-- <div class="card w-10 hover01">
-    <div class="card-body">
-        <a href="{{ base_path }}{{ bourse.url }}" rel="permalink" class="card-link">
-        <h5 class="card-title">{{ bourse.nom }}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{bourse.publication | date_to_string }}</h6>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="{{ base_path }}{{ bourse.url }}" id="cardlink" rel="permalink" class="card-link">En savoir Plus</a>
-    </a>
-    </div>
-</div>
-
-
-<style>
-    .hover01 .card {
-        border-radius: 3%;
-        /* background-color: rgb(224, 248, 248); */
-        max-width: 10%;
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        -webkit-transition: .3s ease-in-out;
-        transition: .3s ease-in-out;
-    }
-    .card-title {
-        color: rgb(13, 94, 118)
-    }
-    /* .card {
-        transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
-    } */
-    .hover01 .card:hover {
-        -webkit-transform: scale(0.95);
-        transform: scale(0.95);
-    }
-
-    .card-text {
-        color: #333333;
-        font-size: 11pt;
-    }
-    .card-link {
-        text-decoration: none;
-        float: right;
-        font-size: 11pt;
-    }
-</style> -->

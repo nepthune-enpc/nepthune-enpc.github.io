@@ -1,113 +1,376 @@
 ---
-permalink: /draft_filtres/
+permalink: /filtres/
 layout: accueil
 redirect_from:
+    - /filtres
+    - /filtres/
+    - /mes_filtres
     - /draft_filtres
-    - /draft_filtres.html
 title: Mes Filtres
 ---
 
 {% include base_path %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<div class="form-container" >
-<form class="row g-3" inert>
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Nom:</label>
-    <input type="text" class="form-control" id="inputEmail4">
+{% assign liste_bourses = site.data.bourses %}
+
+<div class="slider">
+<div class="slider-labels">
+  <div> <label for="minPrice">De:</label><span id="minPriceValue"></span></div>
+  <div><label for="maxPrice">A:</label><span id="maxPriceValue"></span></div>
   </div>
-  <div class="col-md-6">
-    <label for="inputPassword4" class="form-label">Prenom:</label>
-    <input type="text" class="form-control" id="inputPassword4">
+<div class="range-slider">
+   <span class="range-selected"></span>
+ </div>
+<div class="slider-inputs">
+<input type="range" id="minPrice" min="0" max="2000" step="1" value="0">
+<input type="range" id="maxPrice" min="0" max="2000" step="1" value="2000">
+</div>
+
+  <div class="slider">
+<div class="slider-labels">
+<div class="filter-title">TYPE</div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="publique" id="publique" onclick="updateCategoryPubliqueValues()"  >
+    <label class="form-check-label" for="publique">Publique</label>
   </div>
-  <div class="col-12">
-    <label for="inputAddress" class="form-label">Addresse</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="privee" id="privee">
+    <label class="form-check-label" for="privee">Privee</label>
   </div>
-  <div class="col-md-6">
-    <label for="inputCity" class="form-label">Ville: </label>
-    <input type="text" class="form-control" id="inputCity">
-  </div>
-  <div class="col-md-4">
-    <label for="inputState" class="form-label">Region</label>
-    <select id="inputState" class="form-select">
-      <option selected>Choose...</option>
-      <option>...</option>
-    </select>
-  </div>
-  <div class="col-md-2">
-    <label for="inputZip" class="form-label">Code Postal</label>
-    <input type="text" class="form-control" id="inputZip">
-  </div>
-    <div class="col-12">
-    <label for="inputAddress2" class="form-label">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="mobilite" id="mobilite">
+    <label class="form-check-label" for="mobilite">Mobilite</label>
+</div>
+</div>
+    </div>
+</div>
+
+
+
+
+{% for bourse in liste_bourses %}
+<div class="js-filterable show" 
+data-category="{{ bourse.type }}" 
+data-price="{{ bourse.montant }}">
+  <div class="row justify-content-center mb-3">
+    <div class="col-md-9" >
+      <div class="card shadow-0 border rounded-3">
+        <div class="card-body">
+          <div class="row g-0">
+            <div class="col-xl-3 col-md-4 d-flex justify-content-center">
+              <div class="bg-image hover-zoom ripple rounded ripple-surface me-md-3 mb-2 mb-md-0">
+                <img src="{{ bourse.logo }}" class="adaptive-width" />
+                <a href="#!">
+                  <div class="hover-overlay">
+                    <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-7 col-md-5 col-sm-7">
+              <h5 class=" text-dark">{{ bourse.nom }}</h5>
+              <div class="d-flex flex-row">
+                <div class="text-warning mb-1 me-2">
+                  <span id="{{ bourse.nom }}"></span>
+                  <span class="ms-1" id="note_attr">
+                    {{ bourse.note }}
+                  </span>
+                  <span class="text-muted">{{bourse.attribution }} attributions</span>
+                </div>
+                
+              </div>
+              <p class="text mb-4 mb-md-0">{{bourse.description}}</p>
+            </div>
+            <div class="col-xl-2 col-md-3 col-sm-5">
+              <div class="d-flex flex-row align-items-center mb-1">
+                <h4 class="mb-1 me-1">{{bourse.montant}} €</h4>
+                {% if bourse.ancien_montant %}
+                <span class="text-danger me-1 ms-1"><s>530 €</s></span>
+                {% endif %}
+              </div>
+              {% if bourse.disponible == "oui" %}
+                <h6 class="text-success">Disponible</h6>
+              {% else %}
+                <h6 class="text-danger">Indisponible</h6>
+              {% endif %}
+              <div class="mt-4">
+                <!-- <button class="btn btn-primary shadow-0" type="button">En savoir plus</button> -->
+<!--                <a href="/bourses_{{bourse.type}}s/{{bourse.id}}/details" class="btn btn-primary border px-2 pt-2 icon-hover" role="button">En savoir plus</a>-->
+                <a href="/bourses_{{bourse.type}}s/{{bourse.id}}/details" class="btn btn-form-submit" role="button">En savoir plus</a>
+              </div>
+            </div>
+            <!-- <span class="price">{{ bourse.montant }}$</span>{{ bourse.nom }} -->
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Sign in</button>
-  </div>
-</form>
-  </div>
+</div>
+<script type="text/javascript">
+  var text = "";
+  // const rate = parseFloat(document.getElementById("note_attr"));
+  var rate = parseFloat( "{{ bourse.note }}");
+
+  for (let i = 0; i < Math.floor(rate); i++) {
+    text += "<i class='ri-star-s-fill ri-15x'></i>";
+  }
+  if (Math.abs(rate) - Math.floor(rate) > 0) {
+    text += "<i class='ri-star-half-s-fill ri-15x'></i>";
+  }
+
+  document.getElementById("{{ bourse.nom }}").innerHTML = text;
+</script>
+{% endfor %}
+
+
+
+
+
+
+
+
+
 <style>
+    img.adaptive-width {
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
   .form-container {
     width: 50%;
     margin-top: 5%;
   }
+
+.show {
+  transform: scale(1);
+  width: 100%;
+}
+.hide {
+  transform: scale(0);
+  position: absolute;
+  width: 0;
+}
+.items {
+  display:flex;
+  width: 100%;
+  justify-content: space-around;
+  min-height: 200px;
+}
+
+.js-filterable {
+  width: 50%;
+  height: auto;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  border-radius: 1rem;
+  border: 3px solid white;
+  box-shadow: 0 0 8px 0px #00000063;
+}
+.slider{
+  width: 50%;
+  margin: 2rem auto;
+}
+span.price {
+  display: block;
+  font-size: 30px;
+  color: black;
+}
+.slider-labels {
+  color: black;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.slider-inputs {
+  position: relative;
+  height: 20px;
+}
+.slider-inputs input {
+  position: absolute;
+    background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width:100%;
+   top: -60%;
+}
+.slider-inputs input::-webkit-slider-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #1b53c0;
+  pointer-events: auto;
+  -webkit-appearance: none;
+}
+.range-slider {
+  height: 5px;
+  position: relative;
+  background-color: #e1e9f6;
+  border-radius: 2px;
+}
+.range-selected {
+  height: 100%;
+  left: 0;
+  right: 0;
+  position: absolute;
+  border-radius: 5px;
+  background-color: #1b53c0;
+}
+.explain {
+  color: black;
+  margin: 2rem auto;
+  width: 50%;
+
+}
 </style>
+  <script type="module">
+    // var text = "";
+    // // const rate = parseFloat(document.getElementById("note_attr"));
+    // var rate = parseFloat( "{{ bourse.note }}");
 
-<!--<form class="row g-3">-->
-<!--  <div class="col-md-6">-->
-<!--      <label for="inputEmail4" class="form-label">Email</label>-->
-<!--      <input type="email" class="form-control" id="inputEmail4">-->
-<!--  </div>-->
-<!--  <section class="range-slider container">-->
-<!--    <span class="output outputOne"></span>-->
-<!--    <span class="output outputTwo"></span>-->
-<!--    <span class="full-range"></span>-->
-<!--    <span class="incl-range"></span>-->
-<!--    <input name="rangeOne" value="10" min="0" max="100" step="1" type="range">-->
-<!--    <input name="rangeTwo" value="90" min="0" max="100" step="1" type="range">-->
-<!--  </section>-->
-<!--</form>-->
-<!--</html>-->
-<!--<script>-->
-<!--  var rangeOne = document.querySelector('input[name="rangeOne"]'),-->
-<!--		rangeTwo = document.querySelector('input[name="rangeTwo"]'),-->
-<!--		outputOne = document.querySelector('.outputOne'),-->
-<!--		outputTwo = document.querySelector('.outputTwo'),-->
-<!--		inclRange = document.querySelector('.incl-range'),-->
-<!--		updateView = function () {-->
-<!--			if (this.getAttribute('name') === 'rangeOne') {-->
-<!--				outputOne.innerHTML = this.value;-->
-<!--				outputOne.style.left = this.value / this.getAttribute('max') * 100 + '%';-->
-<!--			} else {-->
-<!--				outputTwo.style.left = this.value / this.getAttribute('max') * 100 + '%';-->
-<!--				outputTwo.innerHTML = this.value-->
-<!--			}-->
-<!--			if (parseInt(rangeOne.value) > parseInt(rangeTwo.value)) {-->
-<!--				inclRange.style.width = (rangeOne.value - rangeTwo.value) / this.getAttribute('max') * 100 + '%';-->
-<!--				inclRange.style.left = rangeTwo.value / this.getAttribute('max') * 100 + '%';-->
-<!--			} else {-->
-<!--				inclRange.style.width = (rangeTwo.value - rangeOne.value) / this.getAttribute('max') * 100 + '%';-->
-<!--				inclRange.style.left = rangeOne.value / this.getAttribute('max') * 100 + '%';-->
-<!--			}-->
-<!--		};-->
+    // for (let i = 0; i < Math.floor(rate); i++) {
+    //   text += "<i class='ri-star-s-fill ri-15x'></i>";
+    // }
+    // if (Math.abs(rate) - Math.floor(rate) > 0) {
+    //   text += "<i class='ri-star-half-s-fill ri-15x'></i>";
+    // }
 
-<!--	document.addEventListener('DOMContentLoaded', function () {-->
-<!--		updateView.call(rangeOne);-->
-<!--		updateView.call(rangeTwo);-->
-<!--		$('input[type="range"]').on('mouseup', function() {-->
-<!--			this.blur();-->
-<!--		}).on('mousedown input', function () {-->
-<!--			updateView.call(this);-->
-<!--		});-->
-<!--	});-->
-<!--</script>-->
+
+    const allCheckboxesVanillaJS = $(".form-check-input");
+    allCheckboxesVanillaJS.each(function() {
+       $(this).attr("checked", true);
+    });
+
+    
+    var filterableElements = $('.js-filterable');
+
+    // Find the minimum and maximum data-price values
+    var minPrice = Number.MAX_VALUE;
+    var maxPrice = Number.MIN_VALUE;
+
+
+    filterableElements.each(function() {
+      var price = parseInt($(this).attr('data-price'));
+      minPrice = Math.min(minPrice, price);
+      maxPrice = Math.max(maxPrice, price);
+    });
+
+    // Set the min and max attributes of the price range inputs
+    $('#minPrice').attr('min', minPrice).attr('max', maxPrice).attr('value', minPrice);
+    $('#maxPrice').attr('min', minPrice).attr('max', maxPrice).attr('value', maxPrice);
+
+    // Update the selected price values on input change
+    $('#minPrice').on('input', function() {
+      updatePriceValues();
+    });
+
+    $('#maxPrice').on('input', function() {
+      updatePriceValues();
+    });
+
+
+    // Helper function to update the displayed price values
+    function updatePriceValues() {
+      var minSelectedPrice = parseInt($('#minPrice').val());
+      var maxSelectedPrice = parseInt($('#maxPrice').val());
+
+      // Ensure the minimum price is not greater than the maximum price
+      if (minSelectedPrice > maxSelectedPrice) {
+        $('#minPrice').val(maxSelectedPrice);
+        minSelectedPrice = maxSelectedPrice;
+      }
+
+      // Ensure the maximum price is not less than the minimum price
+      if (maxSelectedPrice < minSelectedPrice) {
+        $('#maxPrice').val(minSelectedPrice);
+        maxSelectedPrice = minSelectedPrice;
+      }
+
+      $('#minPriceValue').text(minSelectedPrice + ' €');
+      $('#maxPriceValue').text(maxSelectedPrice+ ' €');
+      var rangeleftPercentage = ((minSelectedPrice - minPrice) / (maxPrice - minPrice)) * 100;
+      var rangerightPercentage = 100 -((maxSelectedPrice - minPrice) / (maxPrice - minPrice)) * 100;
+
+      // Set the width of the range-selected element as a percentage
+      $('.range-selected').css('left', rangeleftPercentage + '%');
+            $('.range-selected').css('right', rangerightPercentage + '%');
+
+      // Filter the .js-filterable elements
+      filterableElements.each(function() {
+        var price = parseInt($(this).attr('data-price'));
+
+        if (price >= minSelectedPrice && price <= maxSelectedPrice) {
+          $(this).removeClass('hide').addClass('show');
+        } else {
+          $(this).removeClass('show').addClass('hide');
+        }
+      });
+   }
+
+    // $('#publique').on('input', function() {
+    //   updateCategoryPubliqueValues();
+    // });
+    $('#privee').onchange("input", function() {
+      updateCategoryPriveeValues();
+    });
+      $('#mobilite').on('input', function() {
+      updateCategoryValues();
+    });
+    function updateCategoryValues() {
+      // Filter the .js-filterable elements on their category
+      filterableElements.each(function() {
+        var category = ($(this).attr('data-category')).split(" ");
+
+        if ($('#mobilite').checked && category.includes($('#mobilite').val())
+        ) {
+          $(this).addClass('show').removeClass('hide');
+        }
+        else {
+          $(this).addClass('hide').removeClass('show');
+        }
+      });
+    }
+    function updateCategoryPubliqueValues() {
+      // Filter the .js-filterable elements on their category
+      filterableElements.each(function() {
+        var category = ($(this).attr('data-category')).split(" ");
+        if ($('#publique').checked && category.includes($('#publique').val())
+        ) {
+          $(this).addClass('show').removeClass('hide');
+        }
+        else {
+          $(this).addClass('hide').removeClass('show');
+        }
+      });
+    }
+    function updateCategoryPriveeValues() {
+
+      // Filter the .js-filterable elements on their category
+      filterableElements.each(function() {
+        var category = ($(this).attr('data-category')).split(" ");
+
+        if ($('#privee').checked && category.includes($('#privee').val())
+        ) {
+          $(this).addClass('show').removeClass('hide');
+        }
+        else {
+          $(this).addClass('hide').removeClass('show');
+        }
+      });
+    }
+
+    // Initialize the filtering based on the initial values of the price range inputs
+    updateCategoryValues();
+    updateCategoryPubliqueValues();
+    updateCategoryPriveeValues();
+    updatePriceValues();
+
+  </script>

@@ -108,7 +108,7 @@ ul.custom-form-list > li {
 
 
 .filter-title {
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 5%;
   color: $dark-gray ;
 }
@@ -124,4 +124,15 @@ ul.custom-form-list > li {
 
 .form-check-label {
     color: $darker-gray;
+}
+.slider-labels {
+    color: $darker-gray;
+}
+span.price {
+    color: $darker-gray;
+}
+
+
+li.page-item.active.a.page-link {
+  background-color: #1b86c2;
 }
