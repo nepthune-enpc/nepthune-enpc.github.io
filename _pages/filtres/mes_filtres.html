@@ -28,22 +28,22 @@ title: Mes Filtres
 </div>
 
   <div class="slider">
-<div class="slider-labels">
-<div class="filter-title">TYPE</div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="publique" id="publique" onclick="updateCategoryPubliqueValues()"  >
-    <label class="form-check-label" for="publique">Publique</label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="privee" id="privee">
-    <label class="form-check-label" for="privee">Privee</label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="mobilite" id="mobilite">
-    <label class="form-check-label" for="mobilite">Mobilite</label>
-</div>
-</div>
+    <div class="slider-labels">
+      <div class="filter-title">TYPE</div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="publique" id="publique" onclick="updateCategoryPubliqueValues()"  >
+        <label class="form-check-label" for="publique">Publique</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="privee" id="privee">
+        <label class="form-check-label" for="privee">Privee</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="mobilite" id="mobilite">
+        <label class="form-check-label" for="mobilite">Mobilite</label>
     </div>
+  </div>
+  </div>
 </div>
 
 
@@ -146,34 +146,97 @@ data-price="{{ bourse.montant }}">
     margin-top: 5%;
   }
 
+  /*.js-filterable.hide {*/
+  /*  position: relative;*/
+  /*  visibility: hidden;*/
+  /*transition:  visibility 1.5s linear;*/
+  /*}*/
+  /*  .js-filterable.show {*/
+  /*  position: relative;*/
+  /*     visibility: visible;*/
+  /*transition:  visibility 1.5s linear;*/
+  /*}*/
 .show {
   transform: scale(1);
   width: 100%;
+  position: absolute;
+  display: block;
+  /*animation: showNav 2s, showAfter 0s;*/
+
 }
 .hide {
   transform: scale(0);
-  position: absolute;
-  width: 0;
+  /*transform-origin: center;*/
+  position: relative;
+   width: 0;
+  height: 0;
+  display: none;
+  /*animation: hideNav 2s, hideAfter 0s;*/
+  /*position: sticky;*/
 }
-.items {
-  display:flex;
-  width: 100%;
-  justify-content: space-around;
-  min-height: 200px;
+/*.hide:after {*/
+/*    display: none;*/
+/*  !*width: 0;*!*/
+/*  !*height: 0;*!*/
+/*}*/
+
+@keyframes fade_in_show {
+     0% {
+          opacity: 0;
+          transform: scale(0)
+     }
+
+     100% {
+          opacity: 1;
+          transform: scale(1)
+     }
+}
+@keyframes showNav {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
 }
 
+@keyframes hideNav {
+  from {transform: scale(1);}
+  to {transform: scale(0);}
+}
+
+@keyframes showAfter {
+  from {display: none;}
+  to {display: block;}
+}
+
+@keyframes hideAfter {
+  from {display: block;}
+  to {display: none;}
+}
+
+
+
 .js-filterable {
+  /*flex-wrap: wrap;*/
   width: 50%;
-  height: auto;
-  /*display: flex;*/
-  /*flex-direction: column;*/
+  /*height: 100%;*/
+  position: sticky;
+  display: grid;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: 0.5s;
+  /*transition:  2.5s ease;*/
   border-radius: 1rem;
   border: 3px solid white;
+  transition: transform 1s, display 0s linear 2s, height 0s linear 2s, width 0s linear 2s, position 0s linear 3s;
   box-shadow: 0 0 8px 0px #00000063;
 }
+
+/*.js-filterable:after {*/
+/*  content: '';*/
+/*  display: block;*/
+/*  clear: both;*/
+/*  position: sticky;*/
+/*}*/
+
+
 .slider{
   width: 50%;
   margin: 2rem auto;
@@ -318,59 +381,129 @@ span.price {
     // $('#publique').on('input', function() {
     //   updateCategoryPubliqueValues();
     // });
-    $('#privee').onchange("input", function() {
-      updateCategoryPriveeValues();
-    });
-      $('#mobilite').on('input', function() {
-      updateCategoryValues();
-    });
-    function updateCategoryValues() {
-      // Filter the .js-filterable elements on their category
-      filterableElements.each(function() {
-        var category = ($(this).attr('data-category')).split(" ");
-
-        if ($('#mobilite').checked && category.includes($('#mobilite').val())
-        ) {
-          $(this).addClass('show').removeClass('hide');
-        }
-        else {
-          $(this).addClass('hide').removeClass('show');
-        }
-      });
-    }
-    function updateCategoryPubliqueValues() {
-      // Filter the .js-filterable elements on their category
-      filterableElements.each(function() {
-        var category = ($(this).attr('data-category')).split(" ");
-        if ($('#publique').checked && category.includes($('#publique').val())
-        ) {
-          $(this).addClass('show').removeClass('hide');
-        }
-        else {
-          $(this).addClass('hide').removeClass('show');
-        }
-      });
-    }
-    function updateCategoryPriveeValues() {
-
-      // Filter the .js-filterable elements on their category
-      filterableElements.each(function() {
-        var category = ($(this).attr('data-category')).split(" ");
-
-        if ($('#privee').checked && category.includes($('#privee').val())
-        ) {
-          $(this).addClass('show').removeClass('hide');
-        }
-        else {
-          $(this).addClass('hide').removeClass('show');
-        }
-      });
-    }
-
-    // Initialize the filtering based on the initial values of the price range inputs
-    updateCategoryValues();
-    updateCategoryPubliqueValues();
-    updateCategoryPriveeValues();
+    // $('#privee').onchange("input", function() {
+    //   updateCategoryPriveeValues();
+    // });
+    //   $('#mobilite').on('input', function() {
+    //   updateCategoryValues();
+    // });
+    // function updateCategoryValues() {
+    //   // Filter the .js-filterable elements on their category
+    //   filterableElements.each(function() {
+    //     var category = ($(this).attr('data-category')).split(" ");
+    //
+    //     if ($('#mobilite').checked && category.includes($('#mobilite').val())
+    //     ) {
+    //       $(this).addClass('show').removeClass('hide');
+    //     }
+    //     else {
+    //       $(this).addClass('hide').removeClass('show');
+    //     }
+    //   });
+    // }
+    // function updateCategoryPubliqueValues() {
+    //   // Filter the .js-filterable elements on their category
+    //   filterableElements.each(function() {
+    //     var category = ($(this).attr('data-category')).split(" ");
+    //     if ($('#publique').checked && category.includes($('#publique').val())
+    //     ) {
+    //       $(this).addClass('show').removeClass('hide');
+    //     }
+    //     else {
+    //       $(this).addClass('hide').removeClass('show');
+    //     }
+    //   });
+    // }
+    // function updateCategoryPriveeValues() {
+    //
+    //   // Filter the .js-filterable elements on their category
+    //   filterableElements.each(function() {
+    //     var category = ($(this).attr('data-category')).split(" ");
+    //
+    //     if ($('#privee').checked && category.includes($('#privee').val())
+    //     ) {
+    //       $(this).addClass('show').removeClass('hide');
+    //     }
+    //     else {
+    //       $(this).addClass('hide').removeClass('show');
+    //     }
+    //   });
+    // }
+    //
+    // // Initialize the filtering based on the initial values of the price range inputs
+    // updateCategoryValues();
+    // updateCategoryPubliqueValues();
+    // updateCategoryPriveeValues();
     updatePriceValues();
+
+    var $filterCheckboxes = $('input[type="checkbox"]');
+
+    var filterFunc = function() {
+      var selectedFilters = {};
+
+      // select all the filter category names
+      $filterCheckboxes.filter(':checked').each(function() {
+          if (!selectedFilters.hasOwnProperty(this.name)) {
+              selectedFilters[this.name] = [];
+          }
+          selectedFilters[this.name].push(this.value);
+      });
+      // create a collection containing all of the filterable elements
+      var $filteredResults = $('.js-filterable');
+      var $hiddenResults = $('.js-filterable');
+      // loop over the selected filter name -> (array) values pairs
+      $.each(selectedFilters, function(name, filterValues) {
+
+         //filter each .flower element
+        $filteredResults = $filteredResults.filter(function() {
+          var matched = false, currentFilterValues = $(this).data('category').split(' ');
+          // loop over each category value in the current .flower's data-category
+          $.each(currentFilterValues, function(_, currentFilterValue) {
+
+            // if the current category exists in the selected filters array
+            // set matched to true, and stop looping. as we're ORing in each
+            // set of filters, we only need to match once
+
+            if ($.inArray(currentFilterValue, filterValues) != -1) {
+              matched = true;
+              return false;
+            }
+            });
+           // if matched is true the current .flower element is returned
+          return matched;
+        });
+      });
+      $.each(selectedFilters, function(name, filterValues) {
+
+         //filter each .flower element
+        $hiddenResults = $hiddenResults.filter(function() {
+          var matched = false, currentFilterValues = $(this).data('category').split(' ');
+          // loop over each category value in the current .flower's data-category
+          $.each(currentFilterValues, function(_, currentFilterValue) {
+
+            // if the current category exists in the selected filters array
+            // set matched to true, and stop looping. as we're ORing in each
+            // set of filters, we only need to match once
+
+            if ($.inArray(currentFilterValue, filterValues) == -1) {
+              matched = true;
+              return false;
+            }
+            });
+           // if matched is true the current .flower element is returned
+          return matched;
+        });
+      });
+
+      // var toHide = $('.js-filterable').filter($filteredResults);
+      // toHide.hide(500);
+
+     // $('.js-filterable').hide(1000).filter($filteredResults).show(1000);
+     $('.js-filterable').filter($filteredResults).removeClass('hide').addClass('show');
+     $('.js-filterable').filter($hiddenResults).addClass('hide').removeClass('show');
+     //  $('.js-filterable').filter(!$filteredResults).addClass('hide').removeClass('show');
+}
+
+$filterCheckboxes.on('change', filterFunc);
 
   </script>

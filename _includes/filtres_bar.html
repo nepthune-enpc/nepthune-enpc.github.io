@@ -1,11 +1,11 @@
 {% include base_path %}
 
 
-<div class="card shadow-0 border rounded-3 px-3">
+<div class="card shadow-0 border rounded-3 " style="transform: scale(1);">
   <div class="card-body">
     <div class="row g-0">
         <h4 style="text-align:center;margin-bottom: 2%;" class="border-bottom mb-2 pb-3">Filtres</h4>
-      <div class="col-xl-12 col-md-12 d-flex mt-4 justify-content-start" >
+      <div class="col-12 col-xl-12 col-md-12 px-2 mt-4 justify-content-start" >
         <form action="" method="">
           <ul class="custom-form-list">
             <li>
@@ -60,15 +60,15 @@
             <li>
               <div class="filter-title">TYPE</div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="publique" checked>
+                <input class="form-check-input" type="checkbox" value="publique" id="publique" checked>
                 <label class="form-check-label" for="publique">Publique</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="privee" checked>
+                <input class="form-check-input" type="checkbox" value="privee" id="privee" checked>
                 <label class="form-check-label" for="privee">Privee</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="mobilite" checked>
+                <input class="form-check-input" type="checkbox" value="mobilite" id="mobilite" checked>
                 <label class="form-check-label" for="mobilite">Mobilite</label>
               </div>
             </li>
@@ -125,109 +125,5 @@
   </div>
 </div>
 <style>
-  .slider {
-    margin-left: 5%;
-    justify-content: center;
-  }
-  .show {
-    transform: scale(1);
-    /* position: relative; */
-    justify-content: center;
-  }
-.hide {
-  /* margin-left: -50%;  */
-  transform: scale(0);
-  /* transform-box: border-box; */
-  /* transform-origin: 0% -50%;  */
-  position: absolute;
-  justify-content: center;
-  /*overflow: visible;*/
-  left: 5%;
-  width: 0;
-}
-span.price {
-  display: block;
-  font-size: 30px;
-  color: #586066;
-}
-.slider-labels {
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: space-between;
-  color: #465055;
-  font-weight: 400;
-}
-.slider-inputs {
-  position: relative;
-  height: 20px;
-}
-.slider-inputs input {
-  position: absolute;
-    background: none;
-  pointer-events: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width:100%;
-   top: -60%;
-}
-.slider-inputs input::-webkit-slider-thumb {
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  background-color: #1b86c2;
-  /*background-color: #1b53c0;*/
-  pointer-events: auto;
-  -webkit-appearance: none;
-}
-.range-slider {
-  height: 5px;
-  position: relative;
-  background-color: #e1e9f6;
-  border-radius: 2px;
-}
-.range-selected {
-  height: 100%;
-  left: 0;
-  right: 0;
-  position: absolute;
-  border-radius: 5px;
-  background-color: #1b86c2;
-  /*background-color: #1b53c0;*/
-}
 
-.form-check {
-  margin-left: 10%;
-}
-
-input[type=checkbox]:checked {
-  color: #1b86c2;
-  background-color: #1b86c2;
-}
-.explain {
-  color: black;
-  margin: 2rem auto;
-  /*width: 50%;*/
-
-}
-.js-filterable {
-  width: 100%;
-  height: auto;
-  /* display: flex;*/
-  flex-direction: column; 
-  /* display: grid; */
-  /* position: relative; */
-  align-items: center;
-  justify-content: center;
-  transition: 1.5s;
-  /*border-radius: 1rem;*/
-  /*border: 3px solid white;*/
-  /*box-shadow: 0 0 8px 0px #00000063;*/
-}
-
-.reset-button {
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-}
 </style>

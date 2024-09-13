@@ -1,9 +1,9 @@
 {% include base_path %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
+<!-- {{ bourse.lycee }} {{ bourse.licence }} {{ bourse.master }} {{ bourse.doctorant }} {{ bourse.disponible }}"-->
 {% for bourse in liste_bourses %}
-<div class="js-filterable show" data-price="{{ bourse.montant }}">
+<div class="js-filterable show" data-price="{{ bourse.montant }}" data-category="{{ bourse.type }}" data-note="{{ bourse.note }}" data-deadline="{{ bourse.deadline }}">
   <div class="row justify-content-center mb-3">
     <div class="col-md-9" >
       <div class="card shadow-0 border rounded-3">
@@ -150,6 +150,79 @@
 
   // Initialize the filtering based on the initial values of the price range inputs
   updatePriceValues();
+
+
+  // Checkbox multifilter
+  var $filterCheckboxes = $('input[type="checkbox"]');
+
+    var filterFunc = function() {
+      var selectedFilters = {};
+
+      // select all the filter category names
+      $filterCheckboxes.filter(':checked').each(function() {
+          if (!selectedFilters.hasOwnProperty(this.name)) {
+              selectedFilters[this.name] = [];
+          }
+          selectedFilters[this.name].push(this.value);
+      });
+      // create a collection containing all of the filterable elements
+      var $filteredResults = $('.js-filterable');
+      var $hiddenResults = $('.js-filterable');
+      // loop over the selected filter name -> (array) values pairs
+      $.each(selectedFilters, function(name, filterValues) {
+
+         //filter each .flower element
+        $filteredResults = $filteredResults.filter(function() {
+          var matched = false, currentFilterValues = $(this).data('category').split(' ');
+          // loop over each category value in the current .flower's data-category
+          $.each(currentFilterValues, function(_, currentFilterValue) {
+
+            // if the current category exists in the selected filters array
+            // set matched to true, and stop looping. as we're ORing in each
+            // set of filters, we only need to match once
+
+            if ($.inArray(currentFilterValue, filterValues) != -1) {
+              matched = true;
+              return false;
+            }
+            });
+           // if matched is true the current .flower element is returned
+          return matched;
+        });
+      });
+      $.each(selectedFilters, function(name, filterValues) {
+
+         //filter each .flower element
+        $hiddenResults = $hiddenResults.filter(function() {
+          var matched = false, currentFilterValues = $(this).data('category').split(' ');
+          // loop over each category value in the current .flower's data-category
+          $.each(currentFilterValues, function(_, currentFilterValue) {
+
+            // if the current category exists in the selected filters array
+            // set matched to true, and stop looping. as we're ORing in each
+            // set of filters, we only need to match once
+
+            if ($.inArray(currentFilterValue, filterValues) == -1) {
+              matched = true;
+              return false;
+            }
+            });
+           // if matched is true the current .flower element is returned
+          return matched;
+        });
+      });
+
+      // var toHide = $('.js-filterable').filter($filteredResults);
+      // toHide.hide(500);
+
+     // $('.js-filterable').hide(1000).filter($filteredResults).show(1000);
+     $('.js-filterable').filter($filteredResults).removeClass('hide').addClass('show');
+     $('.js-filterable').filter($hiddenResults).addClass('hide').removeClass('show');
+     //  $('.js-filterable').filter(!$filteredResults).addClass('hide').removeClass('show');
+    }
+
+    $filterCheckboxes.on('change', filterFunc);
+
   </script>
 
 <style>

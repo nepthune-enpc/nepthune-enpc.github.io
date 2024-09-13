@@ -4,13 +4,15 @@
       display: flex;
       align-items: center;
       padding: 20px;
+      font-family: "Poppins", sans-serif;
     }
     .content {
       //padding: 12px 50px;
       padding: 2% 3%;
-      height: 150%;
+      //height: 150%;
       display: flex;
       flex-direction: column;
+      font-family: "Poppins", sans-serif;
     }
   
     .footer {
@@ -18,5 +20,6 @@
       margin-top: auto;
       margin-bottom: 20px;
       padding: 20px;
+      font-family: "Poppins", sans-serif;
     }
   }

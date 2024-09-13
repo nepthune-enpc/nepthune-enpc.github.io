@@ -163,7 +163,7 @@
 }
 .layout .content {
   flex-grow: 1;
-  height: 1000px;
+  //height: 1000px;
 }
 .layout .overlay {
   position: fixed;
@@ -397,7 +397,7 @@
   min-height: 100px;
   display: flex;
   align-items: center;
-  // padding: 0 20px;
+  padding: 6% 6%;
 }
 .sidebar .sidebar-layout .sidebar-header > span {
   overflow: hidden;
@@ -413,7 +413,7 @@
   min-height: 230px;
   display: flex;
   align-items: center;
-  // padding: 0 20px;
+  padding: 6% 6%;
 }
 .sidebar .sidebar-layout .sidebar-footer > span {
   overflow: hidden;
@@ -676,17 +676,21 @@ a {
   min-width: 190px;
   margin: 0 auto;
   background-color: #162d4a;
+  font-family: "Poppins", sans-serif;
 }
 .layout .sidebar .footer-box img.react-logo {
   width: 40px;
   height: 40px;
   margin-bottom: 10px;
 }
-.layout .sidebar .footer-box a {
-  color: #fff;
+.layout .sidebar .footer-box a.sidebar-link {
+  text-decoration: none;
+  color: #7d84ab;
   font-weight: 600;
   margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
 }
+
 .layout .sidebar .sidebar-collapser {
   transition: left, right, 0.3s;
   position: fixed;
@@ -754,6 +758,22 @@ a {
 .social-links a {
   margin: 0 10px;
   color: #3f4750;
+}
+
+#disconnect {
+  color: #7d84ab;
+}
+
+#disconnect:hover .menu-icon i {
+  animation: swing ease-in-out 0.5s 1 alternate;
+}
+
+#disconnect:hover .menu-icon {
+  color: #dee2ec;
+}
+
+#disconnect:hover .menu-title {
+  color: #dee2ec;
 }
 
 /*# sourceMappingURL=styles.css.map */

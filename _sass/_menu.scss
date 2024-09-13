@@ -31,6 +31,7 @@
           list-style-type: none;
           padding: 0;
           margin: 0;
+          font-family: "Poppins", sans-serif;
         }
         .menu-header {
           font-weight: 600;
@@ -39,6 +40,7 @@
           letter-spacing: 2px;
           transition: opacity 0.3s;
           opacity: 0.5;
+          font-family: "Poppins", sans-serif;
         }
         .menu-item {
           a {
@@ -47,6 +49,7 @@
             height: 50px;
             padding: 0 20px;
             color: $text-color;
+            font-family: "Poppins", sans-serif;
   
             .menu-icon {
               font-size: 1.2rem;
@@ -71,6 +74,7 @@
               white-space: nowrap;
               flex-grow: 1;
               transition: color 0.3s;
+              font-family: "Poppins", sans-serif;
             }
             .menu-prefix,
             .menu-suffix {
@@ -114,6 +118,7 @@
               display: none;
               overflow: hidden;
               z-index: 999;
+              font-family: "Poppins", sans-serif;
             }
             &.open {
               > a {
@@ -214,6 +219,7 @@
                 width: 200px;
                 margin-left: 3px !important;
                 border-radius: 4px;
+                font-family: "Poppins", sans-serif;
                 display: block !important;
               }
             }

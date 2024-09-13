@@ -1,13 +1,13 @@
 @import "variables";
 
 :root {
-  --main-bg-color: #32506d;
+  --main-bg-color: #22406b;
 }
 .calendar-container {
   position: relative;
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
-  align-items: center;
+  //align-items: center;
   justify-content: center;
   padding-bottom: 2%;
   width: 100%;
@@ -19,22 +19,40 @@
   width: 60%;
   padding: 2%;
   //height: 100%;
-  min-height: 100vh;
+  min-height: 70vh;
 }
 
-.calendar {
-  position: relative;
-  width: 100%;
-  min-height: 50vh;
+.right {
+  width: 40%;
+  padding: 2%;
+  //height: 100%;
+  min-height: 40vh;
+    position: relative;
   //height: 60%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  color: #32506d;
+  color: var(--main-bg-color);
   border-color: #2b75a5;
-  background-color: #eeffff;
-  border-radius: 5px;
+  background-color: #aaddee;
+  border-radius: 10px;
+  //align-items: start;
+}
+
+.calendar {
+  position: relative;
+  width: 100%;
+  min-height: 40vh;
+  //height: 60%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: var(--main-bg-color);
+  border-color: #2b75a5;
+  background-color: #aaddee;
+  border-radius: 10px;
 }
 
 
@@ -82,7 +100,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 2%;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   //margin-bottom: 2%;
 
@@ -95,18 +113,21 @@
   flex-wrap: wrap;
   justify-content: center;
   cursor: pointer;
-  color: #2b75a5;
+  color: #1964a4;
   padding: 0 1%;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 500;
   align-items: center;
+  background-color: #fff;
   border: 1px solid #858585;
-  margin-bottom: 3%;
-  min-height: 9vh;
+  margin-bottom: 1%;
+  //margin-left: 2px;
+  min-height: 8vh;
+  border-radius: 5px;
 }
 
 .calendar .days .day:not(.prev-date, .next-date):hover {
-  color: #3c97b6;;
+  color: #3c97b6;
   background-color: var(main-bg-color);
 }
 
@@ -116,8 +137,8 @@
 }
 .calendar .days .active {
   position: relative;
-  font-size: 2rem;
-  color: #255395;
+  font-size: 1.8rem;
+  color: #103375;
   background-color: var(main-bg-color);
 }
 
@@ -184,11 +205,25 @@
   border-radius: 0;
 }
 
-.calendar-container .right {
+//.calendar-container .right {
+//   position: relative;
+//  width: 40%;
+//  padding: 3% 0;
+//  min-height: 40vh;
+//  margin-bottom: 5%;
+//  //padding-bottom: 5%;
+//  background-color: #007bb6;
+//}
+
+ .calendar-container .right {
    position: relative;
   width: 40%;
   padding: 3% 0;
-  min-height: 100vh;
+  //min-height: 40vh;
+  margin-bottom: 25%;
+  margin-top: 2%;
+  //padding-bottom: 5%;
+  background-color: #c8e8ff //#007bb6;
 }
 
 .right .today-date {
@@ -216,66 +251,70 @@
   font-weight: 400;
   color: #278f95;
 }
-.events {
+.right.events {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  //padding-left: 4px;
-}
+  padding-left: 4px;
 
-.events .event {
+}
+.right.events.event {
+  list-style-type: none;
+}
+.right .events .event {
   position: relative;
-  width: 95%;
-  min-height: 70px;
+  width: 85%;
+  min-height: 5vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
   gap: 5px;
-  padding: 0 20px;
-  padding-left: 50px;
+  padding: 2%  2%;
+  padding-left: 2%;
   color: #fff;
-  background: linear-gradient(90deg, #3f4458, transparent);
+
+  background: linear-gradient(90deg, #3486b8, transparent);
   cursor: pointer;
 }
 /* even event */
-.events .event:nth-child(even) {
+.right .events .event:nth-child(even) {
   background: transparent;
 }
-.events .event:hover {
+.right .events .event:hover {
   background: linear-gradient(90deg, var(--main-bg-color), transparent);
 }
-.events .event .title {
+.right .events .event .title {
   display: flex;
   align-items: center;
   pointer-events: none;
 }
-.events .event .title .event-title {
+.right .events .event .title .event-title {
   font-size: 1rem;
   font-weight: 400;
   margin-left: 20px;
 }
-.events .event i {
+.right .events .event i {
   color: var(--main-bg-color);
   font-size: 0.5rem;
 }
-.events .event:hover i {
+.right .events .event:hover i {
   color: #fff;
 }
-.events .event .event-time {
+.right .events .event .event-time {
   font-size: 0.8rem;
   font-weight: 400;
   color: #878895;
   margin-left: 15px;
   pointer-events: none;
 }
-.events .event:hover .event-time {
+.right .events .event:hover .event-time {
   color: #fff;
 }
 /* add tick in event after */
-.events .event::after {
+.right .events .event::after {
   content: "✓";
   position: absolute;
   top: 50%;
@@ -289,21 +328,22 @@
   color: var(--main-bg-color);
   transform: translateY(-50%);
 }
-.events .event:hover::after {
+.right .events .event:hover::after {
   display: flex;
 }
 .add-event {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  width: 40px;
-  height: 40px;
+  position: relative;
+  margin-top: 45vh;
+  //bottom: 30px;
+  right: 5vh;
+  width: 45px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  color: #878895;
-  border: 2px solid #878895;
+  color: var(--main-bg-color); // #878895;
+  border: 3px solid var(--main-bg-color);
   opacity: 0.5;
   border-radius: 50%;
   background-color: transparent;
@@ -428,17 +468,17 @@
     align-items: flex-start;
     justify-content: flex-start;
   }
-  .container {
+  .calendar-container {
     min-height: 100vh;
     flex-direction: column;
     border-radius: 0;
   }
-  .container .left {
+  .calendar-container .left {
     width: 100%;
     height: 100%;
     padding: 20px 0;
   }
-  .container .right {
+  .calendar-container .right {
     width: 100%;
     height: 100%;
     padding: 20px 0;
